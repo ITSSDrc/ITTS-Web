@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'ITSS - Innovative Tech Solutions & Services',
-  description: 'Driving business success through cutting-edge technology solutions.',
+  title: 'ITSS - Solutions et Services Technologiques Innovants',
+  description: 'Favoriser le succès des entreprises grâce à des solutions technologiques de pointe.',
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

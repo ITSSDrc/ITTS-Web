@@ -4,8 +4,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - ITSS',
-  description: 'Get in touch with the ITSS team for inquiries, quotes, or support.',
+  title: 'Contactez-Nous - ITSS',
+  description: 'Contactez l\'équipe d\'ITSS pour toute demande d\'information, de devis ou de support.',
 };
 
 export default function ContactPage() {
@@ -13,9 +13,9 @@ export default function ContactPage() {
     <>
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-headline font-bold md:text-5xl">Get in Touch</h1>
+          <h1 className="text-4xl font-headline font-bold md:text-5xl">Contactez-Nous</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            We'd love to hear from you. Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.
+            Nous serions ravis de vous entendre. Que vous ayez une question sur nos services, nos tarifs ou toute autre chose, notre équipe est prête à répondre à toutes vos questions.
           </p>
         </div>
       </section>
@@ -25,17 +25,17 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12">
             <Card>
               <CardHeader>
-                <CardTitle className="font-headline text-2xl">Contact Form</CardTitle>
-                <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+                <CardTitle className="font-headline text-2xl">Formulaire de Contact</CardTitle>
+                <CardDescription>Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.</CardDescription>
               </CardHeader>
               <CardContent>
                 <ContactForm />
               </CardContent>
             </Card>
             <div className="space-y-8">
-                <h2 className="text-3xl font-headline font-bold">Contact Information</h2>
+                <h2 className="text-3xl font-headline font-bold">Informations de Contact</h2>
                 <p className="text-muted-foreground">
-                    Alternatively, you can reach us through the following channels. We look forward to connecting with you!
+                    Vous pouvez également nous joindre via les canaux suivants. Nous avons hâte d'échanger avec vous !
                 </p>
                 <div className="space-y-6">
                     <div className="flex items-start gap-4">
@@ -44,7 +44,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-lg">Email</h3>
-                            <p className="text-muted-foreground">General Inquiries & Sales</p>
+                            <p className="text-muted-foreground">Demandes Générales & Ventes</p>
                             <a href="mailto:contact@itss.com" className="text-primary hover:underline">
                                 contact@itss.com
                             </a>
@@ -55,8 +55,8 @@ export default function ContactPage() {
                             <Phone className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                            <h3 className="font-semibold text-lg">Phone</h3>
-                            <p className="text-muted-foreground">Mon-Fri, 9am-5pm EST</p>
+                            <h3 className="font-semibold text-lg">Téléphone</h3>
+                            <p className="text-muted-foreground">Lun-Ven, 9h-17h HNE</p>
                             <a href="tel:+1234567890" className="text-primary hover:underline">
                                 (123) 456-7890
                             </a>
@@ -67,8 +67,8 @@ export default function ContactPage() {
                             <MapPin className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                            <h3 className="font-semibold text-lg">Office</h3>
-                            <p className="text-muted-foreground">123 Tech Avenue</p>
+                            <h3 className="font-semibold text-lg">Bureau</h3>
+                            <p className="text-muted-foreground">123 Avenue de la Tech</p>
                             <p className="text-primary">Innovation City, TX 12345</p>
                         </div>
                     </div>

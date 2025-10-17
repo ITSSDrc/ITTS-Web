@@ -9,9 +9,9 @@ import { Menu, Mountain } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -51,7 +51,7 @@ export function Header() {
               className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
             >
               <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
+              <span className="sr-only">Ouvrir/Fermer le menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
@@ -87,7 +87,7 @@ export function Header() {
 
         <div className="flex flex-1 items-center justify-end space-x-2">
           <Button asChild>
-            <Link href="/contact">Get a Quote</Link>
+            <Link href="/contact">Obtenir un devis</Link>
           </Button>
         </div>
       </div>

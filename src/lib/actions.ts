@@ -3,9 +3,9 @@
 import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
+  name: z.string().min(2, "Le nom doit comporter au moins 2 caractères."),
+  email: z.string().email("Adresse e-mail invalide."),
+  message: z.string().min(10, "Le message doit comporter au moins 10 caractères."),
 });
 
 export type ContactFormState = {
@@ -30,19 +30,19 @@ export async function submitContactForm(
 
   if (!validatedFields.success) {
     return {
-      message: "Validation failed. Please check your input.",
+      message: "La validation a échoué. Veuillez vérifier vos entrées.",
       errors: validatedFields.error.flatten().fieldErrors,
       success: false,
     };
   }
   
-  // Here you would typically send an email, save to a database, etc.
-  // For this example, we'll just log it to the console.
-  console.log("Contact form submitted successfully:");
+  // Ici, vous enverriez normalement un e-mail, enregistreriez dans une base de données, etc.
+  // Pour cet exemple, nous allons simplement le journaliser dans la console.
+  console.log("Formulaire de contact soumis avec succès :");
   console.log(validatedFields.data);
 
   return {
-    message: "Thank you for your message! We will get back to you shortly.",
+    message: "Merci pour votre message ! Nous vous répondrons sous peu.",
     success: true,
   };
 }

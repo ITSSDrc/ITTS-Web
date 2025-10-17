@@ -3,40 +3,40 @@ import { CheckCircle } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services - ITSS',
-  description: 'Explore the comprehensive technology services offered by ITSS, including cloud solutions, custom software, cybersecurity, and managed IT.',
+  title: 'Nos Services - ITSS',
+  description: 'Explorez les services technologiques complets proposés par ITSS, y compris les solutions cloud, les logiciels personnalisés, la cybersécurité et l\'infogérance.',
 };
 
 const serviceDetails = [
   {
-    name: "Cloud Solutions",
-    description: "Leverage the power of the cloud with our comprehensive services, including migration, management, and optimization. We build scalable, resilient, and cost-effective cloud architectures on AWS, Azure, and Google Cloud.",
-    features: ["Cloud Migration & Strategy", "Infrastructure as Code (IaC)", "Serverless Computing", "Containerization (Docker & Kubernetes)"],
+    name: "Solutions Cloud",
+    description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Nous construisons des architectures cloud évolutives, résilientes et rentables sur AWS, Azure et Google Cloud.",
+    features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur (Serverless)", "Conteneurisation (Docker & Kubernetes)"],
   },
   {
-    name: "Custom Software Development",
-    description: "Get tailor-made software that aligns perfectly with your business processes. Our agile development team builds robust, scalable, and user-friendly web and mobile applications from scratch.",
-    features: ["Full-Stack Web Development", "Mobile App Development (iOS & Android)", "API Design & Integration", "UI/UX Design & Prototyping"],
+    name: "Développement de Logiciels sur Mesure",
+    description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales à partir de zéro.",
+    features: ["Développement Web Full-Stack", "Développement d'applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Conception UI/UX & Prototypage"],
   },
   {
-    name: "Cybersecurity Services",
-    description: "In an era of increasing digital threats, our cybersecurity services provide a multi-layered defense to protect your valuable data and infrastructure. We identify vulnerabilities and implement proactive security measures.",
-    features: ["Penetration Testing", "Security Audits & Compliance", "Managed Detection & Response (MDR)", "Employee Security Training"],
+    name: "Services de Cybersécurité",
+    description: "À l'ère des menaces numériques croissantes, nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures de sécurité proactives.",
+    features: ["Tests d'intrusion", "Audits de sécurité & Conformité", "Détection et réponse gérées (MDR)", "Formation à la sécurité des employés"],
   },
   {
-    name: "Managed IT Services",
-    description: "Offload the burden of IT management and focus on your core business. Our proactive managed services ensure your systems are always up-to-date, secure, and performing optimally, minimizing downtime.",
-    features: ["24/7 System Monitoring", "Help Desk & Technical Support", "Network Management", "Data Backup & Disaster Recovery"],
+    name: "Services d'Infogérance",
+    description: "Déléguez le fardeau de la gestion informatique et concentrez-vous sur votre cœur de métier. Nos services gérés proactifs garantissent que vos systèmes sont toujours à jour, sécurisés et performants, minimisant les temps d'arrêt.",
+    features: ["Surveillance des systèmes 24/7", "Service d'assistance et support technique", "Gestion de réseau", "Sauvegarde des données et reprise après sinistre"],
   },
   {
-    name: "Data Analytics & BI",
-    description: "Turn your data into actionable insights. We help you collect, process, and visualize data to make informed business decisions, identify trends, and uncover new opportunities for growth.",
-    features: ["Data Warehousing", "ETL Pipeline Development", "Interactive Dashboards", "Predictive Analytics"],
+    name: "Analyse de Données & BI",
+    description: "Transformez vos données en informations exploitables. Nous vous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées, identifier les tendances et découvrir de nouvelles opportunités de croissance.",
+    features: ["Entreposage de données (Data Warehousing)", "Développement de pipelines ETL", "Tableaux de bord interactifs", "Analyse prédictive"],
   },
   {
-    name: "DevOps & Automation",
-    description: "Accelerate your development lifecycle and improve software quality with our DevOps expertise. We implement CI/CD pipelines and automate infrastructure to increase efficiency and reliability.",
-    features: ["CI/CD Pipeline Implementation", "Infrastructure Automation", "Monitoring & Logging Solutions", "Cloud-Native Tooling"],
+    name: "DevOps & Automatisation",
+    description: "Accélérez votre cycle de vie de développement et améliorez la qualité des logiciels grâce à notre expertise DevOps. Nous mettons en œuvre des pipelines CI/CD et automatisons l'infrastructure pour accroître l'efficacité et la fiabilité.",
+    features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Solutions de surveillance et de journalisation", "Outils natifs du cloud"],
   },
 ];
 
@@ -45,9 +45,9 @@ export default function ServicesPage() {
     <>
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-headline font-bold md:text-5xl">Our Technology Services</h1>
+          <h1 className="text-4xl font-headline font-bold md:text-5xl">Nos Services Technologiques</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            We provide a wide range of expert services designed to solve complex challenges and drive innovation for your business.
+            Nous fournissons une large gamme de services experts conçus pour résoudre des défis complexes et stimuler l'innovation pour votre entreprise.
           </p>
         </div>
       </section>

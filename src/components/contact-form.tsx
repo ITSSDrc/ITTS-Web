@@ -20,7 +20,7 @@ function SubmitButton() {
   return (
     <Button type="submit" className="w-full" disabled={pending}>
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Send Message
+      Envoyer le message
     </Button>
   );
 }
@@ -34,13 +34,13 @@ export function ContactForm() {
     if (state.message) {
       if (state.success) {
         toast({
-          title: "Success!",
+          title: "Succès !",
           description: state.message,
         });
         formRef.current?.reset();
       } else {
         toast({
-          title: "Error",
+          title: "Erreur",
           description: state.message,
           variant: "destructive",
         });
@@ -51,8 +51,8 @@ export function ContactForm() {
   return (
     <form ref={formRef} action={formAction} className="space-y-6">
       <div>
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" type="text" placeholder="Your Name" required />
+        <Label htmlFor="name">Nom</Label>
+        <Input id="name" name="name" type="text" placeholder="Votre Nom" required />
         {state.errors?.name && (
           <p className="text-sm font-medium text-destructive mt-2">
             {state.errors.name[0]}
@@ -61,7 +61,7 @@ export function ContactForm() {
       </div>
       <div>
         <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" placeholder="your@email.com" required />
+        <Input id="email" name="email" type="email" placeholder="votre@email.com" required />
         {state.errors?.email && (
           <p className="text-sm font-medium text-destructive mt-2">
             {state.errors.email[0]}
@@ -73,7 +73,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           name="message"
-          placeholder="How can we help you?"
+          placeholder="Comment pouvons-nous vous aider ?"
           rows={5}
           required
         />
