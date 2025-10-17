@@ -1,6 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit } from "lucide-react";
 import type { Metadata } from 'next';
+import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export const metadata: Metadata = {
   title: 'Nos Services - ITSS',
@@ -10,59 +12,82 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     name: "Solutions Cloud",
+    icon: <Cloud />,
     description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Nous construisons des architectures cloud évolutives, résilientes et rentables sur AWS, Azure et Google Cloud.",
     features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur (Serverless)", "Conteneurisation (Docker & Kubernetes)"],
   },
   {
-    name: "Développement de Logiciels sur Mesure",
-    description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales à partir de zéro.",
-    features: ["Développement Web Full-Stack", "Développement d'applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Conception UI/UX & Prototypage"],
+    name: "Logiciels sur Mesure",
+    icon: <Code />,
+    description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales.",
+    features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Conception UI/UX & Prototypage"],
   },
   {
-    name: "Services de Cybersécurité",
-    description: "À l'ère des menaces numériques croissantes, nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures de sécurité proactives.",
-    features: ["Tests d'intrusion", "Audits de sécurité & Conformité", "Détection et réponse gérées (MDR)", "Formation à la sécurité des employés"],
+    name: "Cybersécurité",
+    icon: <Shield />,
+    description: "Nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures proactives.",
+    features: ["Tests d'intrusion & Audits", "Détection et réponse gérées (MDR)", "Conformité (RGPD, ISO 27001)", "Formation à la sécurité"],
   },
   {
-    name: "Services d'Infogérance",
-    description: "Déléguez le fardeau de la gestion informatique et concentrez-vous sur votre cœur de métier. Nos services gérés proactifs garantissent que vos systèmes sont toujours à jour, sécurisés et performants, minimisant les temps d'arrêt.",
-    features: ["Surveillance des systèmes 24/7", "Service d'assistance et support technique", "Gestion de réseau", "Sauvegarde des données et reprise après sinistre"],
+    name: "Infogérance",
+    icon: <Server />,
+    description: "Déléguez la gestion informatique et concentrez-vous sur votre cœur de métier. Nos services proactifs garantissent que vos systèmes sont toujours à jour, sécurisés et performants.",
+    features: ["Surveillance des systèmes 24/7", "Service d'assistance et support", "Gestion de réseau et d'infrastructure", "Sauvegarde et reprise après sinistre"],
   },
   {
     name: "Analyse de Données & BI",
-    description: "Transformez vos données en informations exploitables. Nous vous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées, identifier les tendances et découvrir de nouvelles opportunités de croissance.",
-    features: ["Entreposage de données (Data Warehousing)", "Développement de pipelines ETL", "Tableaux de bord interactifs", "Analyse prédictive"],
+    icon: <LineChart />,
+    description: "Transformez vos données en informations exploitables. Nous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées et découvrir de nouvelles opportunités.",
+    features: ["Entreposage de données", "Développement de pipelines ETL", "Tableaux de bord interactifs (Power BI, Tableau)", "Analyse prédictive et Machine Learning"],
   },
   {
-    name: "DevOps & Automatisation",
-    description: "Accélérez votre cycle de vie de développement et améliorez la qualité des logiciels grâce à notre expertise DevOps. Nous mettons en œuvre des pipelines CI/CD et automatisons l'infrastructure pour accroître l'efficacité et la fiabilité.",
-    features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Solutions de surveillance et de journalisation", "Outils natifs du cloud"],
+    name: "Conseil en IA & DevOps",
+    icon: <BrainCircuit />,
+    description: "Accélérez votre cycle de développement et intégrez l'intelligence artificielle. Nous automatisons vos processus et mettons en œuvre des solutions d'IA pour booster l'efficacité et l'innovation.",
+    features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Stratégie et intégration de l'IA", "Développement de modèles personnalisés"],
   },
 ];
 
 export default function ServicesPage() {
+  const heroImage = PlaceHolderImages.find(p => p.id === 'services-hero');
+
   return (
     <>
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-headline font-bold md:text-5xl">Nos Services Technologiques</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Nous fournissons une large gamme de services experts conçus pour résoudre des défis complexes et stimuler l'innovation pour votre entreprise.
+      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover opacity-20"
+            data-ai-hint={heroImage.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Nos Services</h1>
+          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+            Des solutions technologiques expertes, conçues pour propulser votre entreprise vers de nouveaux sommets d'innovation et d'efficacité.
           </p>
         </div>
       </section>
       
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceDetails.map((service) => (
-              <Card key={service.name} className="flex flex-col">
+              <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 hover:-translate-y-2 transition-transform duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-headline">{service.name}</CardTitle>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/10 p-3 rounded-lg text-primary">
+                      {React.cloneElement(service.icon, { className: "h-7 w-7" })}
+                    </div>
+                    <CardTitle className="text-2xl font-headline">{service.name}</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <p className="text-muted-foreground mb-6">{service.description}</p>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 text-sm">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-accent mr-3 mt-0.5 shrink-0" />

@@ -3,38 +3,56 @@
     {
       "id": "team-member-1",
       "description": "Portrait of a smiling professional woman.",
-      "imageUrl": "https://picsum.photos/seed/10/400/400",
+      "imageUrl": "https://picsum.photos/seed/101/400/400",
       "imageHint": "professional woman"
     },
     {
       "id": "team-member-2",
       "description": "Portrait of a smiling professional man.",
-      "imageUrl": "https://picsum.photos/seed/11/400/400",
+      "imageUrl": "https://picsum.photos/seed/102/400/400",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
       "description": "Portrait of a professional person.",
-      "imageUrl": "https://picsum.photos/seed/12/400/400",
+      "imageUrl": "https://picsum.photos/seed/103/400/400",
       "imageHint": "professional person"
     },
     {
       "id": "team-member-4",
       "description": "Portrait of a technology expert.",
-      "imageUrl": "https://picsum.photos/seed/13/400/400",
+      "imageUrl": "https://picsum.photos/seed/104/400/400",
       "imageHint": "tech expert"
     },
     {
       "id": "hero-background",
-      "description": "Abstract technology background with glowing lights.",
-      "imageUrl": "https://picsum.photos/seed/hero/1920/1080",
-      "imageHint": "abstract technology"
+      "description": "Abstract technology background with glowing plexus.",
+      "imageUrl": "https://picsum.photos/seed/tech-plexus/1920/1080",
+      "imageHint": "abstract plexus"
     },
     {
       "id": "about-us-hero",
-      "description": "Modern office interior with people collaborating.",
-      "imageUrl": "https://picsum.photos/seed/abouthero/1600/600",
-      "imageHint": "modern office"
+      "description": "Diverse team collaborating in a modern, sunlit office.",
+      "imageUrl": "https://picsum.photos/seed/about-sunlit/1600/600",
+      "imageHint": "diverse team"
+    },
+    {
+      "id": "services-hero",
+      "description": "Data visualization and analytics dashboard on a screen.",
+      "imageUrl": "https://picsum.photos/seed/data-viz/1600/600",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "contact-hero",
+      "description": "World map with connection lines, symbolizing global communication.",
+      "imageUrl": "https://picsum.photos/seed/connections/1600/600",
+      "imageHint": "global network"
+    },
+    {
+      "id": "mission-image",
+      "description": "A rocket launching into the sky, symbolizing innovation and ambition.",
+      "imageUrl": "https://picsum.photos/seed/rocket-launch/800/800",
+      "imageHint": "rocket launch"
     }
   ]
 }
