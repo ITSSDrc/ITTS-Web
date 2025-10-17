@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'ITSS - Solutions et Services Technologiques Innovants',
@@ -16,19 +17,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn("font-body antialiased", "dark:bg-background dark:text-foreground")}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
+      <body className={cn("font-body antialiased", "bg-background text-foreground")}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

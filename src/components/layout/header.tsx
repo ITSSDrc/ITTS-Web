@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Mountain, BotMessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -86,6 +87,7 @@ export function Header() {
         </Link>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <ThemeToggle />
           <Button asChild size="lg" className="rounded-full font-semibold">
             <Link href="/contact">Obtenir un devis</Link>
           </Button>
