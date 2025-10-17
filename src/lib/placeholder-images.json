@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "team-member-1",
+      "description": "Portrait of a smiling professional woman.",
+      "imageUrl": "https://picsum.photos/seed/10/400/400",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Portrait of a smiling professional man.",
+      "imageUrl": "https://picsum.photos/seed/11/400/400",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Portrait of a professional person.",
+      "imageUrl": "https://picsum.photos/seed/12/400/400",
+      "imageHint": "professional person"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Portrait of a technology expert.",
+      "imageUrl": "https://picsum.photos/seed/13/400/400",
+      "imageHint": "tech expert"
+    },
+    {
+      "id": "hero-background",
+      "description": "Abstract technology background with glowing lights.",
+      "imageUrl": "https://picsum.photos/seed/hero/1920/1080",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "Modern office interior with people collaborating.",
+      "imageUrl": "https://picsum.photos/seed/abouthero/1600/600",
+      "imageHint": "modern office"
+    }
+  ]
 }
