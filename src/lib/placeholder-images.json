@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "team-member-1",
-      "description": "Portrait of a smiling professional woman.",
-      "imageUrl": "https://picsum.photos/seed/101/400/400",
-      "imageHint": "professional woman"
+      "description": "Portrait de Prince Ongala, Développeur.",
+      "imageUrl": "https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/user-assets%2Fprince-ongala.png?alt=media&token=8d23d8c1-8b2f-48e0-9488-ca2362b5b6d6",
+      "imageHint": "male developer"
     },
     {
       "id": "team-member-2",

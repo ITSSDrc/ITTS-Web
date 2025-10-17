@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const teamMembers = [
-  { name: "Alice Johnson", role: "PDG & Fondatrice", imageId: "team-member-1", initials: "AJ" },
+  { name: "Prince Ongala", role: "Developpeur", imageId: "team-member-1", initials: "PO" },
   { name: "Bob Williams", role: "Directeur de la Technologie", imageId: "team-member-2", initials: "BW" },
   { name: "Charlie Brown", role: "Architecte Cloud Principal", imageId: "team-member-3", initials: "CB" },
   { name: "Diana Prince", role: "Responsable de la Cybersécurité", imageId: "team-member-4", initials: "DP" },
