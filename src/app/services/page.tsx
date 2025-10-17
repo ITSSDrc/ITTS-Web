@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit } from "lucide-react";
 import type { Metadata } from 'next';
