@@ -26,9 +26,9 @@
     },
     {
       "id": "hero-background",
-      "description": "Abstract technology background with glowing plexus.",
-      "imageUrl": "https://picsum.photos/seed/tech-plexus/1920/1080",
-      "imageHint": "abstract plexus"
+      "description": "Vue abstraite de lignes de données et de nœuds de réseau lumineux.",
+      "imageUrl": "https://picsum.photos/seed/network-nodes/1920/1080",
+      "imageHint": "data network"
     },
     {
       "id": "about-us-hero",
