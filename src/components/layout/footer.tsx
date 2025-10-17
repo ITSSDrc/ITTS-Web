@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BotMessageSquare, Twitter, Github, Linkedin } from "lucide-react";
+import { BrainCircuit, Twitter, Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <BotMessageSquare className="h-8 w-8 text-primary" />
+              <BrainCircuit className="h-8 w-8 text-primary" />
               <span className="font-headline text-xl font-bold">ITSS</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">

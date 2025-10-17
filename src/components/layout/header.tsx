@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Mountain, BotMessageSquare } from "lucide-react";
+import { Menu, BrainCircuit } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -25,7 +25,7 @@ export function Header() {
       <div className="container flex h-20 max-w-screen-xl items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <BotMessageSquare className="h-8 w-8 text-primary" />
+            <BrainCircuit className="h-8 w-8 text-primary" />
             <span className="font-headline text-xl font-bold">ITSS</span>
           </Link>
           <nav className="flex items-center gap-6 text-base">
@@ -61,7 +61,7 @@ export function Header() {
               className="mb-8 flex items-center"
               onClick={() => setMenuOpen(false)}
             >
-              <BotMessageSquare className="mr-2 h-8 w-8 text-primary" />
+              <BrainCircuit className="mr-2 h-8 w-8 text-primary" />
               <span className="font-headline text-xl font-bold">ITSS</span>
             </Link>
             <div className="flex flex-col space-y-6">
@@ -82,7 +82,7 @@ export function Header() {
           </SheetContent>
         </Sheet>
         <Link href="/" className="flex items-center space-x-2 md:hidden">
-          <BotMessageSquare className="h-8 w-8 text-primary" />
+          <BrainCircuit className="h-8 w-8 text-primary" />
           <span className="font-headline text-xl font-bold">ITSS</span>
         </Link>
 
