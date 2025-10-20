@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, UserCircle } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/blog-data";
@@ -64,13 +64,17 @@ export default function BlogPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow p-6">
                   <div className="flex-grow">
-                    <div className="flex justify-between items-center mb-4">
-                        <Badge variant="outline" className="text-primary border-primary">{post.category}</Badge>
-                        <p className="text-sm text-muted-foreground">{post.date}</p>
+                    <div className="flex justify-between items-center mb-4 text-sm text-muted-foreground">
+                      <Badge variant="outline" className="text-primary border-primary">{post.category}</Badge>
+                      <p>{post.date}</p>
                     </div>
                     <h2 className="text-2xl font-headline font-semibold mb-4">
-                        <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">{post.title}</Link>
+                      <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">{post.title}</Link>
                     </h2>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                        <UserCircle className="h-4 w-4" />
+                        <span>{post.author}</span>
+                    </div>
                     <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
                   </div>
                   <div className="mt-6">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, UserCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { blogPosts } from "@/lib/blog-data";
 
@@ -44,6 +44,10 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
                     <p className="text-sm text-muted-foreground">{post.date}</p>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-4">{post.title}</h1>
+                <div className="flex items-center gap-2 text-lg text-muted-foreground">
+                    <UserCircle className="h-5 w-5" />
+                    <span>Par {post.author}</span>
+                </div>
             </header>
 
             {post.image && (
