@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette, Wifi } from "lucide-react";
+import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette, Wifi, Wrench } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -53,6 +53,12 @@ const serviceDetails = [
     icon: <BrainCircuit />,
     description: "Accélérez votre cycle de développement et intégrez l'intelligence artificielle. Nous automatisons vos processus et mettons en œuvre des solutions d'IA pour booster l'efficacité et l'innovation.",
     features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Stratégie et intégration de l'IA", "Développement de modèles personnalisés"],
+  },
+  {
+    name: "Maintenance Matériel",
+    icon: <Wrench />,
+    description: "Assurez la longévité et la performance de votre parc informatique avec nos services de maintenance préventive et curative sur serveurs, postes de travail et périphériques.",
+    features: ["Diagnostic et réparation de matériel", "Mises à niveau de composants (RAM, SSD)", "Nettoyage physique et dépoussiérage", "Gestion du cycle de vie du matériel"],
   },
 ];
 
