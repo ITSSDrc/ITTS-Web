@@ -126,9 +126,7 @@ export default function CareersPage() {
                   <CardDescription className="md:col-span-2">{job.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button asChild>
-                    <Link href="/contact">Postuler maintenant</Link>
-                  </Button>
+                  <Button disabled>Offre non disponible</Button>
                 </CardFooter>
               </Card>
             ))}
