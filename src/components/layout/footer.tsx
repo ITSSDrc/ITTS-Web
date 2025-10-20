@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { Twitter, Github, Linkedin, Youtube } from "lucide-react";
@@ -40,9 +41,9 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-foreground">Entreprise</h3>
             <ul className="space-y-3">
               <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">À propos</Link></li>
-              <li><Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Carrières</Link></li>
+              <li><Link href="/careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Carrières</Link></li>
               <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
-               <li><Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Presse</Link></li>
+               <li><Link href="/press" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Presse</Link></li>
             </ul>
           </div>
           
