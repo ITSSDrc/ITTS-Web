@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from 'next';
@@ -8,10 +11,12 @@ import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export const metadata: Metadata = {
+// Metadata is still supported in client components
+/* export const metadata: Metadata = {
   title: 'Blog - ITSS',
   description: 'Articles, nouvelles et aperçus sur la technologie et le développement à Bunia et en RDC.',
-};
+}; */
+
 
 export const blogPosts = [
     {
@@ -88,9 +93,15 @@ export const blogPosts = [
     }
 ];
 
+const POSTS_PER_PAGE = 6;
 
 export default function BlogPage() {
-    const heroImage = PlaceHolderImages.find(p => p.id === 'blog-hero');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'blog-hero');
+  const [visiblePosts, setVisiblePosts] = useState(POSTS_PER_PAGE);
+
+  const loadMorePosts = () => {
+    setVisiblePosts(prev => prev + 3);
+  };
 
   return (
     <>
@@ -116,7 +127,7 @@ export default function BlogPage() {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {blogPosts.map((post) => (
+            {blogPosts.slice(0, visiblePosts).map((post) => (
               <Card key={post.id} className="flex flex-col overflow-hidden group">
                 <CardHeader className="p-0">
                   {post.image && (
@@ -152,12 +163,15 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
-           <div className="text-center mt-20">
-              <Button size="lg" variant="outline">Charger plus d'articles</Button>
-            </div>
+           {visiblePosts < blogPosts.length && (
+            <div className="text-center mt-20">
+                <Button size="lg" variant="outline" onClick={loadMorePosts}>
+                  Charger plus d'articles
+                </Button>
+              </div>
+            )}
         </div>
       </section>
     </>
   );
 }
-
