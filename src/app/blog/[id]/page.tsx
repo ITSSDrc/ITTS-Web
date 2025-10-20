@@ -2,11 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { blogPosts } from "../page";
+import { blogPosts } from "@/lib/blog-data";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const post = blogPosts.find((p) => p.id === params.id);
