@@ -9,33 +9,81 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: 'Blog - ITSS',
-  description: 'Articles, nouvelles et aperçus du monde de la technologie par ITSS.',
+  description: 'Articles, nouvelles et aperçus sur la technologie et le développement à Bunia et en RDC.',
 };
 
 const blogPosts = [
     {
-        id: "optimisation-cloud-aws",
-        title: "5 stratégies pour optimiser vos coûts sur AWS sans sacrifier la performance",
-        category: "Cloud",
-        image: PlaceHolderImages.find(p => p.id === 'blog-post-1'),
-        excerpt: "Le cloud AWS offre une flexibilité incroyable, mais les coûts peuvent rapidement grimper. Découvrez nos 5 stratégies éprouvées pour garder votre facture sous contrôle.",
-        date: "15 Juil, 2024",
+        id: "transformation-numerique-bunia",
+        title: "Bunia à l'Ère du Numérique : Comment la Technologie Façonne l'Avenir de la Ville",
+        category: "Développement Local",
+        image: PlaceHolderImages.find(p => p.id === 'blog-bunia-digital'),
+        excerpt: "Découvrez comment les innovations technologiques, de la finance mobile à l'éducation en ligne, redessinent le paysage économique et social de Bunia.",
+        date: "20 Oct, 2024",
     },
     {
-        id: "ia-service-client",
-        title: "Comment l'IA générative révolutionne le service client",
-        category: "Intelligence Artificielle",
-        image: PlaceHolderImages.find(p => p.id === 'blog-post-2'),
-        excerpt: "L'IA n'est plus de la science-fiction. Nous explorons comment les chatbots intelligents et les outils d'analyse de sentiments transforment l'expérience client.",
-        date: "28 Juin, 2024",
+        id: "agritech-ituri",
+        title: "L'AgriTech en Ituri : Une Révolution Silencieuse pour les Agriculteurs de Bunia",
+        category: "Technologie Agricole",
+        image: PlaceHolderImages.find(p => p.id === 'blog-agritech'),
+        excerpt: "Des drones pour la cartographie des champs aux applications de gestion de récoltes, l'agriculture en Ituri se modernise et gagne en efficacité.",
+        date: "15 Oct, 2024",
     },
     {
-        id: "zero-trust-securite",
-        title: "Le guide ultime de la sécurité Zéro Trust (Zero Trust)",
+        id: "fintech-bunia",
+        title: "Le Boom de la Finance Mobile à Bunia : Inclusion Financière et Nouvelles Opportunités",
+        category: "FinTech",
+        image: PlaceHolderImages.find(p => p.id === 'blog-fintech-rdc'),
+        excerpt: "L'adoption massive du mobile money transforme le commerce et la vie quotidienne, ouvrant la voie à une nouvelle ère d'inclusion financière pour tous.",
+        date: "08 Oct, 2024",
+    },
+    {
+        id: "education-tech-bunia",
+        title: "EdTech en RDC : Comment les Plateformes en Ligne Renforcent l'Éducation à Bunia",
+        category: "Éducation",
+        image: PlaceHolderImages.find(p => p.id === 'blog-edtech-rdc'),
+        excerpt: "Analyse des solutions d'e-learning et de leur impact sur l'accès à une éducation de qualité pour les jeunes de la région.",
+        date: "29 Sep, 2024",
+    },
+    {
+        id: "cybersecurite-pme-bunia",
+        title: "Cybersécurité : Les Défis et Solutions pour les PME de Bunia",
         category: "Cybersécurité",
-        image: PlaceHolderImages.find(p => p.id === 'blog-post-3'),
-        excerpt: "Ne faites confiance à personne, vérifiez tout. Plongez dans les principes fondamentaux de l'architecture Zéro Trust et comment la mettre en œuvre.",
-        date: "10 Juin, 2024",
+        image: PlaceHolderImages.find(p => p.id === 'blog-cybersecurity'),
+        excerpt: "Alors que les entreprises se numérisent, la protection des données devient cruciale. Nos experts partagent des conseils pratiques pour sécuriser votre activité.",
+        date: "22 Sep, 2024",
+    },
+    {
+        id: "energie-solaire-ituri",
+        title: "L'Énergie Solaire : Le Moteur de l'Innovation Technologique en Ituri",
+        category: "Énergies Renouvelables",
+        image: PlaceHolderImages.find(p => p.id === 'blog-solar-rdc'),
+        excerpt: "L'accès à une énergie fiable et abordable grâce au solaire est un catalyseur pour le déploiement de nouvelles solutions numériques dans les zones urbaines et rurales.",
+        date: "12 Sep, 2024",
+    },
+    {
+        id: "ecommerce-bunia",
+        title: "E-commerce à Bunia : Tendances, Défis et Opportunités pour les Commerçants Locaux",
+        category: "E-commerce",
+        image: PlaceHolderImages.find(p => p.id === 'blog-ecommerce-rdc'),
+        excerpt: "Le commerce en ligne prend son envol. Comment les entrepreneurs de Bunia peuvent-ils saisir cette opportunité pour atteindre de nouveaux marchés ?",
+        date: "05 Sep, 2024",
+    },
+    {
+        id: "sante-connectee-rdc",
+        title: "La Santé Connectée : Améliorer l'Accès aux Soins en RDC grâce à la Télémédecine",
+        category: "Santé",
+        image: PlaceHolderImages.find(p => p.id === 'blog-health-rdc'),
+        excerpt: "La télémédecine et les dossiers médicaux numériques promettent de révolutionner le secteur de la santé, même dans les régions les plus reculées.",
+        date: "28 Aoû, 2024",
+    },
+    {
+        id: "hub-innovation-bunia",
+        title: "Créer un Hub d'Innovation à Bunia : Notre Vision pour l'Écosystème Tech Local",
+        category: "Innovation",
+        image: PlaceHolderImages.find(p => p.id === 'blog-innovation-hub'),
+        excerpt: "ITSS s'engage à soutenir les talents locaux en créant un espace de collaboration, de formation et d'incubation pour les startups de demain.",
+        date: "15 Aoû, 2024",
     }
 ];
 
@@ -59,7 +107,7 @@ export default function BlogPage() {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Le Blog ITSS</h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-            Nos analyses, tutoriels et réflexions sur les technologies qui façonnent demain.
+            Nos analyses, tutoriels et réflexions sur les technologies qui façonnent l'avenir de Bunia et de la RDC.
           </p>
         </div>
       </section>

@@ -67,24 +67,6 @@
       "imageHint": "writing blog"
     },
     {
-      "id": "blog-post-1",
-      "description": "Abstract image of cloud servers and data streams.",
-      "imageUrl": "https://images.unsplash.com/photo-1551113014-9bcb6a083e32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbG91ZCUyMGNvc3R8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cloud cost"
-    },
-    {
-      "id": "blog-post-2",
-      "description": "AI chatbot interface on a smartphone.",
-      "imageUrl": "https://images.unsplash.com/photo-1727600950773-82b48c5ecbf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhaSUyMHN1cHBvcnR8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ai support"
-    },
-    {
-      "id": "blog-post-3",
-      "description": "Digital lock and shield, representing cybersecurity.",
-      "imageUrl": "https://images.unsplash.com/photo-1641945512718-b5a7dbc1360c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx6ZXJvJTIwdHJ1c3R8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "zero trust"
-    },
-    {
       "id": "case-studies-hero",
       "description": "A group of professionals analyzing charts and graphs on a large screen.",
       "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -107,6 +89,60 @@
       "description": "Customer support agent with a headset smiling.",
       "imageUrl": "https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzYwOTY0MDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "customer support"
+    },
+    {
+      "id": "blog-bunia-digital",
+      "description": "A bustling street scene in Bunia, DRC, with people using smartphones.",
+      "imageUrl": "https://images.unsplash.com/photo-1610992383293-9a6a8435d21e?w=800&q=80",
+      "imageHint": "Bunia city"
+    },
+    {
+      "id": "blog-agritech",
+      "description": "A farmer in a lush green field in DRC, using a tablet to monitor crops.",
+      "imageUrl": "https://images.unsplash.com/photo-1589923188902-c2c045a7065c?w=800&q=80",
+      "imageHint": "DRC agriculture"
+    },
+    {
+      "id": "blog-fintech-rdc",
+      "description": "Close-up of a mobile money transaction on a phone screen in Africa.",
+      "imageUrl": "https://images.unsplash.com/photo-1609921142878-c5d991986e33?w=800&q=80",
+      "imageHint": "mobile money"
+    },
+    {
+      "id": "blog-edtech-rdc",
+      "description": "Students in a classroom in DRC engaged with educational technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=800&q=80",
+      "imageHint": "african students"
+    },
+    {
+      "id": "blog-cybersecurity",
+      "description": "Abstract digital padlock and binary code, representing cybersecurity.",
+      "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
+      "imageHint": "digital security"
+    },
+    {
+      "id": "blog-solar-rdc",
+      "description": "Solar panels installed on a rooftop in a rural village in DRC.",
+      "imageUrl": "https://images.unsplash.com/photo-1508552494856-c139c80345a9?w=800&q=80",
+      "imageHint": "solar panels"
+    },
+    {
+      "id": "blog-ecommerce-rdc",
+      "description": "A small business owner in DRC packing products for online orders.",
+      "imageUrl": "https://images.unsplash.com/photo-1599494024504-20530353923c?w=800&q=80",
+      "imageHint": "local business"
+    },
+    {
+      "id": "blog-health-rdc",
+      "description": "A doctor in DRC using a tablet for a teleconsultation with a patient.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      "imageHint": "digital health"
+    },
+    {
+      "id": "blog-innovation-hub",
+      "description": "Young entrepreneurs collaborating in a modern co-working space in Africa.",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+      "imageHint": "tech hub"
     }
   ]
 }
