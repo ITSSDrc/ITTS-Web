@@ -1,14 +1,21 @@
 
+"use client";
+
+import { useState } from 'react';
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Search, Book, Cloud, Code } from 'lucide-react';
 import Link from 'next/link';
 
+// Since this is a client component, we can't export metadata directly.
+// This should be moved to a layout file or parent server component if SEO is critical.
+/*
 export const metadata: Metadata = {
   title: 'Documentation - ITSS',
   description: 'Documentation technique et guides pour les services et produits ITSS.',
 };
+*/
 
 const docCategories = [
     {
@@ -29,9 +36,16 @@ const docCategories = [
         description: "Tutoriels pas à pas pour configurer votre premier projet avec ITSS.",
         link: "/documentation/getting-started"
     },
-]
+];
 
 export default function DocumentationPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredDocs = docCategories.filter(cat => 
+    cat.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    cat.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <section className="bg-secondary py-24 md:py-32">
@@ -43,7 +57,12 @@ export default function DocumentationPage() {
             <div className="mt-10 max-w-2xl mx-auto">
                 <div className="relative">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input placeholder="Rechercher dans la documentation..." className="w-full h-14 pl-12 rounded-full text-lg" />
+                    <Input 
+                        placeholder="Rechercher dans la documentation..." 
+                        className="w-full h-14 pl-12 rounded-full text-lg" 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                 </div>
             </div>
         </div>
@@ -51,21 +70,29 @@ export default function DocumentationPage() {
 
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {docCategories.map(cat => (
-                    <Link href={cat.link} key={cat.title}>
-                        <Card className="h-full text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
-                            <CardHeader>
-                                {cat.icon}
-                                <CardTitle className="text-2xl font-headline">{cat.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground">{cat.description}</p>
-                            </CardContent>
-                        </Card>
-                    </Link>
-                ))}
-            </div>
+            {filteredDocs.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {filteredDocs.map(cat => (
+                        <Link href={cat.link} key={cat.title}>
+                            <Card className="h-full text-center hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                                <CardHeader>
+                                    {cat.icon}
+                                    <CardTitle className="text-2xl font-headline">{cat.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground">{cat.description}</p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                    ))}
+                </div>
+            ) : (
+                <div className="text-center py-16">
+                    <Search className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-2xl font-semibold">Aucun résultat trouvé</h3>
+                    <p className="text-muted-foreground mt-2">Nous n'avons trouvé aucune documentation correspondant à votre recherche.</p>
+                </div>
+            )}
         </div>
       </section>
     </>
