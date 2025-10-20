@@ -1,14 +1,21 @@
 import Link from "next/link";
-import { BrainCircuit, Twitter, Github, Linkedin } from "lucide-react";
+import Image from "next/image";
+import { Twitter, Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t bg-secondary/50">
       <div className="container mx-auto max-w-screen-xl px-4 py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <BrainCircuit className="h-8 w-8 text-primary" />
+               <Image 
+                src="https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/user-assets%2Fitss-logo-new.png?alt=media&token=e150531c-52f3-455e-9060-6e9f1f41746b" 
+                alt="ITSS Logo" 
+                width={48} 
+                height={48}
+                className="rounded-full"
+              />
               <span className="font-headline text-xl font-bold">ITSS</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
