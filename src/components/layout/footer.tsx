@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin, Youtube } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Footer() {
@@ -71,14 +71,14 @@ export function Footer() {
               © {new Date().getFullYear()} ITSS, Inc. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 mt-4 sm:mt-0">
-              <Link href="#" aria-label="Twitter">
+              <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)">
                 <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
-              <Link href="#" aria-label="GitHub">
+              <Link href="https://github.com/ITSSDrc" aria-label="GitHub">
                 <Github className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
-              <Link href="#" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+              <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube">
+                <Youtube className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
             </div>
         </div>
