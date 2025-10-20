@@ -1,6 +1,7 @@
+
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit } from "lucide-react";
+import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -21,7 +22,13 @@ const serviceDetails = [
     name: "Logiciels sur Mesure",
     icon: <Code />,
     description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales.",
-    features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Conception UI/UX & Prototypage"],
+    features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Maintenance et support continus"],
+  },
+  {
+    name: "Design UI/UX",
+    icon: <Palette />,
+    description: "Créez des expériences utilisateur exceptionnelles avec notre expertise en design. Nous concevons des interfaces intuitives et esthétiques qui captivent vos utilisateurs et renforcent votre marque.",
+    features: ["Recherche utilisateur & Personas", "Prototypage & Wireframing", "Conception d'interfaces (UI)", "Création de systèmes de design"],
   },
   {
     name: "Cybersécurité",
