@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, Building, MapPin, Users } from 'lucide-react';
+import { Briefcase, Building, MapPin, Users, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Carrières - ITSS',
@@ -18,24 +18,28 @@ const jobOpenings = [
     location: 'Bunia / Télétravail',
     department: 'Ingénierie',
     description: 'Nous recherchons un développeur expérimenté pour construire et maintenir nos applications web de nouvelle génération.',
+    date: '15 Mai 2024',
   },
   {
     title: 'Architecte Cloud (AWS/Azure)',
     location: 'Bunia',
     department: 'Infrastructure',
     description: 'Concevez et mettez en œuvre des solutions cloud robustes et évolutives pour nos clients.',
+    date: '10 Mai 2024',
   },
   {
     title: 'Spécialiste en Cybersécurité',
     location: 'Télétravail',
     department: 'Sécurité',
     description: 'Protégez nos clients contre les menaces émergentes en réalisant des audits et en mettant en place des stratégies de défense.',
+    date: '02 Mai 2024',
   },
   {
     title: 'Chef de Projet Technique',
     location: 'Bunia',
     department: 'Gestion de Projet',
     description: 'Pilotez nos projets de la conception à la livraison, en garantissant la qualité et le respect des délais.',
+    date: '28 Avr 2024',
   },
 ];
 
@@ -118,12 +122,13 @@ export default function CareersPage() {
                 <CardHeader className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                   <div>
                     <CardTitle className="font-headline text-xl">{job.title}</CardTitle>
-                    <div className='flex items-center gap-4 text-sm text-muted-foreground mt-2'>
+                    <div className='flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mt-2'>
                         <div className="flex items-center gap-1.5"><Briefcase className='h-4 w-4' /> {job.department}</div>
                         <div className="flex items-center gap-1.5"><MapPin className='h-4 w-4' /> {job.location}</div>
+                        <div className="flex items-center gap-1.5"><Calendar className='h-4 w-4' /> {job.date}</div>
                     </div>
                   </div>
-                  <CardDescription className="md:col-span-2">{job.description}</CardDescription>
+                  <CardDescription className="md:col-span-2 pt-1">{job.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
                   <Button disabled>Offre non disponible</Button>
