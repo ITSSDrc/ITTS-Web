@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from 'next';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Découvrez les projets qui illustrent notre expertise et notre engagement envers l\'innovation.',
 };
 
-const portfolioProjects = [
+export const portfolioProjects = [
   {
     id: 'e-commerce-migration-cloud',
     client: 'RetailNext Corp',
@@ -24,7 +25,10 @@ const portfolioProjects = [
       { label: 'Réduction des coûts', value: '40%' },
       { label: 'Disponibilité', value: '99.99%' },
       { label: 'Temps de chargement', value: '-60%' },
-    ]
+    ],
+    challenge: "L'ancienne plateforme e-commerce du client était lente, difficile à mettre à jour et ne pouvait pas gérer les pics de trafic pendant les périodes de soldes, entraînant des pertes de revenus importantes.",
+    solution: "Nous avons conçu et exécuté une migration complète vers une architecture de microservices sur Amazon Web Services (AWS). La boutique a été reconstruite avec React et Node.js, et déployée sur des conteneurs auto-évolutifs pour une flexibilité maximale.",
+    result: "La nouvelle plateforme a non seulement géré le trafic du Black Friday sans aucun temps d'arrêt, mais a également permis à l'équipe de développement de déployer de nouvelles fonctionnalités 5 fois plus rapidement. La réduction des coûts d'infrastructure a atteint 40%."
   },
   {
     id: 'fintech-app-securite',
@@ -37,7 +41,10 @@ const portfolioProjects = [
       { label: 'Failles de sécurité', value: '0' },
       { label: 'Adoption utilisateur', value: '+200k' },
       { label: 'Satisfaction App Store', value: '4.8/5' },
-    ]
+    ],
+    challenge: "La banque avait besoin de lancer une nouvelle application mobile pour rester compétitive, mais la sécurité était la priorité absolue pour protéger les données sensibles des clients et se conformer aux réglementations financières strictes.",
+    solution: "Notre équipe a développé des applications natives pour iOS (Swift) et Android (Kotlin) en intégrant des protocoles de sécurité de pointe, notamment le chiffrement de bout en bout, la détection de jailbreak/root, et une authentification multi-facteurs incluant la biométrie.",
+    result: "L'application a passé avec succès plusieurs audits de sécurité externes et a été lancée en toute confiance. Elle a rapidement gagné la confiance des utilisateurs, avec plus de 200 000 téléchargements au cours des six premiers mois et des notes exceptionnelles sur les app stores."
   },
   {
     id: 'saas-ia-automatisation',
@@ -50,7 +57,10 @@ const portfolioProjects = [
       { label: 'Tickets résolus par IA', value: '65%' },
       { label: 'Temps de réponse moyen', value: '-80%' },
       { label: 'Satisfaction client', value: '+30%' },
-    ]
+    ],
+    challenge: "L'équipe de support client était submergée par un volume croissant de tickets répétitifs, ce qui entraînait des temps de réponse lents pour les problèmes plus complexes et une baisse de la satisfaction client.",
+    solution: "Nous avons développé et intégré un chatbot intelligent utilisant le traitement du langage naturel (NLP). L'agent a été entraîné sur la base de connaissances de l'entreprise pour comprendre et résoudre de manière autonome les questions les plus fréquentes, et pour trier et acheminer intelligemment les demandes complexes vers le bon agent humain.",
+    result: "L'automatisation a permis de résoudre instantanément 65% des tickets entrants, libérant ainsi l'équipe humaine pour se concentrer sur les problèmes à forte valeur ajoutée. Le temps de réponse moyen a été réduit de 80%, et la satisfaction client a augmenté de 30% en un trimestre."
   },
    {
     id: 'healthtech-data-platform',
@@ -63,7 +73,10 @@ const portfolioProjects = [
       { label: 'Temps d\'analyse', value: '÷10' },
       { label: 'Conformité HIPAA', value: '100%' },
       { label: 'Nouveaux partenariats', value: '12' },
-    ]
+    ],
+    challenge: "Les chercheurs perdaient un temps précieux à agréger et nettoyer des données provenant de sources multiples. La collaboration était difficile et la sécurité des données patient était une préoccupation majeure.",
+    solution: "Nous avons construit une plateforme centralisée et conforme aux normes de santé (HIPAA) avec un backend Django robuste et une interface intuitive en Vue.js. La plateforme automatise l'ingestion de données, fournit des outils d'analyse visuelle et gère des contrôles d'accès stricts pour garantir la confidentialité.",
+    result: "Les cycles de recherche ont été considérablement réduits, passant de plusieurs mois à quelques semaines pour certaines analyses. La plateforme a permis à l'institution de nouer 12 nouveaux partenariats de recherche en un an grâce à sa fiabilité et sa sécurité."
   },
    {
     id: 'edtech-learning-platform',
@@ -76,7 +89,10 @@ const portfolioProjects = [
       { label: 'Engagement étudiant', value: '+45%' },
       { label: 'Taux de complétion', value: '+25%' },
       { label: 'Coûts de tutorat', value: '-35%' },
-    ]
+    ],
+    challenge: "Les plateformes d'apprentissage traditionnelles 'taille unique' ne parvenaient pas à maintenir l'engagement des étudiants, entraînant de faibles taux de complétion des cours.",
+    solution: "Nous avons développé une plateforme entièrement nouvelle avec Next.js et Firebase. Le cœur de l'innovation réside dans un moteur d'IA qui analyse les performances des étudiants et adapte dynamiquement le contenu et les exercices. Nous avons également intégré des classes virtuelles en temps réel avec WebRTC.",
+    result: "La nouvelle approche personnalisée a augmenté l'engagement des étudiants de 45 %. Le taux de réussite des cours a bondi de 25 %, et la plateforme a pu réduire la nécessité d'un tutorat humain coûteux de 35 % grâce à son support automatisé et adaptatif."
   },
   {
     id: 'agritech-supply-chain',
@@ -89,7 +105,10 @@ const portfolioProjects = [
       { label: 'Transparence', value: '100%' },
       { label: 'Pertes réduites', value: '15%' },
       { label: 'Confiance consommateur', value: '+50%' },
-    ]
+    ],
+    challenge: "Les consommateurs étaient de plus en plus méfiants quant à l'origine et à la qualité des produits alimentaires. Les producteurs, quant à eux, subissaient des pertes dues à une logistique inefficace.",
+    solution: "Nous avons mis en place une solution de traçabilité de bout en bout utilisant la blockchain Hyperledger. Des capteurs IoT sur le terrain capturent des données (température, humidité) qui sont enregistrées de manière immuable sur la chaîne. Une application mobile en React Native permet aux consommateurs de scanner un QR code pour voir tout le parcours du produit.",
+    result: "La solution a apporté une transparence totale, renforçant la confiance des consommateurs qui a augmenté de 50%. L'analyse des données logistiques a permis de réduire les pertes de produits périssables de 15%, augmentant directement les revenus des producteurs."
   },
 ];
 
@@ -124,7 +143,7 @@ export default function PortfolioPage() {
               <Card key={project.id} className="flex flex-col overflow-hidden group border-2 border-transparent hover:border-primary transition-all duration-300 hover:shadow-2xl">
                 <CardHeader className="p-0">
                   {project.image && (
-                    <div className="block aspect-video overflow-hidden">
+                    <Link href={`/portfolio/${project.id}`} className="block aspect-video overflow-hidden">
                       <Image
                         src={project.image.imageUrl}
                         alt={project.image.description}
@@ -133,14 +152,14 @@ export default function PortfolioPage() {
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                         data-ai-hint={project.image.imageHint}
                       />
-                    </div>
+                    </Link>
                   )}
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow p-6">
                   <div className="flex-grow">
                      <p className="text-primary font-semibold mb-2 text-sm">{project.client}</p>
                     <h2 className="text-2xl font-headline font-semibold mb-4">
-                        {project.title}
+                        <Link href={`/portfolio/${project.id}`}>{project.title}</Link>
                     </h2>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map(tag => (
@@ -161,8 +180,10 @@ export default function PortfolioPage() {
 
                   </div>
                   <div className="mt-8">
-                    <Button variant="outline" className="w-full">
-                      Voir le projet détaillé <ArrowRight className="ml-2 h-5 w-5" />
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href={`/portfolio/${project.id}`}>
+                        Voir le projet détaillé <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>
