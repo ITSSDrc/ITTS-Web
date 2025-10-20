@@ -33,7 +33,7 @@
     {
       "id": "hero-background",
       "description": "Vue abstraite de lignes de données et de nœuds de réseau lumineux.",
-      "imageUrl": "https://images.unsplash.com/photo-1738082956257-06cde4444b1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMG5ldHdvcmt8ZW58MHx8fHwxNzYwOTgzODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1545987796-200677ee1011?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwbmV0d29ya3xlbnwwfHx8fDE3NjA5ODM4MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data network"
     },
     {
@@ -57,8 +57,56 @@
     {
       "id": "mission-image",
       "description": "A rocket launching into the sky, symbolizing innovation and ambition.",
-      "imageUrl": "https://images.unsplash.com/photo-1614642240262-a452c2c11724?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzYwOTc3ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1457365050282-c53d772ef8b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzYwOTc3ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "rocket launch"
+    },
+    {
+      "id": "blog-hero",
+      "description": "Person writing in a notebook in a cozy cafe setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1638540398296-489580cc9e2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3cml0aW5nJTIwYmxvZ3xlbnwwfHx8fDE3NjA5NTU1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing blog"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Abstract image of cloud servers and data streams.",
+      "imageUrl": "https://images.unsplash.com/photo-1551113014-9bcb6a083e32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbG91ZCUyMGNvc3R8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud cost"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "AI chatbot interface on a smartphone.",
+      "imageUrl": "https://images.unsplash.com/photo-1727600950773-82b48c5ecbf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhaSUyMHN1cHBvcnR8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ai support"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "Digital lock and shield, representing cybersecurity.",
+      "imageUrl": "https://images.unsplash.com/photo-1641945512718-b5a7dbc1360c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx6ZXJvJTIwdHJ1c3R8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "zero trust"
+    },
+    {
+      "id": "case-studies-hero",
+      "description": "A group of professionals analyzing charts and graphs on a large screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzYwOTkyODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business success"
+    },
+    {
+      "id": "case-study-1",
+      "description": "Busy e-commerce warehouse with workers and packages.",
+      "imageUrl": "https://images.unsplash.com/photo-1669003154400-053af9a35eba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlY29tbWVyY2UlMjB3YXJlaG91c2V8ZW58MHx8fHwxNzYwOTg3ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce warehouse"
+    },
+    {
+      "id": "case-study-2",
+      "description": "A person using a mobile banking app on their phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1681826292838-c37fbd22263a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2JpbGUlMjBiYW5raW5nfGVufDB8fHx8MTc2MDk5Mjg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile banking"
+    },
+    {
+      "id": "case-study-3",
+      "description": "Customer support agent with a headset smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzYwOTY0MDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer support"
     }
   ]
 }
