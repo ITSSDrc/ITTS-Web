@@ -61,8 +61,8 @@ export default function ContactPage() {
                         <div>
                             <h3 className="font-semibold text-xl">Email</h3>
                             <p className="text-muted-foreground">Demandes générales & ventes</p>
-                            <a href="mailto:contact@itss.com" className="text-primary font-medium hover:underline">
-                                contact@itss.com
+                            <a href="mailto:innovatechsolutionservice@gmail.com" className="text-primary font-medium hover:underline">
+                                innovatechsolutionservice@gmail.com
                             </a>
                         </div>
                     </div>

@@ -45,7 +45,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-semibold">7. Contactez-nous</h2>
           <p>
-            Si vous avez des questions concernant ces Conditions, veuillez nous contacter à <a href="mailto:contact@itss.com" className="text-primary hover:underline">contact@itss.com</a>.
+            Si vous avez des questions concernant ces Conditions, veuillez nous contacter à <a href="mailto:innovatechsolutionservice@gmail.com" className="text-primary hover:underline">innovatechsolutionservice@gmail.com</a>.
           </p>
         </div>
       </div>

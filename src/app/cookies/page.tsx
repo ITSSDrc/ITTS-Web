@@ -40,7 +40,7 @@ export default function CookiesPage() {
 
           <h2 className="text-2xl font-semibold">5. Contactez-nous</h2>
           <p>
-            Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter à <a href="mailto:contact@itss.com" className="text-primary hover:underline">contact@itss.com</a>.
+            Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter à <a href="mailto:innovatechsolutionservice@gmail.com" className="text-primary hover:underline">innovatechsolutionservice@gmail.com</a>.
           </p>
         </div>
       </div>

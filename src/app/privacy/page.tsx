@@ -51,7 +51,7 @@ export default function PrivacyPage() {
           
           <h2 className="text-2xl font-semibold">7. Contactez-nous</h2>
           <p>
-            Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à <a href="mailto:contact@itss.com" className="text-primary hover:underline">contact@itss.com</a>.
+            Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à <a href="mailto:innovatechsolutionservice@gmail.com" className="text-primary hover:underline">innovatechsolutionservice@gmail.com</a>.
           </p>
         </div>
       </div>
