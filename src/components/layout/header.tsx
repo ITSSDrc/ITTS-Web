@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -20,19 +21,20 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 max-w-screen-xl items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image 
-              src="https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/user-assets%2Fitss-logo-new.png?alt=media&token=e150531c-52f3-455e-9060-6e9f1f41746b" 
-              alt="ITSS Logo" 
+            {logo && <Image 
+              src={logo.imageUrl}
+              alt={logo.description} 
               width={40} 
               height={40} 
               className="rounded-full"
-            />
+            />}
             <span className="font-headline text-xl font-bold">ITSS</span>
           </Link>
           <nav className="flex items-center gap-6 text-base">
@@ -68,13 +70,13 @@ export function Header() {
               className="mb-8 flex items-center"
               onClick={() => setMenuOpen(false)}
             >
-              <Image 
-                src="https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/user-assets%2Fitss-logo-new.png?alt=media&token=e150531c-52f3-455e-9060-6e9f1f41746b" 
-                alt="ITSS Logo" 
+              {logo && <Image 
+                src={logo.imageUrl}
+                alt={logo.description} 
                 width={40} 
                 height={40} 
                 className="mr-2 rounded-full"
-              />
+              />}
               <span className="font-headline text-xl font-bold">ITSS</span>
             </Link>
             <div className="flex flex-col space-y-6">
@@ -95,13 +97,13 @@ export function Header() {
           </SheetContent>
         </Sheet>
         <Link href="/" className="flex items-center space-x-2 md:hidden">
-          <Image 
-            src="https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/user-assets%2Fitss-logo-new.png?alt=media&token=e150531c-52f3-455e-9060-6e9f1f41746b" 
-            alt="ITSS Logo" 
+          {logo && <Image 
+            src={logo.imageUrl}
+            alt={logo.description} 
             width={40} 
             height={40} 
             className="rounded-full"
-          />
+          />}
           <span className="font-headline text-xl font-bold">ITSS</span>
         </Link>
 
