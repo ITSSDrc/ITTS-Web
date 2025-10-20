@@ -68,9 +68,7 @@ export default function PressPage() {
                     <CardContent>
                         <p className="font-semibold mb-2">ITSS Lance une Initiative pour Former 100 Jeunes Développeurs en Ituri</p>
                         <p className='text-sm text-muted-foreground mb-4'>24 Octobre 2024</p>
-                        <Button variant="outline" asChild>
-                            <Link href="#">Lire le communiqué</Link>
-                        </Button>
+                        <Button variant="outline" disabled>Lire le communiqué</Button>
                     </CardContent>
                 </Card>
                  <Card>
@@ -80,8 +78,8 @@ export default function PressPage() {
                     </CardHeader>
                     <CardContent>
                         <p className="font-semibold">Service Presse</p>
-                        <Link href="mailto:press@itss.com" className='text-primary hover:underline'>
-                            press@itss.com
+                        <Link href="mailto:innovatechsolutionservice@gmail.com" className='text-primary hover:underline'>
+                            innovatechsolutionservice@gmail.com
                         </Link>
                     </CardContent>
                 </Card>
@@ -104,8 +102,8 @@ export default function PressPage() {
                         {logo && <div className='bg-background p-6 rounded-lg flex justify-center items-center mb-4'>
                             <Image src={logo.imageUrl} alt={logo.description} width={100} height={100} />
                         </div>}
-                        <Button className='w-full' asChild>
-                            <Link href="#"><Download className='mr-2' /> Télécharger les logos</Link>
+                        <Button className='w-full' disabled>
+                            <Download className='mr-2' /> Télécharger les logos
                         </Button>
                     </CardContent>
                 </Card>
@@ -132,8 +130,8 @@ export default function PressPage() {
                                 )
                             })}
                         </div>
-                         <Button className='w-full mt-6' variant="outline" asChild>
-                            <Link href="#"><Download className='mr-2' /> Télécharger les portraits</Link>
+                         <Button className='w-full mt-6' variant="outline" disabled>
+                            <Download className='mr-2' /> Télécharger les portraits
                         </Button>
                     </CardContent>
                 </Card>
@@ -147,8 +145,8 @@ export default function PressPage() {
                             <Image src="https://picsum.photos/seed/office1/200/200" width={200} height={200} alt="Bureau ITSS 1" className='rounded-md' />
                             <Image src="https://picsum.photos/seed/office2/200/200" width={200} height={200} alt="Bureau ITSS 2" className='rounded-md' />
                         </div>
-                         <Button className='w-full' variant="outline" asChild>
-                            <Link href="#"><Download className='mr-2' /> Télécharger les images</Link>
+                         <Button className='w-full' variant="outline" disabled>
+                            <Download className='mr-2' /> Télécharger les images
                         </Button>
                     </CardContent>
                 </Card>
