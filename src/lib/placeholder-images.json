@@ -15,13 +15,13 @@
     {
       "id": "team-member-2",
       "description": "Portrait of a smiling professional man.",
-      "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzYwOTU0NDM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzYwOTU0NDM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
       "description": "Portrait of a professional person.",
-      "imageUrl": "https://images.unsplash.com/photo-1570170609489-43197f518df0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcGVyc29ufGVufDB8fHx8MTc2MDk3MDQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1600878459081-02f46f27b406?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzYwOTcwNDc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional person"
     },
     {
@@ -29,6 +29,24 @@
       "description": "Portrait of a technology expert.",
       "imageUrl": "https://images.unsplash.com/photo-1694375073673-fc3f0b706d8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwZXhwZXJ0fGVufDB8fHx8MTc2MDkzMjA0OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech expert"
+    },
+    {
+      "id": "team-member-5",
+      "description": "Portrait of a developer.",
+      "imageUrl": "https://images.unsplash.com/photo-1629904888099-00285934292b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZXZlbG9wZXIlMjBwZXJzb258ZW58MHx8fHwxNzYwOTk0NTY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer person"
+    },
+    {
+      "id": "team-member-6",
+      "description": "Portrait of a network engineer.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092919535-7146ff1a590b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZXR3b3JrJTIwZW5naW5lZXJ8ZW58MHx8fHwxNzYwOTk0NTY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network engineer"
+    },
+    {
+      "id": "team-member-7",
+      "description": "Portrait of an AI specialist.",
+      "imageUrl": "https://picsum.photos/seed/ai-expert/400/400",
+      "imageHint": "ai specialist"
     },
     {
       "id": "hero-background",

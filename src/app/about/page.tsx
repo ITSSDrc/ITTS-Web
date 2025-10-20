@@ -11,10 +11,13 @@ export const metadata: Metadata = {
 };
 
 const teamMembers = [
-  { name: "Prince Ongala", role: "Developpeur", imageId: "team-member-1", initials: "PO" },
-  { name: "Bob Williams", role: "Directeur de la Technologie", imageId: "team-member-2", initials: "BW" },
-  { name: "Charlie Brown", role: "Architecte Cloud Principal", imageId: "team-member-3", initials: "CB" },
-  { name: "Diana Prince", role: "Responsable de la Cybersécurité", imageId: "team-member-4", initials: "DP" },
+  { name: "Prince Ongala", role: "Software Development, Data Analyst, Coordinator", imageId: "team-member-1", initials: "PO" },
+  { name: "Isaac Diavo", role: "Network, Designer, Coordinator", imageId: "team-member-2", initials: "ID" },
+  { name: "Eric Pimbo", role: "Network, Media", imageId: "team-member-3", initials: "EP" },
+  { name: "Dimex Mwanzita", role: "Network, Designer", imageId: "team-member-4", initials: "DM" },
+  { name: "Merite Mufungizi", role: "Software Development, Designer", imageId: "team-member-5", initials: "MM" },
+  { name: "Sam Awenze", role: "Network, Coordinator", imageId: "team-member-6", initials: "SA" },
+  { name: "Jacques Uwonda", role: "Software Development, AI Specialist", imageId: "team-member-7", initials: "JU" },
 ];
 
 const values = [
@@ -99,7 +102,7 @@ export default function AboutPage() {
               Découvrez les esprits brillants qui pilotent l'innovation chez ITSS.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member) => {
               const memberImage = teamImages.find(img => img.id === member.imageId);
               return (
