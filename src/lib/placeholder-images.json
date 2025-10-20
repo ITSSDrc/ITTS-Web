@@ -92,26 +92,26 @@
     },
     {
       "id": "blog-bunia-digital",
-      "description": "A bustling street scene in Bunia, DRC, with people using smartphones.",
-      "imageUrl": "https://images.unsplash.com/photo-1610992383293-9a6a8435d21e?w=800&q=80",
-      "imageHint": "Bunia city"
+      "description": "A bustling street market scene in Bunia, DRC, with people using smartphones.",
+      "imageUrl": "https://images.unsplash.com/photo-1606233426330-a17387a6a4c2?w=800&q=80",
+      "imageHint": "Bunia market"
     },
     {
       "id": "blog-agritech",
-      "description": "A farmer in a lush green field in DRC, using a tablet to monitor crops.",
-      "imageUrl": "https://images.unsplash.com/photo-1589923188902-c2c045a7065c?w=800&q=80",
+      "description": "A farmer in a lush green field in DRC, inspecting coffee beans.",
+      "imageUrl": "https://images.unsplash.com/photo-1620755749764-963d39575916?w=800&q=80",
       "imageHint": "DRC agriculture"
     },
     {
       "id": "blog-fintech-rdc",
-      "description": "Close-up of a mobile money transaction on a phone screen in Africa.",
-      "imageUrl": "https://images.unsplash.com/photo-1609921142878-c5d991986e33?w=800&q=80",
+      "description": "Close-up of a mobile money transaction on a phone screen in an African market.",
+      "imageUrl": "https://images.unsplash.com/photo-1597893121558-883354f38870?w=800&q=80",
       "imageHint": "mobile money"
     },
     {
       "id": "blog-edtech-rdc",
-      "description": "Students in a classroom in DRC engaged with educational technology.",
-      "imageUrl": "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=800&q=80",
+      "description": "Students in a classroom in DRC attentively looking at a lesson.",
+      "imageUrl": "https://images.unsplash.com/photo-1542898663-35c059882d81?w=800&q=80",
       "imageHint": "african students"
     },
     {
@@ -122,26 +122,26 @@
     },
     {
       "id": "blog-solar-rdc",
-      "description": "Solar panels installed on a rooftop in a rural village in DRC.",
-      "imageUrl": "https://images.unsplash.com/photo-1508552494856-c139c80345a9?w=800&q=80",
+      "description": "Solar panels installed on a rooftop against a clear blue sky in a Congolese village.",
+      "imageUrl": "https://images.unsplash.com/photo-1622969984255-a501a303e05a?w=800&q=80",
       "imageHint": "solar panels"
     },
     {
       "id": "blog-ecommerce-rdc",
-      "description": "A small business owner in DRC packing products for online orders.",
-      "imageUrl": "https://images.unsplash.com/photo-1599494024504-20530353923c?w=800&q=80",
+      "description": "A small business owner in DRC proudly standing in front of her shop.",
+      "imageUrl": "https://images.unsplash.com/photo-1590630782848-1d74bbea4393?w=800&q=80",
       "imageHint": "local business"
     },
     {
       "id": "blog-health-rdc",
-      "description": "A doctor in DRC using a tablet for a teleconsultation with a patient.",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      "description": "A healthcare worker in DRC using a digital tablet in a clinic.",
+      "imageUrl": "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?w=800&q=80",
       "imageHint": "digital health"
     },
     {
       "id": "blog-innovation-hub",
-      "description": "Young entrepreneurs collaborating in a modern co-working space in Africa.",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+      "description": "Young African entrepreneurs collaborating in a modern co-working space.",
+      "imageUrl": "https://images.unsplash.com/photo-1594328693836-474242352b82?w=800&q=80",
       "imageHint": "tech hub"
     }
   ]

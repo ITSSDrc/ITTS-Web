@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from 'next';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Articles, nouvelles et aperçus sur la technologie et le développement à Bunia et en RDC.',
 };
 
-const blogPosts = [
+export const blogPosts = [
     {
         id: "transformation-numerique-bunia",
         title: "Bunia à l'Ère du Numérique : Comment la Technologie Façonne l'Avenir de la Ville",
@@ -119,7 +120,7 @@ export default function BlogPage() {
               <Card key={post.id} className="flex flex-col overflow-hidden group">
                 <CardHeader className="p-0">
                   {post.image && (
-                    <div className="aspect-video overflow-hidden">
+                    <Link href={`/blog/${post.id}`} className="block aspect-video overflow-hidden">
                       <Image
                         src={post.image.imageUrl}
                         alt={post.image.description}
@@ -128,7 +129,7 @@ export default function BlogPage() {
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                         data-ai-hint={post.image.imageHint}
                       />
-                    </div>
+                    </Link>
                   )}
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow p-6">
@@ -138,13 +139,13 @@ export default function BlogPage() {
                         <p className="text-sm text-muted-foreground">{post.date}</p>
                     </div>
                     <h2 className="text-2xl font-headline font-semibold mb-4">
-                        <Link href="#" className="hover:text-primary transition-colors">{post.title}</Link>
+                        <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">{post.title}</Link>
                     </h2>
                     <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
                   </div>
                   <div className="mt-6">
                     <Button variant="link" className="p-0 text-lg" asChild>
-                      <Link href="#">Lire la suite <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                      <Link href={`/blog/${post.id}`}>Lire la suite <ArrowRight className="ml-2 h-5 w-5" /></Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -159,3 +160,4 @@ export default function BlogPage() {
     </>
   );
 }
+
