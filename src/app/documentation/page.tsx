@@ -15,19 +15,19 @@ const docCategories = [
         icon: <Cloud className="h-10 w-10 text-primary mb-4" />,
         title: "API Cloud",
         description: "Guides complets pour l'intégration et la gestion de nos services cloud.",
-        link: "#"
+        link: "/documentation/cloud-api"
     },
     {
         icon: <Code className="h-10 w-10 text-primary mb-4" />,
         title: "Kits de développement (SDK)",
         description: "Documentation pour nos SDK en Python, JavaScript, et plus encore.",
-        link: "#"
+        link: "/documentation/sdk"
     },
     {
         icon: <Book className="h-10 w-10 text-primary mb-4" />,
         title: "Guides de démarrage",
         description: "Tutoriels pas à pas pour configurer votre premier projet avec ITSS.",
-        link: "#"
+        link: "/documentation/getting-started"
     },
 ]
 
