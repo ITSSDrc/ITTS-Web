@@ -33,7 +33,7 @@
     {
       "id": "hero-background",
       "description": "Vue abstraite de lignes de données et de nœuds de réseau lumineux.",
-      "imageUrl": "https://images.unsplash.com/photo-1495592822108-9e6261896da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXRhJTIwbmV0d29ya3xlbnwwfHx8fDE3NjA5ODM4MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956257-06cde4444b1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMG5ldHdvcmt8ZW58MHx8fHwxNzYwOTgzODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data network"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "mission-image",
       "description": "A rocket launching into the sky, symbolizing innovation and ambition.",
-      "imageUrl": "https://images.unsplash.com/photo-1541185934-01b600ea069c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzYwOTc3ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1614642240262-a452c2c11724?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzYwOTc3ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "rocket launch"
     }
   ]
