@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette } from "lucide-react";
+import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette, Wifi } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -37,10 +37,10 @@ const serviceDetails = [
     features: ["Tests d'intrusion & Audits", "Détection et réponse gérées (MDR)", "Conformité (RGPD, ISO 27001)", "Formation à la sécurité"],
   },
   {
-    name: "Infogérance",
-    icon: <Server />,
-    description: "Déléguez la gestion informatique et concentrez-vous sur votre cœur de métier. Nos services proactifs garantissent que vos systèmes sont toujours à jour, sécurisés et performants.",
-    features: ["Surveillance des systèmes 24/7", "Service d'assistance et support", "Gestion de réseau et d'infrastructure", "Sauvegarde et reprise après sinistre"],
+    name: "Infrastructure & Réseau",
+    icon: <Wifi />,
+    description: "Concentrez-vous sur votre métier grâce à une infrastructure réseau fiable, sécurisée et performante, gérée par nos experts.",
+    features: ["Conception d'architecture LAN/WAN", "Gestion et surveillance de réseau", "Sécurité des infrastructures", "Solutions de connectivité et VPN"],
   },
   {
     name: "Analyse de Données & BI",
