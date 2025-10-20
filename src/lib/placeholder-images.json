@@ -143,6 +143,30 @@
       "description": "Young African entrepreneurs collaborating in a modern co-working space.",
       "imageUrl": "https://images.unsplash.com/photo-1594328693836-474242352b82?w=800&q=80",
       "imageHint": "tech hub"
+    },
+    {
+      "id": "blog-university-bunia",
+      "description": "University students sitting in a lecture hall in Africa.",
+      "imageUrl": "https://images.unsplash.com/photo-1618641974863-33b6c0f3a033?w=800&q=80",
+      "imageHint": "university students"
+    },
+    {
+      "id": "blog-school-ituri",
+      "description": "Happy children in a school classroom in a village in DRC.",
+      "imageUrl": "https://images.unsplash.com/photo-1574312529094-a749d2a41285?w=800&q=80",
+      "imageHint": "DRC schoolchildren"
+    },
+    {
+      "id": "blog-religion-tech",
+      "description": "A large congregation gathered inside a modern church in Africa.",
+      "imageUrl": "https://images.unsplash.com/photo-1604924844329-65239a5f36e4?w=800&q=80",
+      "imageHint": "african church"
+    },
+    {
+      "id": "blog-bunia-commerce",
+      "description": "Vibrant and busy outdoor market scene in a town in Africa.",
+      "imageUrl": "https://images.unsplash.com/photo-1549882236-54a79669e49a?w=800&q=80",
+      "imageHint": "african market"
     }
   ]
 }
