@@ -1,11 +1,18 @@
 
+'use client';
 import Link from "next/link";
 import Image from "next/image";
 import { Twitter, Github, Linkedin, Youtube } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useState, useEffect } from "react";
 
 export function Footer() {
   const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
   
   return (
     <footer className="border-t bg-secondary/50">
@@ -69,7 +76,7 @@ export function Footer() {
         </div>
         <div className="mt-16 border-t pt-8 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} ITSS, Inc. Tous droits réservés.
+              © {year} ITSS, Inc. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 mt-4 sm:mt-0">
               <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)">

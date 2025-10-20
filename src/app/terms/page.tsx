@@ -1,17 +1,27 @@
+
+'use client';
+import { useState, useEffect } from 'react';
 import type { Metadata } from 'next';
 
+/*
 export const metadata: Metadata = {
   title: 'Conditions d\'Utilisation - ITSS',
   description: 'Consultez les conditions d\'utilisation de nos services.',
 };
+*/
 
 export default function TermsPage() {
+    const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        setCurrentDate(new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }, []);
   return (
     <div className="container mx-auto px-4 py-20 md:py-32">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-headline font-bold text-center mb-12">Conditions d'Utilisation</h1>
         <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
-          <p>Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p>Dernière mise à jour : {currentDate}</p>
           
           <h2 className="text-2xl font-semibold">1. Introduction</h2>
           <p>
