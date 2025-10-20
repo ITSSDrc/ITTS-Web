@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LifeBuoy, Book, MessageSquare, CreditCard, Cloud, Shield } from 'lucide-react';
+import { LifeBuoy, Book, MessageSquare, CreditCard, Cloud, Shield, Code, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -13,54 +13,54 @@ export const metadata: Metadata = {
 
 const faqItems = [
     {
-        category: "Général",
-        icon: <MessageSquare className="h-5 w-5 mr-3 text-primary" />,
-        questions: [
-            {
-                question: "Comment puis-je réinitialiser mon mot de passe ?",
-                answer: "Vous pouvez réinitialiser votre mot de passe en cliquant sur 'Mot de passe oublié' sur la page de connexion. Un e-mail vous sera envoyé avec des instructions pour en créer un nouveau."
-            },
-            {
-                question: "Quels sont vos horaires de support ?",
-                answer: "Notre support technique est disponible par ticket 24h/24 et 7j/7. Le support téléphonique est disponible du lundi au vendredi, de 9h à 18h (heure locale)."
-            }
-        ]
-    },
-    {
-        category: "Facturation et Compte",
-        icon: <CreditCard className="h-5 w-5 mr-3 text-primary" />,
-        questions: [
-            {
-                question: "Quels moyens de paiement acceptez-vous ?",
-                answer: "Nous acceptons les principales cartes de crédit (Visa, MasterCard, American Express) ainsi que les virements bancaires pour les forfaits entreprise."
-            },
-            {
-                question: "Quelle est votre politique de remboursement ?",
-                answer: "Nous offrons une garantie de remboursement de 30 jours pour tous nos nouveaux abonnements mensuels. Si vous n'êtes pas satisfait, contactez notre support dans les 30 jours suivant votre achat pour un remboursement complet."
-            }
-        ]
-    },
-    {
-        category: "Technique",
-        icon: <Shield className="h-5 w-5 mr-3 text-primary" />,
-        questions: [
-            {
-                question: "Comment puis-je contacter le support technique ?",
-                answer: "Le meilleur moyen est de soumettre un ticket via notre portail client pour un suivi détaillé. Vous pouvez également nous envoyer un e-mail à innovatechsolutionservice@gmail.com pour les demandes urgentes."
-            },
-            {
-                question: "Intégrez-vous avec d'autres plateformes ?",
-                answer: "Oui, nous offrons des intégrations natives avec de nombreuses plateformes populaires comme Slack, Zapier, et Salesforce. Consultez notre documentation sur l'API pour des intégrations personnalisées."
-            }
-        ]
-    },
-    {
-        category: "Services Cloud",
+        category: "Solutions Cloud",
         icon: <Cloud className="h-5 w-5 mr-3 text-primary" />,
         questions: [
             {
-                question: "Comment puis-je augmenter les ressources de mon serveur ?",
-                answer: "Vous pouvez facilement mettre à niveau votre plan de service directement depuis votre tableau de bord client. Les modifications sont généralement appliquées en quelques minutes sans interruption de service."
+                question: "Quels fournisseurs de cloud supportez-vous ?",
+                answer: "Nous sommes spécialisés dans les principaux fournisseurs de cloud, notamment Amazon Web Services (AWS), Microsoft Azure et Google Cloud Platform (GCP). Nous vous aidons à choisir la plateforme la mieux adaptée à vos besoins."
+            },
+            {
+                question: "Comment se déroule une migration vers le cloud ?",
+                answer: "Notre processus de migration commence par une évaluation approfondie de votre infrastructure existante. Nous élaborons ensuite une stratégie de migration sur mesure, en minimisant les temps d'arrêt et en assurant une transition en douceur de vos applications et données."
+            }
+        ]
+    },
+    {
+        category: "Logiciels sur Mesure",
+        icon: <Code className="h-5 w-5 mr-3 text-primary" />,
+        questions: [
+            {
+                question: "Quel est votre processus de développement logiciel ?",
+                answer: "Nous suivons une approche agile qui nous permet de livrer de la valeur rapidement et de nous adapter aux changements. Le processus inclut la découverte, la conception UI/UX, le développement, les tests et le déploiement, avec une communication constante avec vous."
+            },
+            {
+                question: "Puis-je voir une démo ou un prototype avant de m'engager ?",
+                answer: "Oui, la phase de conception inclut la création de prototypes interactifs. Cela vous permet de visualiser et de tester l'expérience utilisateur avant le début du développement, garantissant que le produit final correspond à votre vision."
+            }
+        ]
+    },
+    {
+        category: "Cybersécurité",
+        icon: <Shield className="h-5 w-5 mr-3 text-primary" />,
+        questions: [
+            {
+                question: "Mon entreprise est-elle trop petite pour être une cible ?",
+                answer: "Aucune entreprise n'est trop petite pour être une cible. Les cybercriminels ciblent souvent les PME car elles sont perçues comme moins sécurisées. Nous proposons des solutions de sécurité adaptées à toutes les tailles d'entreprise pour vous protéger efficacement."
+            },
+            {
+                question: "En quoi consiste un audit de sécurité ?",
+                answer: "Un audit de sécurité est une évaluation complète de vos systèmes d'information. Nous effectuons des tests d'intrusion et des analyses de vulnérabilités pour identifier les failles potentielles et vous fournissons un rapport détaillé avec des recommandations claires pour renforcer votre sécurité."
+            }
+        ]
+    },
+    {
+        category: "Intelligence Artificielle",
+        icon: <BrainCircuit className="h-5 w-5 mr-3 text-primary" />,
+        questions: [
+            {
+                question: "Comment l'IA peut-elle aider mon entreprise spécifiquement ?",
+                answer: "L'IA peut optimiser de nombreux aspects de votre activité, comme l'automatisation du service client avec des chatbots, l'analyse prédictive pour anticiper les tendances du marché, ou encore l'optimisation de vos opérations logistiques. Nous analysons vos processus pour identifier les opportunités les plus pertinentes."
             }
         ]
     }
