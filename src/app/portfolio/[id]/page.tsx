@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { portfolioProjects } from "@/app/portfolio/page";
+import { portfolioProjects } from "@/lib/portfolio-data";
 import { ArrowLeft, CheckCircle, Award } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";

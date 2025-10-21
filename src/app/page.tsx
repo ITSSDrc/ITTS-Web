@@ -1,4 +1,6 @@
 
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -6,9 +8,10 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { ArrowRight, Cloud, Code, Shield, BrainCircuit } from "lucide-react";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
-import { portfolioProjects } from "@/app/portfolio/page";
+import { portfolioProjects } from "@/lib/portfolio-data";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const services = [
   {
@@ -35,11 +38,25 @@ const services = [
 
 export default function Home() {
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  );
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
-      <section className="w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+         {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-contain opacity-10 dark:opacity-20 p-16"
+            data-ai-hint={heroImage.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-center md:text-left">
             <FadeInOnScroll>
               <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60">
@@ -68,12 +85,7 @@ export default function Home() {
                 loop: true,
                 align: "start",
               }}
-              plugins={[
-                Autoplay({
-                  delay: 4000,
-                  stopOnInteraction: false,
-                }),
-              ]}
+              plugins={[plugin.current]}
               className="w-full"
             >
               <CarouselContent>
