@@ -46,7 +46,7 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl lg:text-8xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60">
             Votre Partenaire<br />d'Innovation Technologique
