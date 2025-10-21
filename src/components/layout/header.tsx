@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -108,13 +109,13 @@ export function Header() {
             <div className="mt-auto">
               <Separator className="my-4" />
               <div className="flex items-center justify-center gap-6">
-                <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" onClick={() => setMenuOpen(false)}>
+                <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
                   <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
                 </Link>
-                <Link href="https://github.com/ITSSDrc" aria-label="GitHub" onClick={() => setMenuOpen(false)}>
+                <Link href="https://github.com/ITSSDrc" aria-label="GitHub" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
                   <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
                 </Link>
-                <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" onClick={() => setMenuOpen(false)}>
+                <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
                   <Youtube className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
                 </Link>
               </div>

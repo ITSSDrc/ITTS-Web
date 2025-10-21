@@ -79,13 +79,13 @@ export function Footer() {
               © {year} ITSS, Inc. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 mt-4 sm:mt-0">
-              <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)">
+              <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
                 <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
-              <Link href="https://github.com/ITSSDrc" aria-label="GitHub">
+              <Link href="https://github.com/ITSSDrc" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
-              <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube">
+              <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                 <Youtube className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
               </Link>
             </div>
