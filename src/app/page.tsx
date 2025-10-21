@@ -30,7 +30,7 @@ const services = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
 
   return (
@@ -41,7 +41,7 @@ export default function Home() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-contain opacity-10 p-16"
             data-ai-hint={heroImage.imageHint}
             priority
           />
