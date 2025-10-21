@@ -41,19 +41,19 @@ const values = [
 ]
 
 export default function AboutPage() {
-  const aboutHeroImage = PlaceHolderImages.find(p => p.id === 'about-us-hero');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
   const teamImages = PlaceHolderImages.filter(p => p.id.startsWith('team-member'));
 
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {aboutHeroImage && (
+        {heroImage && (
           <Image
-            src={aboutHeroImage.imageUrl}
-            alt={aboutHeroImage.description}
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
-            data-ai-hint={aboutHeroImage.imageHint}
+            className="object-contain opacity-10 dark:opacity-20 p-16"
+            data-ai-hint={heroImage.imageHint}
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />

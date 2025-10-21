@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette, Wifi, Wrench } from "lucide-react";
@@ -63,7 +62,7 @@ const serviceDetails = [
 ];
 
 export default function ServicesPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'services-hero');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
 
   return (
     <>
@@ -73,7 +72,7 @@ export default function ServicesPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-contain opacity-10 dark:opacity-20 p-16"
             data-ai-hint={heroImage.imageHint}
           />
         )}

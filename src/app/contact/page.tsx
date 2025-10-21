@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'contact-hero');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function ContactPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-contain opacity-10 dark:opacity-20 p-16"
             data-ai-hint={heroImage.imageHint}
           />
         )}
