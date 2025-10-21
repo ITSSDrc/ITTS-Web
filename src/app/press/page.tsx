@@ -142,8 +142,8 @@ export default function PressPage() {
                     </CardHeader>
                     <CardContent>
                         <div className='grid grid-cols-2 gap-2 mb-4'>
-                            <Image src="https://picsum.photos/seed/office1/200/200" width={200} height={200} alt="Bureau ITSS 1" className='rounded-md' />
-                            <Image src="https://picsum.photos/seed/office2/200/200" width={200} height={200} alt="Bureau ITSS 2" className='rounded-md' />
+                            <Image src="/images/office-1.jpg" width={200} height={200} alt="Bureau ITSS 1" className='rounded-md' data-ai-hint="office workspace" />
+                            <Image src="/images/office-2.jpg" width={200} height={200} alt="Bureau ITSS 2" className='rounded-md' data-ai-hint="team meeting" />
                         </div>
                          <Button className='w-full' variant="outline" disabled>
                             <Download className='mr-2' /> Télécharger les images

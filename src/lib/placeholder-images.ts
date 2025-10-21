@@ -122,82 +122,34 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "customer support"
     },
     {
-      "id": "blog-bunia-digital",
-      "description": "A bustling street market scene in Bunia, DRC, with people using smartphones.",
-      "imageUrl": "/images/blog-bunia-digital.jpg",
-      "imageHint": "Bunia market"
-    },
-    {
-      "id": "blog-agritech",
-      "description": "A farmer in a lush green field in DRC, inspecting coffee beans.",
-      "imageUrl": "/images/blog-agritech.jpg",
-      "imageHint": "DRC agriculture"
-    },
-    {
-      "id": "blog-fintech-rdc",
-      "description": "Close-up of a mobile money transaction on a phone screen in an African market.",
-      "imageUrl": "/images/blog-fintech-rdc.jpg",
-      "imageHint": "mobile money"
-    },
-    {
-      "id": "blog-edtech-rdc",
-      "description": "Students in a classroom in DRC attentively looking at a lesson.",
-      "imageUrl": "/images/blog-edtech-rdc.jpg",
-      "imageHint": "african students"
-    },
-    {
-      "id": "blog-cybersecurity",
-      "description": "Abstract digital padlock and binary code, representing cybersecurity.",
-      "imageUrl": "/images/blog-cybersecurity.jpg",
-      "imageHint": "digital security"
-    },
-    {
-      "id": "blog-solar-rdc",
-      "description": "Solar panels installed on a rooftop against a clear blue sky in a Congolese village.",
-      "imageUrl": "/images/blog-solar-rdc.jpg",
-      "imageHint": "solar panels"
-    },
-    {
-      "id": "blog-ecommerce-rdc",
-      "description": "A small business owner in DRC proudly standing in front of her shop.",
-      "imageUrl": "/images/blog-ecommerce-rdc.jpg",
-      "imageHint": "local business"
-    },
-    {
-      "id": "blog-health-rdc",
+      "id": "blog-health-rdc-portfolio",
       "description": "A healthcare worker in DRC using a digital tablet in a clinic.",
       "imageUrl": "/images/blog-health-rdc.jpg",
       "imageHint": "digital health"
     },
     {
-      "id": "blog-innovation-hub",
-      "description": "Young African entrepreneurs collaborating in a modern co-working space.",
-      "imageUrl": "/images/blog-innovation-hub.jpg",
-      "imageHint": "tech hub"
+      "id": "blog-edtech-rdc-portfolio",
+      "description": "Students in a classroom in DRC attentively looking at a lesson.",
+      "imageUrl": "/images/blog-edtech-rdc.jpg",
+      "imageHint": "african students"
     },
     {
-      "id": "blog-university-bunia",
-      "description": "University students sitting in a lecture hall in Africa.",
-      "imageUrl": "/images/blog-university-bunia.jpg",
-      "imageHint": "university students"
+      "id": "blog-agritech-portfolio",
+      "description": "A farmer in a lush green field in DRC, inspecting coffee beans.",
+      "imageUrl": "/images/blog-agritech.jpg",
+      "imageHint": "DRC agriculture"
     },
     {
-      "id": "blog-school-ituri",
-      "description": "Happy children in a school classroom in a village in DRC.",
-      "imageUrl": "/images/blog-school-ituri.jpg",
-      "imageHint": "DRC schoolchildren"
+      "id": "office-1",
+      "description": "Photo of ITSS office space.",
+      "imageUrl": "/images/office-1.jpg",
+      "imageHint": "office workspace"
     },
     {
-      "id": "blog-religion-tech",
-      "description": "A large congregation gathered inside a modern church in Africa.",
-      "imageUrl": "/images/blog-religion-tech.jpg",
-      "imageHint": "african church"
-    },
-    {
-      "id": "blog-bunia-commerce",
-      "description": "Vibrant and busy outdoor market scene in a town in Africa.",
-      "imageUrl": "/images/blog-bunia-commerce.jpg",
-      "imageHint": "african market"
+      "id": "office-2",
+      "description": "Photo of ITSS team meeting.",
+      "imageUrl": "/images/office-2.jpg",
+      "imageHint": "team meeting"
     }
   ]
 ;

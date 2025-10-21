@@ -66,7 +66,7 @@ export const portfolioProjects = [
     id: 'healthtech-data-platform',
     client: 'SantéData Plus',
     title: 'Plateforme d\'analyse de données pour la recherche médicale',
-    image: PlaceHolderImages.find(p => p.id === 'blog-health-rdc'),
+    image: PlaceHolderImages.find(p => p.id === 'blog-health-rdc-portfolio'),
     summary: 'Développement d’une plateforme web sécurisée pour la collecte et l’analyse de données de santé anonymisées, permettant d’accélérer la recherche clinique.',
     tags: ['HealthTech', 'Big Data', 'Vue.js', 'Django', 'PostgreSQL'],
      metrics: [
@@ -82,7 +82,7 @@ export const portfolioProjects = [
     id: 'edtech-learning-platform',
     client: 'EduSphere',
     title: 'Plateforme d\'apprentissage en ligne personnalisée',
-    image: PlaceHolderImages.find(p => p.id === 'blog-edtech-rdc'),
+    image: PlaceHolderImages.find(p => p.id === 'blog-edtech-rdc-portfolio'),
     summary: 'Création d\'une plateforme EdTech avec des parcours d\'apprentissage adaptatifs basés sur l\'IA, des classes virtuelles et des outils collaboratifs.',
     tags: ['EdTech', 'IA', 'Next.js', 'Firebase', 'WebRTC'],
      metrics: [
@@ -98,7 +98,7 @@ export const portfolioProjects = [
     id: 'agritech-supply-chain',
     client: 'AgriConnect',
     title: 'Optimisation de la chaîne logistique agricole avec la blockchain',
-    image: PlaceHolderImages.find(p => p.id === 'blog-agritech'),
+    image: PlaceHolderImages.find(p => p.id === 'blog-agritech-portfolio'),
     summary: 'Mise en œuvre d\'un système de traçabilité basé sur la blockchain pour garantir la transparence de la chaîne d\'approvisionnement du producteur au consommateur.',
     tags: ['AgriTech', 'Blockchain', 'IoT', 'React Native', 'Hyperledger'],
      metrics: [
