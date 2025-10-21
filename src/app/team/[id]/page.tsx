@@ -38,9 +38,9 @@ export default function TeamMemberPage({ params }: { params: { id: string } }) {
                 Retour à l'équipe
             </Link>
         </div>
-        <div className="grid md:grid-cols-3 gap-12 items-start">
-            <div className="md:col-span-1 text-center">
-                 <Avatar className="h-48 w-48 mx-auto mb-4 ring-4 ring-primary/50 ring-offset-4 ring-offset-background">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-start">
+            <div className="md:col-span-1 text-center md:text-left md:sticky md:top-24">
+                 <Avatar className="h-48 w-48 mx-auto md:mx-0 mb-4 ring-4 ring-primary/50 ring-offset-4 ring-offset-background">
                     {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Photo de ${member.name}`} data-ai-hint={memberImage.imageHint} />}
                     <AvatarFallback className="text-6xl bg-muted">{member.initials}</AvatarFallback>
                   </Avatar>

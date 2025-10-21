@@ -80,7 +80,7 @@ export default function SupportPage() {
 
         <section className="py-20 md:py-32">
             <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-3 gap-8 mb-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-24">
                     <Card className="text-center hover:shadow-lg transition-shadow">
                         <CardHeader>
                             <LifeBuoy className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -105,7 +105,7 @@ export default function SupportPage() {
                             </Button>
                         </CardContent>
                     </Card>
-                     <Card className="text-center hover:shadow-lg transition-shadow">
+                     <Card className="text-center hover:shadow-lg transition-shadow sm:col-span-2 md:col-span-1">
                         <CardHeader>
                             <MessageSquare className="h-12 w-12 text-primary mx-auto mb-4" />
                             <CardTitle className="font-headline text-2xl">FAQ</CardTitle>

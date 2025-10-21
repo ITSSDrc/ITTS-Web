@@ -119,17 +119,17 @@ export default function CareersPage() {
           <div className="max-w-4xl mx-auto space-y-6">
             {jobOpenings.map((job) => (
               <Card key={job.title}>
-                <CardHeader className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                  <div>
+                <div className="p-6 md:grid md:grid-cols-3 md:gap-4 md:items-start">
+                  <div className="md:col-span-1 mb-4 md:mb-0">
                     <CardTitle className="font-headline text-xl">{job.title}</CardTitle>
-                    <div className='flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mt-2'>
+                    <div className='flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mt-2'>
                         <div className="flex items-center gap-1.5"><Briefcase className='h-4 w-4' /> {job.department}</div>
                         <div className="flex items-center gap-1.5"><MapPin className='h-4 w-4' /> {job.location}</div>
                         <div className="flex items-center gap-1.5"><Calendar className='h-4 w-4' /> {job.date}</div>
                     </div>
                   </div>
-                  <CardDescription className="md:col-span-2 pt-1">{job.description}</CardDescription>
-                </CardHeader>
+                  <CardDescription className="md:col-span-2">{job.description}</CardDescription>
+                </div>
                 <CardFooter>
                   <Button disabled>Offre non disponible</Button>
                 </CardFooter>

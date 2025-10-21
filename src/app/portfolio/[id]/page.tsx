@@ -70,7 +70,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                 <p>{project.result}</p>
             </article>
           </div>
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 row-start-1 md:row-auto">
             <Card className="sticky top-24">
                 <CardHeader>
                     <CardTitle className="font-headline">Détails du Projet</CardTitle>

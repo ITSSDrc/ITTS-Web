@@ -135,7 +135,7 @@ export function Header() {
 
         <div className="flex flex-1 items-center justify-end space-x-2">
           <ThemeToggle />
-          <Button asChild size="lg" className="rounded-full font-semibold">
+          <Button asChild size="lg" className="rounded-full font-semibold px-4 text-sm md:px-6 md:text-base">
             <Link href="/contact">Obtenir un devis</Link>
           </Button>
         </div>
