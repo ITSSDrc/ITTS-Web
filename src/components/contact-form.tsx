@@ -1,7 +1,8 @@
 "use client";
 
 import { useActionState, useEffect, useRef } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormStatus, useFormState } from "react-dom";
+import { useSearchParams } from "next/navigation";
 import { submitContactForm, type ContactFormState } from "@/lib/actions";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +30,8 @@ export function ContactForm() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const searchParams = useSearchParams();
+  const subject = searchParams.get('subject') || '';
 
   useEffect(() => {
     if (state.message) {
@@ -50,6 +53,7 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} action={formAction} className="space-y-6">
+      <input type="hidden" name="subject" value={subject} />
       <div>
         <Label htmlFor="name">Nom</Label>
         <Input id="name" name="name" type="text" placeholder="Votre Nom" required />
@@ -67,6 +71,10 @@ export function ContactForm() {
             {state.errors.email[0]}
           </p>
         )}
+      </div>
+      <div>
+        <Label htmlFor="subject-display">Sujet</Label>
+        <Input id="subject-display" name="subject-display" type="text" placeholder="Sujet de votre message" defaultValue={subject} required />
       </div>
       <div>
         <Label htmlFor="message">Message</Label>

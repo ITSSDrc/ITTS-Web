@@ -138,7 +138,7 @@ export default function CareersPage() {
              <div className="text-center pt-10">
                 <p className="text-muted-foreground">Vous ne trouvez pas le poste idéal ?</p>
                 <Button variant="link" className="text-lg" asChild>
-                    <Link href="/contact">Envoyez-nous une candidature spontanée</Link>
+                    <Link href={{ pathname: '/contact', query: { subject: 'Candidature Spontanée' } }}>Envoyez-nous une candidature spontanée</Link>
                 </Button>
             </div>
           </div>

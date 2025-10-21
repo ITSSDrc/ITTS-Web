@@ -12,6 +12,8 @@ import { portfolioProjects } from "@/lib/portfolio-data";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import Typewriter from 'typewriter-effect';
+
 
 const services = [
   {
@@ -39,9 +41,6 @@ const services = [
 export default function Home() {
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
   const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
-  const plugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
-  );
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
@@ -59,8 +58,15 @@ export default function Home() {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-center md:text-left">
             <FadeInOnScroll>
-              <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60">
-                Votre Partenaire d'Innovation Technologique
+              <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60 min-h-[180px] md:min-h-[240px] lg:min-h-[280px]">
+                <Typewriter
+                    options={{
+                        strings: ["Votre Partenaire d'Innovation Technologique"],
+                        autoStart: true,
+                        loop: true,
+                        delay: 75,
+                    }}
+                />
               </h1>
             </FadeInOnScroll>
             <FadeInOnScroll delay={200}>
@@ -85,7 +91,12 @@ export default function Home() {
                 loop: true,
                 align: "start",
               }}
-              plugins={[plugin.current]}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: false,
+                })
+              ]}
               className="w-full"
             >
               <CarouselContent>
