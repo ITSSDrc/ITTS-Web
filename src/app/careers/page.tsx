@@ -72,7 +72,7 @@ export default function CareersPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-10 dark:opacity-20"
             data-ai-hint={heroImage.imageHint}
           />
         )}

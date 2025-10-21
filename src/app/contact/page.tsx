@@ -21,7 +21,7 @@ export default function ContactPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-contain opacity-20 p-24"
+            className="object-contain opacity-10 dark:opacity-20 p-16 md:p-24"
             data-ai-hint={heroImage.imageHint}
           />
         )}

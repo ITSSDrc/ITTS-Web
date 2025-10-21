@@ -57,8 +57,8 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
           </Card>
         )}
 
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="md:col-span-2">
+        <div className="grid lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-2">
             <article className="prose prose-lg dark:prose-invert max-w-none space-y-6">
                 <h2 className="font-headline text-3xl">Le Défi</h2>
                 <p>{project.challenge}</p>
@@ -70,7 +70,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                 <p>{project.result}</p>
             </article>
           </div>
-          <div className="md:col-span-1 row-start-1 md:row-auto">
+          <div className="lg:col-span-1 row-start-1 lg:row-auto">
             <Card className="sticky top-24">
                 <CardHeader>
                     <CardTitle className="font-headline">Détails du Projet</CardTitle>
