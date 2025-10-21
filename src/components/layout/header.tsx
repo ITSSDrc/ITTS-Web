@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Twitter, Github, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -65,38 +65,44 @@ export function Header() {
               <span className="sr-only">Ouvrir/Fermer le menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="pr-0 flex flex-col">
-            <Link
-              href="/"
-              className="mb-4 flex items-center"
-              onClick={() => setMenuOpen(false)}
-            >
-              {logo && <Image 
-                src={logo.imageUrl}
-                alt={logo.description} 
-                width={40} 
-                height={40} 
-                className="mr-2 rounded-full"
-              />}
-              <span className="font-headline text-xl font-bold">ITSS</span>
-            </Link>
-            
-            <Separator className="mb-4" />
-
-            <div className="flex flex-col flex-1 space-y-4">
-              {navLinks.map((link) => (
+          <SheetContent side="left" className="flex flex-col bg-background/80 backdrop-blur-lg">
+            <SheetHeader>
+                <SheetTitle className="sr-only">Menu Principal</SheetTitle>
+                <SheetDescription className="sr-only">Navigation principale du site</SheetDescription>
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  href="/"
+                  className="flex items-center"
                   onClick={() => setMenuOpen(false)}
-                  className={cn(
-                    "text-xl font-medium transition-colors hover:text-foreground/80",
-                    pathname === link.href ? "text-foreground" : "text-foreground/60"
-                  )}
                 >
-                  {link.label}
+                  {logo && <Image 
+                    src={logo.imageUrl}
+                    alt={logo.description} 
+                    width={40} 
+                    height={40} 
+                    className="mr-2 rounded-full"
+                  />}
+                  <span className="font-headline text-xl font-bold">ITSS</span>
                 </Link>
-              ))}
+            </SheetHeader>
+            
+            <Separator className="my-4" />
+
+            <div className="flex flex-1 flex-col">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(
+                      "text-xl font-medium transition-colors hover:text-foreground/80",
+                      pathname === link.href ? "text-foreground" : "text-foreground/60"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
             <div className="mt-auto">
