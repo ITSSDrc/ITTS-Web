@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Twitter, Github, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -64,10 +65,10 @@ export function Header() {
               <span className="sr-only">Ouvrir/Fermer le menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="pr-0">
+          <SheetContent side="left" className="pr-0 flex flex-col">
             <Link
               href="/"
-              className="mb-8 flex items-center"
+              className="mb-4 flex items-center"
               onClick={() => setMenuOpen(false)}
             >
               {logo && <Image 
@@ -79,14 +80,17 @@ export function Header() {
               />}
               <span className="font-headline text-xl font-bold">ITSS</span>
             </Link>
-            <div className="flex flex-col space-y-6">
+            
+            <Separator className="mb-4" />
+
+            <div className="flex flex-col flex-1 space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className={cn(
-                    "text-lg font-medium transition-colors hover:text-foreground/80",
+                    "text-xl font-medium transition-colors hover:text-foreground/80",
                     pathname === link.href ? "text-foreground" : "text-foreground/60"
                   )}
                 >
@@ -94,6 +98,22 @@ export function Header() {
                 </Link>
               ))}
             </div>
+
+            <div className="mt-auto">
+              <Separator className="my-4" />
+              <div className="flex items-center justify-center gap-6">
+                <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" onClick={() => setMenuOpen(false)}>
+                  <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+                </Link>
+                <Link href="https://github.com/ITSSDrc" aria-label="GitHub" onClick={() => setMenuOpen(false)}>
+                  <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+                </Link>
+                <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" onClick={() => setMenuOpen(false)}>
+                  <Youtube className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+                </Link>
+              </div>
+            </div>
+
           </SheetContent>
         </Sheet>
         <Link href="/" className="flex items-center space-x-2 md:hidden">
