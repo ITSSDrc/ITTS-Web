@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import { PageLoader } from '@/components/page-loader';
 
 export const metadata: Metadata = {
   title: 'ITSS - Solutions et Services Technologiques Innovants',
@@ -30,12 +31,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+          <PageLoader>
             <Header />
             <main>
               {children}
             </main>
             <Footer />
             <Toaster />
+          </PageLoader>
         </ThemeProvider>
       </body>
     </html>
