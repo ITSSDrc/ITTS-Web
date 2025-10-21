@@ -68,7 +68,7 @@ export default function PortfolioPage() {
                             <Badge key={tag} variant="secondary">{tag}</Badge>
                         ))}
                     </div>
-                    <p className="text-muted-foreground line-clamp-3 mb-6">{project.summary}</p>
+                    <p className="text-muted-foreground mb-6">{project.summary}</p>
 
                     <div className="space-y-3 text-sm">
                         {project.metrics.map(metric => (
