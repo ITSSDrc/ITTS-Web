@@ -3,9 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Cloud, Code, Shield, Server, Zap, BrainCircuit, BotMessageSquare, LineChart } from "lucide-react";
+import { ArrowRight, Cloud, Code, Shield, BrainCircuit } from "lucide-react";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
+import { portfolioProjects } from "@/app/portfolio/page";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const services = [
   {
@@ -31,43 +34,77 @@ const services = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
-      <section className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-contain opacity-10 dark:opacity-20 p-16"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <FadeInOnScroll>
-            <h1 className="text-5xl font-headline font-extrabold md:text-7xl lg:text-8xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60">
-              Votre Partenaire<br />d'Innovation Technologique
-            </h1>
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={200}>
-            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-              ITSS propulse votre entreprise vers l'avenir avec des solutions de pointe en Cloud, Logiciel, Cybersécurité et Intelligence Artificielle.
-            </p>
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={400}>
-            <div className="mt-10 flex justify-center gap-4">
-              <Button size="lg" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
-                <Link href="/services">Explorer nos Services</Link>
-              </Button>
-              <Button size="lg" variant="ghost" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
-                <Link href="/contact">Nous Contacter <ArrowRight className="ml-2 h-5 w-5" /></Link>
-              </Button>
-            </div>
+      <section className="w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-center md:text-left">
+            <FadeInOnScroll>
+              <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60">
+                Votre Partenaire d'Innovation Technologique
+              </h1>
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={200}>
+              <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl text-muted-foreground">
+                ITSS propulse votre entreprise vers l'avenir avec des solutions de pointe en Cloud, Logiciel, Cybersécurité et Intelligence Artificielle.
+              </p>
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={400}>
+              <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                <Button size="lg" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
+                  <Link href="/services">Explorer nos Services</Link>
+                </Button>
+                <Button size="lg" variant="ghost" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
+                  <Link href="/contact">Nous Contacter <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                </Button>
+              </div>
+            </FadeInOnScroll>
+          </div>
+          <FadeInOnScroll delay={600} className="w-full max-w-md mx-auto md:max-w-none">
+             <Carousel 
+              opts={{
+                loop: true,
+                align: "start",
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: false,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {portfolioProjects.map((project) => (
+                  <CarouselItem key={project.id}>
+                    <Link href={`/portfolio/${project.id}`}>
+                      <Card className="overflow-hidden group glow-card">
+                         {project.image && (
+                          <div className="aspect-video overflow-hidden">
+                              <Image
+                                src={project.image.imageUrl}
+                                alt={project.image.description}
+                                width={600}
+                                height={400}
+                                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                data-ai-hint={project.image.imageHint}
+                              />
+                          </div>
+                         )}
+                        <CardHeader>
+                          <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                          <CardDescription>{project.client}</CardDescription>
+                        </CardHeader>
+                      </Card>
+                    </Link>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+            </Carousel>
           </FadeInOnScroll>
         </div>
       </section>
