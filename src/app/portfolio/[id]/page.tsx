@@ -64,7 +64,33 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                 <p>{project.challenge}</p>
 
                 <h2 className="font-headline text-3xl">Notre Solution</h2>
-                <div dangerouslySetInnerHTML={{ __html: project.solution }} />
+                
+                {/* Check if solution is a string or has a special gallery */}
+                {typeof project.solution === 'string' ? (
+                    <div dangerouslySetInnerHTML={{ __html: project.solution }} />
+                ) : (
+                    <p>{project.solution}</p>
+                )}
+
+                {project.gallery && (
+                  <div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 not-prose my-8">
+                      {project.gallery.map((img, index) => (
+                        <div key={index} className="overflow-hidden rounded-lg group aspect-square">
+                          <Image
+                            src={img.src}
+                            alt={img.alt}
+                            width={400}
+                            height={400}
+                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                            data-ai-hint={img.hint}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
 
                 <h2 className="font-headline text-3xl">Résultats</h2>
                 <p>{project.result}</p>

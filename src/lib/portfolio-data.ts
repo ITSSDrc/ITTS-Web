@@ -31,19 +31,19 @@ export const portfolioProjects = [
       { label: 'Satisfaction Client', value: '98%' },
     ],
     challenge: "De nombreuses entreprises et organisations à Bunia, mais aussi à l'international, manquaient d'une identité visuelle professionnelle et cohérente pour se démarquer. Elles avaient besoin de supports de communication (numériques et imprimés) pour asseoir leur crédibilité et attirer des clients.",
-    solution: `Notre pôle design a travaillé en étroite collaboration avec chaque client pour comprendre leur vision, leurs valeurs et leur public cible. À partir de là, nous avons développé des chartes graphiques complètes, incluant la création de logos, le choix des typographies et des palettes de couleurs. Nous avons ensuite décliné ces identités sur une multitude de supports :
-      <br/><br/>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-        <div class="space-y-2">
-            <img src="/images/design-flyer.jpg" alt="Exemple de flyer réalisé par ITSS" class="rounded-lg shadow-md" data-ai-hint="corporate flyer"/>
-            <p class="text-sm text-center text-muted-foreground">Conception de flyers percutants</p>
-        </div>
-        <div class="space-y-2">
-             <img src="/images/design-logo-mockup.jpg" alt="Exemple de logo sur une maquette" class="rounded-lg shadow-md" data-ai-hint="logo mockup"/>
-             <p class="text-sm text-center text-muted-foreground">Logos modernes et mémorables</p>
-        </div>
-      </div>
-      Nos services incluent la conception de cartes de visite, de brochures, de bannières pour les réseaux sociaux, et de maquettes pour les sites web, garantissant une communication visuelle cohérente sur tous les canaux.`,
+    solution: `Notre pôle design a travaillé en étroite collaboration avec chaque client pour comprendre leur vision, leurs valeurs et leur public cible. À partir de là, nous avons développé des chartes graphiques complètes, incluant la création de logos, le choix des typographies et des palettes de couleurs. Nous avons ensuite décliné ces identités sur une multitude de supports : cartes de visite, brochures, bannières pour les réseaux sociaux, et maquettes pour les sites web, garantissant une communication visuelle cohérente sur tous les canaux.`,
+    gallery: [
+      { src: "/images/design-gallery/design-1.jpg", alt: "Exemple de design 1", hint: "modern logo" },
+      { src: "/images/design-gallery/design-2.jpg", alt: "Exemple de design 2", hint: "business card" },
+      { src: "/images/design-gallery/design-3.jpg", alt: "Exemple de design 3", hint: "flyer design" },
+      { src: "/images/design-gallery/design-4.jpg", alt: "Exemple de design 4", hint: "brochure layout" },
+      { src: "/images/design-gallery/design-5.jpg", alt: "Exemple de design 5", hint: "social media banner" },
+      { src: "/images/design-gallery/design-6.jpg", alt: "Exemple de design 6", hint: "packaging design" },
+      { src: "/images/design-gallery/design-7.jpg", alt: "Exemple de design 7", hint: "web design mockup" },
+      { src: "/images/design-gallery/design-8.jpg", alt: "Exemple de design 8", hint: "app icon" },
+      { src: "/images/design-gallery/design-9.jpg", alt: "Exemple de design 9", hint: "poster design" },
+      { src: "/images/design-gallery/design-10.jpg", alt: "Exemple de design 10", hint: "brand identity" },
+    ],
     result: "Grâce à des identités visuelles fortes et professionnelles, nos clients ont vu leur notoriété et leur crédibilité augmenter. Des supports de communication clairs et esthétiques leur ont permis d'améliorer leurs campagnes marketing et d'attirer une nouvelle clientèle, renforçant ainsi leur positionnement sur le marché."
   },
   {
@@ -143,5 +143,3 @@ export const portfolioProjects = [
     result: "La solution a apporté une transparence totale, renforçant la confiance des consommateurs qui a augmenté de 50%. L'analyse des données logistiques a permis de réduire les pertes de produits périssables de 15%, augmentant directement les revenus des producteurs."
   },
 ];
-
-    
