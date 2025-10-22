@@ -76,8 +76,8 @@ export default function ContactPage() {
                         <div>
                             <h3 className="font-semibold text-xl">Téléphone</h3>
                             <p className="text-muted-foreground">Lun-Ven, 9h-18h</p>
-                            <a href="tel:+1234567890" className="text-primary font-medium hover:underline">
-                                (123) 456-7890
+                            <a href="tel:+243818318712" className="text-primary font-medium hover:underline">
+                                +243 818 318 712
                             </a>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                         <div>
                             <h3 className="font-semibold text-xl">Bureau</h3>
                             <p className="text-muted-foreground">123 Avenue de la Tech</p>
-                            <p className="text-foreground font-medium">Innovation City, TX 12345</p>
+                            <p className="text-foreground font-medium">Bunia, Ituri, RDC</p>
                         </div>
                     </div>
                 </div>

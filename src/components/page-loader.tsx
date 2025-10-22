@@ -1,9 +1,11 @@
+
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode, Suspense } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const Loader = () => {
     const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
@@ -23,16 +25,19 @@ const Loader = () => {
     );
 }
 
-export const PageLoader = ({ children }: { children: React.ReactNode }) => {
+function InnerPageLoader({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1200); 
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname, searchParams]);
 
   return (
     <>
@@ -49,4 +54,13 @@ export const PageLoader = ({ children }: { children: React.ReactNode }) => {
       </div>
     </>
   );
+}
+
+
+export const PageLoader = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Suspense>
+      <InnerPageLoader>{children}</InnerPageLoader>
+    </Suspense>
+  )
 };

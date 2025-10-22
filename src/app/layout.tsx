@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
 import { PageLoader } from '@/components/page-loader';
 import { Inter, Poppins } from 'next/font/google';
+import { Suspense } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,9 +67,16 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/images/og-image.png`],
   },
   icons: {
-    icon: '/images/itss-logo.png',
-    shortcut: '/images/itss-logo.png',
-    apple: '/images/itss-logo.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/images/itss-logo.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/itss-logo.png', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: ['/images/itss-logo.png'],
+    apple: [
+      { url: '/images/itss-logo.png' },
+      { url: '/images/itss-logo.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 
@@ -88,14 +97,16 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
-          <PageLoader>
-            <Header />
-            <main>
-              {children}
-            </main>
-            <Footer />
-            <Toaster />
-          </PageLoader>
+          <Suspense>
+            <PageLoader>
+              <Header />
+              <main>
+                {children}
+              </main>
+              <Footer />
+              <Toaster />
+            </PageLoader>
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
