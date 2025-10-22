@@ -1,5 +1,8 @@
-# robots.txt for www.itssdrc.com
+# Voir https://www.robotstxt.org/robotstxt.html pour la syntaxe
+
+# Autoriser tous les robots à explorer l'intégralité du site
 User-agent: *
 Allow: /
 
+# Emplacement du sitemap
 Sitemap: https://www.itssdrc.com/sitemap.xml
