@@ -55,8 +55,8 @@ export default function Home() {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="text-center md:text-left">
+        <div className="container mx-auto px-4 grid grid-cols-1 gap-12 items-center justify-items-center relative z-10">
+          <div className="text-center">
             <FadeInOnScroll>
               <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60 min-h-[180px] md:min-h-[240px] lg:min-h-[280px]">
                 <Typewriter
@@ -70,12 +70,12 @@ export default function Home() {
               </h1>
             </FadeInOnScroll>
             <FadeInOnScroll delay={200}>
-              <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl text-muted-foreground">
+              <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl text-muted-foreground">
                 ITSS propulse votre entreprise vers l'avenir avec des solutions de pointe en Cloud, Logiciel, Cybersécurité et Intelligence Artificielle.
               </p>
             </FadeInOnScroll>
             <FadeInOnScroll delay={400}>
-              <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
                   <Link href="/services">Explorer nos Services</Link>
                 </Button>
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
             </FadeInOnScroll>
           </div>
-          <FadeInOnScroll delay={600} className="w-full max-w-md mx-auto md:max-w-none">
+          <FadeInOnScroll delay={600} className="w-full max-w-md mx-auto">
              <Carousel 
               opts={{
                 loop: true,
