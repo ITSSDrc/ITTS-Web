@@ -56,7 +56,7 @@ export async function submitContactForm(
       to: ['innovatechsolutionservice@gmail.com'],
       subject: subject || 'Nouveau message depuis le site ITSS',
       reply_to: email,
-      react: React.createElement(ContactEmailTemplate, { name, email, message }),
+      react: ContactEmailTemplate({ name, email, message }),
     });
 
     if (error) {
