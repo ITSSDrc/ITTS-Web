@@ -5,6 +5,8 @@ import Image from "next/image";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -36,6 +38,8 @@ export function ImageGallery({ gallery }: ImageGalleryProps) {
             </div>
           </DialogTrigger>
           <DialogContent className="max-w-4xl p-2 sm:p-4">
+            <DialogTitle className="sr-only">Image en grand format</DialogTitle>
+            <DialogDescription className="sr-only">{img.alt}</DialogDescription>
             <Image
               src={img.src}
               alt={img.alt}
