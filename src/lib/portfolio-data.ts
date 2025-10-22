@@ -47,6 +47,22 @@ export const portfolioProjects = [
     result: "Grâce à des identités visuelles fortes et professionnelles, nos clients ont vu leur notoriété et leur crédibilité augmenter. Des supports de communication clairs et esthétiques leur ont permis d'améliorer leurs campagnes marketing et d'attirer une nouvelle clientèle, renforçant ainsi leur positionnement sur le marché."
   },
   {
+    id: 'computer-maintenance-services',
+    client: 'Entreprises et Particuliers de Bunia',
+    title: 'Services de Maintenance Informatique et Réparation',
+    image: PlaceHolderImages.find(p => p.id === 'computer-maintenance-project'),
+    summary: 'Service complet de maintenance préventive, de réparation et de mise à niveau pour parcs informatiques d\'entreprises et ordinateurs de particuliers.',
+    tags: ['Maintenance Matériel', 'Réparation PC/Laptop', 'Mise à niveau Hardware', 'Support Technique'],
+    metrics: [
+      { label: 'Interventions / an', value: '400+' },
+      { label: 'Taux de résolution', value: '95%' },
+      { label: 'Clients Satisfaits', value: '99%' },
+    ],
+    challenge: "De nombreuses entreprises et particuliers à Bunia faisaient face à des pannes matérielles récurrentes, des ralentissements systèmes et une obsolescence rapide de leur matériel, entraînant des pertes de productivité et des coûts imprévus.",
+    solution: "Nous avons mis en place un service de maintenance complet incluant des diagnostics précis, des réparations rapides (changement de pièces, réinstallation de systèmes) et des programmes de maintenance préventive pour les entreprises. Nous proposons également des services de mise à niveau (ajout de RAM, remplacement par des SSD) pour prolonger la durée de vie des équipements et améliorer leurs performances.",
+    result: "Nos services ont permis de réduire de 70% les temps d'arrêt pour nos clients sous contrat de maintenance. La durée de vie moyenne de leur parc informatique a été prolongée de 2 ans, offrant un excellent retour sur investissement. Les particuliers bénéficient d'un service rapide et fiable, restaurant leurs outils de travail et de communication."
+  },
+  {
     id: 'e-commerce-migration-cloud',
     client: 'RetailNext Corp',
     title: 'Migration et modernisation d\'une plateforme e-commerce',

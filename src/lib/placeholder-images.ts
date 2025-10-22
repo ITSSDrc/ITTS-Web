@@ -26,6 +26,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "graphic design portfolio"
     },
     {
+      "id": "computer-maintenance-project",
+      "description": "Technicien en train de réparer un ordinateur portable dans un atelier.",
+      "imageUrl": "/images/computer-maintenance.jpg",
+      "imageHint": "computer repair"
+    },
+    {
       "id": "team-member-0",
       "description": "Portrait of a confident CEO.",
       "imageUrl": "/images/team-member-0.jpg",
