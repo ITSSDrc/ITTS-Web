@@ -8,7 +8,7 @@ export const portfolioProjects = [
     title: 'Mateya: L\'Application de Podcasts pour les Églises',
     image: PlaceHolderImages.find(p => p.id === 'mateya-podcast-app'),
     summary: 'Une application mobile pour iOS et Android permettant aux fidèles d\'écouter des prédications, des enseignements et des chants, renforçant la communauté chrétienne de Bunia.',
-    tags: ['Développement Mobile', 'Podcast', 'Flutter', 'Supabase', 'Audio Streaming'],
+    tags: ['Développement Mobile', 'Flutter', 'Supabase', 'Podcast', 'Audio Streaming'],
     metrics: [
       { label: 'Utilisateurs Actifs', value: '+5,000' },
       { label: 'Églises Partenaires', value: '25+' },
@@ -17,6 +17,34 @@ export const portfolioProjects = [
     challenge: "De nombreuses églises à Bunia souhaitaient partager leurs messages audio avec leurs membres, en particulier ceux qui ne pouvaient pas assister aux services. Il n'existait aucune plateforme centralisée, simple d'utilisation et adaptée au contexte local (faible connectivité).",
     solution: "Nous avons développé 'Mateya', une application mobile multiplateforme (iOS/Android) avec Flutter, ce qui garantit une expérience utilisateur fluide et native. L'application permet aux églises de téléverser facilement des fichiers audio, de les classer par prédicateur ou par série. Pour les utilisateurs, l'application offre une écoute en streaming et une option de téléchargement pour une écoute hors ligne, cruciale pour les zones à faible connectivité. Nous avons utilisé Supabase pour une base de données robuste, l'authentification des utilisateurs et le stockage des fichiers audio.",
     result: "Mateya est devenue l'application de référence pour la communauté chrétienne de Bunia. En 6 mois, elle a attiré plus de 5 000 utilisateurs actifs et a permis à plus de 25 églises de diffuser leurs messages. L'option de téléchargement a été un succès majeur, permettant de toucher des membres dans des zones rurales sans accès internet stable."
+  },
+  {
+    id: 'graphic-design-branding',
+    client: 'Clients Locaux & Internationaux',
+    title: 'Identités Visuelles & Supports de Communication',
+    image: PlaceHolderImages.find(p => p.id === 'portfolio-graphic-design'),
+    summary: 'Création d\'identités de marque percutantes et de supports de communication variés (logos, flyers, bannières) pour renforcer l\'image de nos clients.',
+    tags: ['Design Graphique', 'Branding', 'Identité Visuelle', 'Supports Print', 'Réseaux Sociaux'],
+    metrics: [
+      { label: 'Identités créées', value: '50+' },
+      { label: 'Supports conçus', value: '+200' },
+      { label: 'Satisfaction Client', value: '98%' },
+    ],
+    challenge: "De nombreuses entreprises et organisations à Bunia, mais aussi à l'international, manquaient d'une identité visuelle professionnelle et cohérente pour se démarquer. Elles avaient besoin de supports de communication (numériques et imprimés) pour asseoir leur crédibilité et attirer des clients.",
+    solution: `Notre pôle design a travaillé en étroite collaboration avec chaque client pour comprendre leur vision, leurs valeurs et leur public cible. À partir de là, nous avons développé des chartes graphiques complètes, incluant la création de logos, le choix des typographies et des palettes de couleurs. Nous avons ensuite décliné ces identités sur une multitude de supports :
+      <br/><br/>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <div class="space-y-2">
+            <img src="/images/design-flyer.jpg" alt="Exemple de flyer réalisé par ITSS" class="rounded-lg shadow-md" data-ai-hint="corporate flyer"/>
+            <p class="text-sm text-center text-muted-foreground">Conception de flyers percutants</p>
+        </div>
+        <div class="space-y-2">
+             <img src="/images/design-logo-mockup.jpg" alt="Exemple de logo sur une maquette" class="rounded-lg shadow-md" data-ai-hint="logo mockup"/>
+             <p class="text-sm text-center text-muted-foreground">Logos modernes et mémorables</p>
+        </div>
+      </div>
+      Nos services incluent la conception de cartes de visite, de brochures, de bannières pour les réseaux sociaux, et de maquettes pour les sites web, garantissant une communication visuelle cohérente sur tous les canaux.`,
+    result: "Grâce à des identités visuelles fortes et professionnelles, nos clients ont vu leur notoriété et leur crédibilité augmenter. Des supports de communication clairs et esthétiques leur ont permis d'améliorer leurs campagnes marketing et d'attirer une nouvelle clientèle, renforçant ainsi leur positionnement sur le marché."
   },
   {
     id: 'e-commerce-migration-cloud',

@@ -20,6 +20,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "podcast app"
     },
     {
+      "id": "portfolio-graphic-design",
+      "description": "Montage de diverses créations graphiques incluant logos et flyers.",
+      "imageUrl": "/images/graphic-design-portfolio.jpg",
+      "imageHint": "graphic design portfolio"
+    },
+    {
       "id": "team-member-0",
       "description": "Portrait of a confident CEO.",
       "imageUrl": "/images/team-member-0.jpg",

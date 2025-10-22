@@ -64,7 +64,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                 <p>{project.challenge}</p>
 
                 <h2 className="font-headline text-3xl">Notre Solution</h2>
-                <p>{project.solution}</p>
+                <div dangerouslySetInnerHTML={{ __html: project.solution }} />
 
                 <h2 className="font-headline text-3xl">Résultats</h2>
                 <p>{project.result}</p>
