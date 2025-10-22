@@ -159,19 +159,21 @@ export const portfolioProjects = [
     result: "La nouvelle approche personnalisée a augmenté l'engagement des étudiants de 45 %. Le taux de réussite des cours a bondi de 25 %, et la plateforme a pu réduire la nécessité d'un tutorat humain coûteux de 35 % grâce à son support automatisé et adaptatif."
   },
   {
-    id: 'agritech-supply-chain',
-    client: 'AgriConnect',
-    title: 'Optimisation de la chaîne logistique agricole avec la blockchain',
+    id: 'agritech-marketplace',
+    client: 'Agropastoral',
+    title: 'Plateforme de mise en relation pour produits agricoles',
     image: PlaceHolderImages.find(p => p.id === 'blog-agritech-portfolio'),
-    summary: 'Mise en œuvre d\'un système de traçabilité basé sur la blockchain pour garantir la transparence de la chaîne d\'approvisionnement du producteur au consommateur.',
-    tags: ['AgriTech', 'Blockchain', 'IoT', 'React Native', 'Hyperledger'],
+    summary: 'Création d\'une marketplace web et mobile pour connecter directement les producteurs agricoles locaux avec les acheteurs, restaurants et consommateurs.',
+    tags: ['AgriTech', 'Marketplace', 'React Native', 'Firebase', 'Géolocalisation'],
      metrics: [
-      { label: 'Transparence', value: '100%' },
-      { label: 'Pertes réduites', value: '15%' },
-      { label: 'Confiance consommateur', value: '+50%' },
+      { label: 'Transactions / mois', value: '1,200+' },
+      { label: 'Producteurs inscrits', value: '300+' },
+      { label: 'Temps de livraison', value: '-40%' },
     ],
-    challenge: "Les consommateurs étaient de plus en plus méfiants quant à l'origine et à la qualité des produits alimentaires. Les producteurs, quant à eux, subissaient des pertes dues à une logistique inefficace.",
-    solution: "Nous avons mis en place une solution de traçabilité de bout en bout utilisant la blockchain Hyperledger. Des capteurs IoT sur le terrain capturent des données (température, humidité) qui sont enregistrées de manière immuable sur la chaîne. Une application mobile en React Native permet aux consommateurs de scanner un QR code pour voir tout le parcours du produit.",
-    result: "La solution a apporté une transparence totale, renforçant la confiance des consommateurs qui a augmenté de 50%. L'analyse des données logistiques a permis de réduire les pertes de produits périssables de 15%, augmentant directement les revenus des producteurs."
+    challenge: "Les producteurs agricoles locaux avaient du mal à accéder à un marché plus large et subissaient les pressions des intermédiaires. Les acheteurs, de leur côté, manquaient de visibilité sur la disponibilité et la qualité des produits locaux.",
+    solution: "Nous avons développé une plateforme complète comprenant une application mobile en React Native pour les producteurs et les acheteurs, ainsi qu'un tableau de bord web pour l'administration. La plateforme intègre la géolocalisation pour trouver les produits les plus proches, un système de paiement mobile sécurisé, et un module de notation pour garantir la qualité et la confiance.",
+    result: "Agropastoral a créé un circuit court plus efficace, augmentant les revenus des producteurs de 30% en moyenne. Les acheteurs bénéficient de produits plus frais et d'une meilleure traçabilité. La plateforme a réduit le temps moyen de la commande à la livraison de 40%."
   },
 ];
+
+    
