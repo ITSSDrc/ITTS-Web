@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -44,7 +45,9 @@ export default function ContactPage() {
                   <CardDescription>Remplissez le formulaire et nous vous répondrons dans les plus brefs délais.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ContactForm />
+                  <Suspense fallback={<div>Chargement du formulaire...</div>}>
+                    <ContactForm />
+                  </Suspense>
                 </CardContent>
               </Card>
             </div>
