@@ -3,6 +3,22 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export const portfolioProjects = [
   {
+    id: 'itss-website-showcase',
+    client: 'ITSS DRC (Projet Interne)',
+    title: 'Site Web Officiel & Vitrine Numérique d\'ITSS',
+    image: PlaceHolderImages.find(p => p.id === 'itss-website-showcase'),
+    summary: 'Développement de notre propre site web institutionnel avec Next.js 14, présentant nos services, notre portfolio et notre expertise. Une vitrine moderne, rapide et optimisée pour le SEO.',
+    tags: ['Next.js 14', 'React', 'Tailwind CSS', 'ShadCN UI', 'Genkit AI', 'Vercel'],
+    metrics: [
+      { label: 'Performance Lighthouse', value: '98/100' },
+      { label: 'Temps de chargement', value: '< 1s' },
+      { label: 'SEO Score', value: '95/100' },
+    ],
+    challenge: "Nous avions besoin d'une nouvelle plateforme pour affirmer notre présence en ligne, présenter nos réalisations et nos services de manière professionnelle, et générer de nouveaux prospects. Le site devait être extrêmement performant, facile à mettre à jour, et refléter notre expertise technologique.",
+    solution: "Nous avons construit le site de A à Z en utilisant les technologies les plus modernes de l'écosystème React. Le choix de Next.js 14 avec le App Router nous a permis de créer un site rapide et optimisé pour le référencement. L'interface a été construite avec les composants ShadCN UI et stylisée avec Tailwind CSS. Nous avons également intégré des capacités d'IA avec Google Genkit pour de futures fonctionnalités. Le déploiement continu est assuré via Vercel.",
+    result: "Le résultat est le site que vous consultez actuellement : une plateforme rapide, esthétique et entièrement responsive. Il sert non seulement de vitrine pour nos services, mais aussi de démonstration concrète de notre capacité à livrer des projets web modernes et performants."
+  },
+  {
     id: 'mateya-podcast-app',
     client: 'Communauté des Églises de Bunia',
     title: 'Mateya: L\'Application de Podcasts pour les Églises',

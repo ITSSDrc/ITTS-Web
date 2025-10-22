@@ -32,6 +32,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "computer repair"
     },
     {
+      "id": "itss-website-showcase",
+      "description": "Capture d'écran du site web d'ITSS montrant la page d'accueil.",
+      "imageUrl": "/images/itss-website-showcase.jpg",
+      "imageHint": "website screenshot"
+    },
+    {
       "id": "team-member-0",
       "description": "Portrait of a confident CEO.",
       "imageUrl": "/images/team-member-0.jpg",
