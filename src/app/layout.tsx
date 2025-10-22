@@ -21,11 +21,53 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+const siteUrl = 'https://www.itssdrc.com';
+
 export const metadata: Metadata = {
-  title: 'ITSS - Solutions et Services Technologiques Innovants',
-  description: 'Favoriser le succès des entreprises grâce à des solutions technologiques de pointe.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'ITSS DRC - Solutions et Services Technologiques Innovants',
+    template: '%s - ITSS DRC',
+  },
+  description: 'ITSS DRC est votre partenaire pour l\'innovation et la transformation numérique à Bunia et en RDC. Nous offrons des solutions de pointe en Cloud, développement logiciel, cybersécurité et IA.',
+  keywords: ['ITSS DRC', 'Bunia', 'RDC', 'développement logiciel', 'cybersécurité', 'solutions cloud', 'intelligence artificielle', 'services informatiques', 'transformation numérique'],
+  authors: [{ name: 'ITSS DRC', url: siteUrl }],
+  creator: 'ITSS DRC',
+  publisher: 'ITSS DRC',
+  alternates: {
+    canonical: '/',
+    languages: {
+      'fr-FR': '/',
+    },
+  },
+  openGraph: {
+    title: 'ITSS DRC - Solutions et Services Technologiques Innovants',
+    description: 'Propulsez votre entreprise vers l\'avenir avec des solutions de pointe en Cloud, Logiciel, Cybersécurité et Intelligence Artificielle.',
+    url: siteUrl,
+    siteName: 'ITSS DRC',
+    images: [
+      {
+        url: '/images/og-image.png', // Assurez-vous que cette image existe dans public/images
+        width: 1200,
+        height: 630,
+        alt: 'Logo de ITSS DRC sur un fond technologique',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ITSS DRC - Solutions et Services Technologiques Innovants',
+    description: 'Votre partenaire pour l\'innovation et la transformation numérique à Bunia et en RDC.',
+    site: '@ITSSDrc',
+    creator: '@ITSSDrc',
+    images: [`${siteUrl}/images/og-image.png`],
+  },
   icons: {
     icon: '/images/itss-logo.png',
+    shortcut: '/images/itss-logo.png',
+    apple: '/images/itss-logo.png',
   },
 };
 

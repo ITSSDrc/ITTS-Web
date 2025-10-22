@@ -1,0 +1,5 @@
+# robots.txt for www.itssdrc.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.itssdrc.com/sitemap.xml
