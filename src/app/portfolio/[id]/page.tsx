@@ -1,4 +1,5 @@
 
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { portfolioProjects } from "@/lib/portfolio-data";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { ImageGallery } from "@/components/image-gallery";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const project = portfolioProjects.find((p) => p.id === params.id);
@@ -73,21 +75,8 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                 )}
 
                 {project.gallery && (
-                  <div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 not-prose my-8">
-                      {project.gallery.map((img, index) => (
-                        <div key={index} className="overflow-hidden rounded-lg group aspect-square">
-                          <Image
-                            src={img.src}
-                            alt={img.alt}
-                            width={400}
-                            height={400}
-                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                            data-ai-hint={img.hint}
-                          />
-                        </div>
-                      ))}
-                    </div>
+                  <div className="not-prose my-8">
+                    <ImageGallery gallery={project.gallery} />
                   </div>
                 )}
 
