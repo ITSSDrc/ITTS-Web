@@ -63,6 +63,28 @@ export const portfolioProjects = [
     result: "Grâce à des identités visuelles fortes et professionnelles, nos clients ont vu leur notoriété et leur crédibilité augmenter. Des supports de communication clairs et esthétiques leur ont permis d'améliorer leurs campagnes marketing et d'attirer une nouvelle clientèle, renforçant ainsi leur positionnement sur le marché."
   },
   {
+    id: 'network-deployment-bunia',
+    client: 'Fournisseurs d\'Accès Internet & Entreprises',
+    title: 'Déploiement d\'Infrastructure Réseau à Bunia',
+    image: PlaceHolderImages.find(p => p.id === 'network-deployment'),
+    summary: 'Conception et déploiement d\'infrastructures réseau filaires (fibre, cuivre) et sans fil (Wi-Fi, 5G) pour connecter les quartiers, les entreprises et les institutions de la ville de Bunia.',
+    tags: ['Infrastructure Réseau', 'Fibre Optique', 'Réseau Sans Fil', 'Topologie Réseau', 'Cybersécurité'],
+    metrics: [
+      { label: 'Km de fibre déployés', value: '15+' },
+      { label: 'Points d\'accès installés', value: '150+' },
+      { label: 'Disponibilité réseau', value: '99.8%' },
+    ],
+    challenge: "La connectivité internet à Bunia était limitée, peu fiable et coûteuse. Les entreprises et les résidents souffraient d'un manque d'infrastructures robustes, ce qui freinait le développement économique et l'accès à l'information.",
+    solution: "Notre équipe réseau a mené une étude topographique complète de la ville pour planifier un déploiement optimal. Nous avons déployé des kilomètres de fibre optique dans les artères principales et mis en place des points d'accès sans fil (Wi-Fi et liaisons point-à-point) pour couvrir les zones moins denses. Nous avons configuré des cœurs de réseau redondants et mis en place des politiques de sécurité strictes pour garantir la fiabilité et la protection des données.",
+    gallery: [
+      { src: "/images/network-team/team-1.jpg", alt: "Équipe technique installant des équipements", hint: "technicians working" },
+      { src: "/images/network-team/team-2.jpg", alt: "Technicien sur un poteau tirant un câble", hint: "fiber optic installation" },
+      { src: "/images/network-team/team-3.jpg" , alt: "Configuration d'un routeur dans un data center", hint: "network configuration" },
+      { src: "/images/network-team/team-4.jpg", alt: "Vue d'ensemble d'une antenne de transmission", hint: "telecom tower" },
+    ],
+    result: "Ce projet a considérablement amélioré la connectivité dans les zones couvertes, offrant un accès internet plus rapide et plus stable. Plusieurs entreprises ont pu migrer vers des solutions cloud, et les fournisseurs d'accès locaux ont amélioré la qualité de leur service, stimulant ainsi l'économie numérique locale."
+  },
+  {
     id: 'computer-maintenance-services',
     client: 'Entreprises et Particuliers de Bunia',
     title: 'Services de Maintenance Informatique et Réparation',
@@ -159,7 +181,7 @@ export const portfolioProjects = [
     result: "La nouvelle approche personnalisée a augmenté l'engagement des étudiants de 45 %. Le taux de réussite des cours a bondi de 25 %, et la plateforme a pu réduire la nécessité d'un tutorat humain coûteux de 35 % grâce à son support automatisé et adaptatif."
   },
   {
-    id: 'agritech-marketplace',
+    id: 'agropastoral',
     client: 'Agropastoral',
     title: 'Plateforme de mise en relation pour produits agricoles',
     image: PlaceHolderImages.find(p => p.id === 'blog-agritech-portfolio'),
@@ -175,5 +197,3 @@ export const portfolioProjects = [
     result: "Agropastoral a créé un circuit court plus efficace, augmentant les revenus des producteurs de 30% en moyenne. Les acheteurs bénéficient de produits plus frais et d'une meilleure traçabilité. La plateforme a réduit le temps moyen de la commande à la livraison de 40%."
   },
 ];
-
-    

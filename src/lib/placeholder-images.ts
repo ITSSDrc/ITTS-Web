@@ -26,6 +26,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "graphic design portfolio"
     },
     {
+      "id": "network-deployment",
+      "description": "Techniciens installant des câbles de fibre optique sur un poteau en milieu urbain.",
+      "imageUrl": "/images/network-deployment.jpg",
+      "imageHint": "network deployment"
+    },
+    {
       "id": "computer-maintenance-project",
       "description": "Technicien en train de réparer un ordinateur portable dans un atelier.",
       "imageUrl": "/images/computer-maintenance.jpg",
