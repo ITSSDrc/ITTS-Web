@@ -5,9 +5,6 @@ import { z } from "zod";
 import { Resend } from 'resend';
 import { ContactEmailTemplate } from '@/components/contact-email-template';
 import * as React from 'react';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -55,7 +52,7 @@ export async function submitContactForm(
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'ITSS DRC <onboarding@resend.dev>',
+      from: 'ITSS Website <onboarding@resend.dev>',
       to: ['innovatechsolutionservice@gmail.com'],
       subject: subject || 'Nouveau message depuis le site ITSS',
       reply_to: email,
