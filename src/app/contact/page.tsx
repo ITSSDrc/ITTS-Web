@@ -6,6 +6,8 @@ import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
+export const runtime = 'nodejs';
+
 export const metadata: Metadata = {
   title: 'Contactez-Nous - ITSS',
   description: 'Contactez l\'équipe d\'ITSS pour toute demande d\'information, de devis ou de support.',

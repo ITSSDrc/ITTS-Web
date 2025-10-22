@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "src/app/api/genkit/**": {
-      "runtime": "node",
-      "memory": 1024
-    }
-  }
-}
