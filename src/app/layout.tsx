@@ -24,6 +24,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'ITSS - Solutions et Services Technologiques Innovants',
   description: 'Favoriser le succès des entreprises grâce à des solutions technologiques de pointe.',
+  icons: {
+    icon: '/images/itss-logo.png',
+  },
 };
 
 export default function RootLayout({
