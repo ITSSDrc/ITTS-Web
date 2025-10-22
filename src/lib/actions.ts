@@ -1,6 +1,12 @@
+
 "use server";
 
 import { z } from "zod";
+import { Resend } from 'resend';
+import { ContactEmailTemplate } from '@/components/contact-email-template';
+import * as React from 'react';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Le nom doit comporter au moins 2 caractères."),
@@ -41,14 +47,35 @@ export async function submitContactForm(
       success: false,
     };
   }
-  
-  // Here you would normally send an email, save to a database, etc.
-  // For this example, we'll just log it to the console.
-  console.log("Formulaire de contact soumis avec succès :");
-  console.log(validatedFields.data);
 
-  return {
-    message: "Merci pour votre message ! Nous vous répondrons sous peu.",
-    success: true,
-  };
+  const { name, email, subject, message } = validatedFields.data;
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'ITSS Website <onboarding@resend.dev>',
+      to: ['innovatechsolutionservice@gmail.com'],
+      subject: subject || 'Nouveau message depuis le site ITSS',
+      reply_to: email,
+      react: ContactEmailTemplate({ name, email, message }) as React.ReactElement,
+    });
+
+    if (error) {
+      console.error("Resend error:", error);
+      return {
+        message: "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.",
+        success: false,
+      };
+    }
+
+    return {
+      message: "Merci pour votre message ! Nous vous répondrons sous peu.",
+      success: true,
+    };
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    return {
+      message: "Une erreur inattendue est survenue. Veuillez réessayer plus tard.",
+      success: false,
+    };
+  }
 }
