@@ -55,7 +55,7 @@ export async function submitContactForm(
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'ITSS Website <onboarding@resend.dev>',
+      from: 'ITSS DRC <onboarding@resend.dev>',
       to: ['innovatechsolutionservice@gmail.com'],
       subject: subject || 'Nouveau message depuis le site ITSS',
       reply_to: email,
