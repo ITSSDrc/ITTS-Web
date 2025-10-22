@@ -11,8 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-// Importer le template ici pour aider le bundler de Vercel
-import { ContactEmailTemplate } from "@/components/contact-email-template";
 
 const initialState: ContactFormState = {
   message: "",
