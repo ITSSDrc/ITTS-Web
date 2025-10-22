@@ -14,6 +14,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "company logo"
     },
     {
+      "id": "mateya-podcast-app",
+      "description": "Personne écoutant un podcast sur un téléphone avec des icônes religieuses en arrière-plan.",
+      "imageUrl": "/images/mateya-podcast-app.jpg",
+      "imageHint": "podcast app"
+    },
+    {
       "id": "team-member-0",
       "description": "Portrait of a confident CEO.",
       "imageUrl": "/images/team-member-0.jpg",
