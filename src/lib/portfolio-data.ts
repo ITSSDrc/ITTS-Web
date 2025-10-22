@@ -8,14 +8,14 @@ export const portfolioProjects = [
     title: 'Mateya: L\'Application de Podcasts pour les Églises',
     image: PlaceHolderImages.find(p => p.id === 'mateya-podcast-app'),
     summary: 'Une application mobile pour iOS et Android permettant aux fidèles d\'écouter des prédications, des enseignements et des chants, renforçant la communauté chrétienne de Bunia.',
-    tags: ['Développement Mobile', 'Podcast', 'React Native', 'Firebase', 'Audio Streaming'],
+    tags: ['Développement Mobile', 'Podcast', 'Flutter', 'Supabase', 'Audio Streaming'],
     metrics: [
       { label: 'Utilisateurs Actifs', value: '+5,000' },
       { label: 'Églises Partenaires', value: '25+' },
       { label: 'Écoutes par semaine', value: '+10,000' },
     ],
     challenge: "De nombreuses églises à Bunia souhaitaient partager leurs messages audio avec leurs membres, en particulier ceux qui ne pouvaient pas assister aux services. Il n'existait aucune plateforme centralisée, simple d'utilisation et adaptée au contexte local (faible connectivité).",
-    solution: "Nous avons développé 'Mateya', une application mobile multiplateforme (iOS/Android) avec React Native. L'application permet aux églises de téléverser facilement des fichiers audio, de les classer par prédicateur ou par série. Pour les utilisateurs, l'application offre une écoute en streaming et une option de téléchargement pour une écoute hors ligne, cruciale pour les zones à faible connectivité. Nous avons utilisé Firebase pour l'authentification, la base de données et le stockage.",
+    solution: "Nous avons développé 'Mateya', une application mobile multiplateforme (iOS/Android) avec Flutter, ce qui garantit une expérience utilisateur fluide et native. L'application permet aux églises de téléverser facilement des fichiers audio, de les classer par prédicateur ou par série. Pour les utilisateurs, l'application offre une écoute en streaming et une option de téléchargement pour une écoute hors ligne, cruciale pour les zones à faible connectivité. Nous avons utilisé Supabase pour une base de données robuste, l'authentification des utilisateurs et le stockage des fichiers audio.",
     result: "Mateya est devenue l'application de référence pour la communauté chrétienne de Bunia. En 6 mois, elle a attiré plus de 5 000 utilisateurs actifs et a permis à plus de 25 églises de diffuser leurs messages. L'option de téléchargement a été un succès majeur, permettant de toucher des membres dans des zones rurales sans accès internet stable."
   },
   {
@@ -115,3 +115,5 @@ export const portfolioProjects = [
     result: "La solution a apporté une transparence totale, renforçant la confiance des consommateurs qui a augmenté de 50%. L'analyse des données logistiques a permis de réduire les pertes de produits périssables de 15%, augmentant directement les revenus des producteurs."
   },
 ];
+
+    
