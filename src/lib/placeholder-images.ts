@@ -180,6 +180,10 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "description": "Photo of ITSS team meeting.",
       "imageUrl": "/images/office-2.jpg",
       "imageHint": "team meeting"
-    }
+    },
+    { "id": "mateya-gallery-1", "description": "Mateya App Homescreen", "imageUrl": "/images/mateya-gallery/mateya-1.jpg", "imageHint": "app homescreen" },
+    { "id": "mateya-gallery-2", "description": "Mateya App Audio Player", "imageUrl": "/images/mateya-gallery/mateya-2.jpg", "imageHint": "app player" },
+    { "id": "mateya-gallery-3", "description": "Mateya App Sermon List", "imageUrl": "/images/mateya-gallery/mateya-3.jpg", "imageHint": "sermon list" },
+    { "id": "mateya-gallery-4", "description": "Mateya App Offline Mode", "imageUrl": "/images/mateya-gallery/mateya-4.jpg", "imageHint": "offline mode" }
   ]
 ;
