@@ -1,5 +1,4 @@
 
-
 export const blogPosts = [
     {
         id: "transformation-numerique-bunia",
