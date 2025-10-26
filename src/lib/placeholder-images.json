@@ -146,78 +146,6 @@
       "imageHint": "customer support"
     },
     {
-      "id": "blog-transformation-numerique-bunia",
-      "description": "Image illustrant la transformation numérique à Bunia.",
-      "imageUrl": "/images/itss-website-showcase.jpg",
-      "imageHint": "digital transformation"
-    },
-    {
-      "id": "blog-agritech-ituri",
-      "description": "Image illustrant l'AgriTech en Ituri.",
-      "imageUrl": "/images/blog-agritech.jpg",
-      "imageHint": "agritech africa"
-    },
-    {
-      "id": "blog-commerce-bunia-digitalisation",
-      "description": "Image illustrant la digitalisation du commerce à Bunia.",
-      "imageUrl": "/images/case-study-1.jpg",
-      "imageHint": "online store"
-    },
-    {
-      "id": "blog-fintech-bunia",
-      "description": "Image illustrant la finance mobile à Bunia.",
-      "imageUrl": "/images/case-study-2.jpg",
-      "imageHint": "mobile finance"
-    },
-    {
-      "id": "blog-education-universite-bunia",
-      "description": "Image illustrant l'éducation supérieure à Bunia.",
-      "imageUrl": "/images/blog-edtech-rdc.jpg",
-      "imageHint": "university education"
-    },
-    {
-      "id": "blog-education-tech-bunia",
-      "description": "Image illustrant l'EdTech à Bunia.",
-      "imageUrl": "/images/blog-edtech-rdc.jpg",
-      "imageHint": "online education"
-    },
-    {
-      "id": "blog-cybersecurite-pme-bunia",
-      "description": "Image illustrant la cybersécurité pour les PME.",
-      "imageUrl": "/images/service-security.jpg",
-      "imageHint": "cyber security"
-    },
-    {
-      "id": "blog-religion-technologie-bunia",
-      "description": "Image illustrant la technologie dans les communautés religieuses.",
-      "imageUrl": "/images/mateya-podcast-app.jpg",
-      "imageHint": "community technology"
-    },
-    {
-      "id": "blog-energie-solaire-ituri",
-      "description": "Image illustrant l'énergie solaire en Ituri.",
-      "imageUrl": "https://picsum.photos/seed/solar-ituri/600/400",
-      "imageHint": "solar energy"
-    },
-    {
-      "id": "blog-sante-connectee-rdc",
-      "description": "Image illustrant la santé connectée en RDC.",
-      "imageUrl": "/images/blog-health-rdc.jpg",
-      "imageHint": "telemedicine health"
-    },
-    {
-      "id": "blog-education-ecole-ituri",
-      "description": "Image illustrant la numérisation des écoles en Ituri.",
-      "imageUrl": "/images/blog-edtech-rdc.jpg",
-      "imageHint": "school digitalization"
-    },
-    {
-      "id": "blog-hub-innovation-bunia",
-      "description": "Image illustrant un hub d'innovation à Bunia.",
-      "imageUrl": "/images/mission-image.jpg",
-      "imageHint": "innovation hub"
-    },
-    {
       "id": "blog-health-rdc-portfolio",
       "description": "A healthcare worker in DRC using a digital tablet in a clinic.",
       "imageUrl": "/images/blog-health-rdc.jpg",
@@ -412,6 +340,66 @@
       "description": "Technicien réparant un ordinateur portable.",
       "imageUrl": "/images/service-maintenance.jpg",
       "imageHint": "hardware maintenance"
+    },
+    {
+      "id": "design-gallery-1",
+      "src": "/images/design-gallery/design-1.jpg",
+      "alt": "Exemple de design 1",
+      "hint": "modern logo"
+    },
+    {
+      "id": "design-gallery-2",
+      "src": "/images/design-gallery/design-2.jpg",
+      "alt": "Exemple de design 2",
+      "hint": "business card"
+    },
+    {
+      "id": "design-gallery-3",
+      "src": "/images/design-gallery/design-3.jpg",
+      "alt": "Exemple de design 3",
+      "hint": "flyer design"
+    },
+    {
+      "id": "design-gallery-4",
+      "src": "/images/design-gallery/design-4.jpg",
+      "alt": "Exemple de design 4",
+      "hint": "brochure layout"
+    },
+    {
+      "id": "design-gallery-5",
+      "src": "/images/design-gallery/design-5.jpg",
+      "alt": "Exemple de design 5",
+      "hint": "social media banner"
+    },
+    {
+      "id": "design-gallery-6",
+      "src": "/images/design-gallery/design-6.jpg",
+      "alt": "Exemple de design 6",
+      "hint": "packaging design"
+    },
+    {
+      "id": "design-gallery-7",
+      "src": "/images/design-gallery/design-7.jpg",
+      "alt": "Exemple de design 7",
+      "hint": "web design mockup"
+    },
+    {
+      "id": "design-gallery-8",
+      "src": "/images/design-gallery/design-8.jpg",
+      "alt": "Exemple de design 8",
+      "hint": "app icon"
+    },
+    {
+      "id": "design-gallery-9",
+      "src": "/images/design-gallery/design-9.jpg",
+      "alt": "Exemple de design 9",
+      "hint": "poster design"
+    },
+    {
+      "id": "design-gallery-10",
+      "src": "/images/design-gallery/design-10.jpg",
+      "alt": "Exemple de design 10",
+      "hint": "brand identity"
     }
   ]
 }
