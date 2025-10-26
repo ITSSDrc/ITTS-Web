@@ -52,7 +52,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "team-member-1",
       "description": "Portrait de Prince Ongala, Développeur.",
-      "imageUrl": "/images/prince-ongala.png",
+      "imageUrl": "/images/team-member-1.jpg",
       "imageHint": "male developer"
     },
     {
