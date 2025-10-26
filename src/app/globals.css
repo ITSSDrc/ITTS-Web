@@ -102,4 +102,19 @@
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
+
+  .tech-mesh-background {
+    background-color: hsl(var(--secondary));
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+  
+  .dark .tech-mesh-background {
+      background-image:
+        linear-gradient(hsl(var(--border) / 0.2) 1px, transparent 1px),
+        linear-gradient(to right, hsl(var(--border) / 0.2) 1px, transparent 1px);
+  }
+
 }
