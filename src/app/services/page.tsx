@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Cloud, Code, Shield, Server, LineChart, BrainCircuit, Palette, Wifi, Wrench } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -68,10 +68,10 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
+        {heroImage && heroImage.imageUrl && (
           <Image
             src={heroImage.imageUrl}
-            alt={heroImage.description}
+            alt={heroImage.description || "ITSS Logo"}
             fill
             className="object-contain p-16 md:p-24"
             data-ai-hint={heroImage.imageHint}
@@ -91,8 +91,8 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceDetails.map((service) => (
-              <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
-                {service.image && (
+              <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 overflow-hidden hover:-translate-y-2 transition-transform duration-300 group">
+                {service.image && service.image.imageUrl && (
                     <div className="aspect-video overflow-hidden">
                         <Image
                             src={service.image.imageUrl}
@@ -126,3 +126,5 @@ export default function ServicesPage() {
     </>
   );
 }
+
+    

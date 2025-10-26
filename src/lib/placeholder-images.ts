@@ -222,3 +222,5 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "service-maintenance", "description": "Technicien réparant un ordinateur portable.", "imageUrl": "/images/service-maintenance.jpg", "imageHint": "hardware maintenance" }
   ]
 ;
+
+    
