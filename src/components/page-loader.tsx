@@ -7,28 +7,29 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-const Loader = () => {
-    const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
-    return (
-        <div className="flex items-center justify-center h-full w-full">
-            {logo && (
-                <Image
-                    src={logo.imageUrl}
-                    alt="ITSS Logo"
-                    width={128}
-                    height={128}
-                    className="animate-pulse"
-                    priority
-                />
-            )}
-        </div>
-    );
-}
-
 function InnerPageLoader({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
+
+  // Define Loader component inside the client component
+  const Loader = () => {
+      const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
+      return (
+          <div className="flex items-center justify-center h-full w-full">
+              {logo && (
+                  <Image
+                      src={logo.imageUrl}
+                      alt="ITSS Logo"
+                      width={128}
+                      height={128}
+                      className="animate-pulse"
+                      priority
+                  />
+              )}
+          </div>
+      );
+  }
 
   useEffect(() => {
     setLoading(true);
