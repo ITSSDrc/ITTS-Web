@@ -20,7 +20,7 @@ export function ConnectionMeshAnimation() {
     let mouse = {
       x: null as number | null,
       y: null as number | null,
-      radius: 100,
+      radius: 150,
     };
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -99,7 +99,7 @@ export function ConnectionMeshAnimation() {
       particles = [];
       const isDark = theme === 'dark';
       const particleColor = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)';
-      const numberOfParticles = (canvas.height * canvas.width) / 9000;
+      const numberOfParticles = (canvas.height * canvas.width) / 7000;
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -131,8 +131,8 @@ export function ConnectionMeshAnimation() {
             Math.pow(particles[a].y - particles[b].y, 2)
           );
 
-          if (distance < 100) {
-            opacityValue = 1 - (distance / 100);
+          if (distance < 120) {
+            opacityValue = 1 - (distance / 120);
             ctx.strokeStyle = lineColor.replace(/, [0-9.]+\)/, `, ${opacityValue})`);
             ctx.lineWidth = 0.5;
             ctx.beginPath();
