@@ -25,7 +25,7 @@ export default function PortfolioPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover object-center opacity-30"
+            className="object-cover opacity-20 md:opacity-30"
             data-ai-hint={heroImage.imageHint}
           />
         )}

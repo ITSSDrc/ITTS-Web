@@ -30,7 +30,7 @@ export default function PressPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-20 md:opacity-30"
             data-ai-hint={heroImage.imageHint}
           />
         )}
