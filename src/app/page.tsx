@@ -108,7 +108,7 @@ export default function Home() {
                 {portfolioProjects.map((project) => (
                   <CarouselItem key={project.id}>
                     <Link href={`/portfolio/${project.id}`}>
-                      <Card className="overflow-hidden group glow-card">
+                      <Card className="overflow-hidden group glow-card bg-background border">
                          {project.image && (
                           <div className="aspect-video overflow-hidden">
                               <Image
