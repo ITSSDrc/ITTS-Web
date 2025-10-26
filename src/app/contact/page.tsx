@@ -15,24 +15,17 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
 
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-contain p-16 md:p-24"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Contactez-Nous</h1>
+          <div className="flex justify-center items-center gap-4">
+              <Phone className="w-10 h-10 md:w-14 md:h-14 text-primary animate-pulse" />
+              <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Contactez-Nous</h1>
+              <Phone className="w-10 h-10 md:w-14 md:h-14 text-primary animate-pulse" />
+          </div>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Nous sommes là pour vous aider. Une question ? Un projet en tête ? Contactez notre équipe d'experts.
           </p>
