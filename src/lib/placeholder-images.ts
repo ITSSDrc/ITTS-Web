@@ -184,6 +184,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "mateya-gallery-1", "description": "Mateya App Homescreen", "imageUrl": "/images/mateya-gallery/mateya-1.jpg", "imageHint": "app homescreen" },
     { "id": "mateya-gallery-2", "description": "Mateya App Audio Player", "imageUrl": "/images/mateya-gallery/mateya-2.jpg", "imageHint": "app player" },
     { "id": "mateya-gallery-3", "description": "Mateya App Sermon List", "imageUrl": "/images/mateya-gallery/mateya-3.jpg", "imageHint": "sermon list" },
-    { "id": "mateya-gallery-4", "description": "Mateya App Offline Mode", "imageUrl": "/images/mateya-gallery/mateya-4.jpg", "imageHint": "offline mode" }
+    { "id": "mateya-gallery-4", "description": "Mateya App Offline Mode", "imageUrl": "/images/mateya-gallery/mateya-4.jpg", "imageHint": "offline mode" },
+    { "id": "training-session-1", "src": "/images/gallery/training-1.jpg", "alt": "Équipe ITSS en session de formation sur le cloud.", "hint": "team training" },
+    { "id": "training-session-2", "src": "/images/gallery/training-2.jpg", "alt": "Atelier de développement agile avec post-its.", "hint": "agile workshop" },
+    { "id": "training-session-3", "src": "/images/gallery/training-3.jpg", "alt": "Un développeur présente une nouvelle architecture.", "hint": "developer presentation" },
+    { "id": "training-session-4", "src": "/images/gallery/training-4.jpg", "alt": "Session de brainstorming de l'équipe design.", "hint": "design brainstorming" },
+    { "id": "training-session-5", "src": "/images/gallery/training-5.jpg", "alt": "Formation sur les nouvelles techniques de cybersécurité.", "hint": "cybersecurity training" },
+    { "id": "training-session-6", "src": "/images/gallery/training-6.jpg", "alt": "Vue d'ensemble d'une session de codage en pair-programming.", "hint": "pair programming" }
   ]
 ;
