@@ -20,12 +20,12 @@ export function ConnectionMeshAnimation() {
     let mouse = {
       x: null as number | null,
       y: null as number | null,
-      radius: 150,
+      radius: 200, // Increased interaction radius
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      mouse.x = event.x;
-      mouse.y = event.y;
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
     };
     
     const handleMouseOut = () => {
@@ -44,15 +44,19 @@ export function ConnectionMeshAnimation() {
       baseY: number;
       density: number;
       color: string;
+      vx: number; // velocity x
+      vy: number; // velocity y
 
       constructor(x: number, y: number, color: string) {
         this.x = x;
         this.y = y;
-        this.size = 1;
+        this.size = 1.5; // Slightly larger particles
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 30) + 1;
+        this.density = (Math.random() * 40) + 5; // Increased density range
         this.color = color;
+        this.vx = (Math.random() - 0.5) * 0.5; // Initial random velocity
+        this.vy = (Math.random() - 0.5) * 0.5; // Initial random velocity
       }
 
       draw() {
@@ -65,32 +69,48 @@ export function ConnectionMeshAnimation() {
       }
 
       update() {
-        if (!mouse.x || !mouse.y) return;
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
+        // Interaction with mouse
+        if (mouse.x !== null && mouse.y !== null) {
+            let dx_mouse = mouse.x - this.x;
+            let dy_mouse = mouse.y - this.y;
+            let distance_mouse = Math.sqrt(dx_mouse * dx_mouse + dy_mouse * dy_mouse);
 
-        let forceDirectionX = dx / distance;
-        let forceDirectionY = dy / distance;
-
-        let maxDistance = mouse.radius;
-        let force = (maxDistance - distance) / maxDistance;
-
-        let directionX = forceDirectionX * force * this.density;
-        let directionY = forceDirectionY * force * this.density;
-
-        if (distance < mouse.radius) {
-          this.x -= directionX;
-          this.y -= directionY;
+            if (distance_mouse < mouse.radius) {
+                let force = (mouse.radius - distance_mouse) / mouse.radius;
+                this.x -= (dx_mouse / distance_mouse) * force * this.density * 0.1;
+                this.y -= (dy_mouse / distance_mouse) * force * this.density * 0.1;
+            } else {
+                 // Return to base position
+                this.returnToBase();
+            }
         } else {
-          if (this.x !== this.baseX) {
-            let dx = this.x - this.baseX;
-            this.x -= dx / 10;
-          }
-          if (this.y !== this.baseY) {
-            let dy = this.y - this.baseY;
-            this.y -= dy / 10;
-          }
+             // Return to base position if mouse is out
+            this.returnToBase();
+        }
+        
+        // Add constant subtle movement
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wall bouncing
+        if (this.x > canvas.width || this.x < 0) {
+            this.vx *= -1;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+            this.vy *= -1;
+        }
+      }
+
+      returnToBase() {
+        let dx_base = this.x - this.baseX;
+        let dy_base = this.y - this.baseY;
+        let distance_base = Math.sqrt(dx_base*dx_base + dy_base*dy_base);
+        if (distance_base > 1) {
+            this.x -= dx_base * 0.05;
+            this.y -= dy_base * 0.05;
+        } else {
+            this.x = this.baseX;
+            this.y = this.baseY;
         }
       }
     }
@@ -99,7 +119,7 @@ export function ConnectionMeshAnimation() {
       particles = [];
       const isDark = theme === 'dark';
       const particleColor = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)';
-      const numberOfParticles = (canvas.height * canvas.width) / 7000;
+      const numberOfParticles = (canvas.height * canvas.width) / 9000; // Adjusted density
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -111,8 +131,8 @@ export function ConnectionMeshAnimation() {
       if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
-        particles[i].draw();
         particles[i].update();
+        particles[i].draw();
       }
       connect();
       animationFrameId = requestAnimationFrame(animate);
@@ -122,7 +142,7 @@ export function ConnectionMeshAnimation() {
       if (!ctx) return;
       let opacityValue = 1;
       const isDark = theme === 'dark';
-      const lineColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+      const lineColor = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)';
 
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
@@ -131,10 +151,10 @@ export function ConnectionMeshAnimation() {
             Math.pow(particles[a].y - particles[b].y, 2)
           );
 
-          if (distance < 120) {
-            opacityValue = 1 - (distance / 120);
+          if (distance < 140) { // Increased connection distance
+            opacityValue = 1 - (distance / 140);
             ctx.strokeStyle = lineColor.replace(/, [0-9.]+\)/, `, ${opacityValue})`);
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(particles[b].x, particles[b].y);
