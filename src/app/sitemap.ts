@@ -22,7 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/press',
     '/privacy',
     '/terms',
-    '/cookies'
+    '/cookies',
+    '/team',
+    '/gallery'
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date().toISOString(),

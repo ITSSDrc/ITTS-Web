@@ -7,19 +7,31 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Twitter, Github, Youtube } from "lucide-react";
+import { Menu, Twitter, Github, Youtube, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Separator } from "@/components/ui/separator";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Nos réalisations" },
-  { href: "/about", label: "À propos" },
-  { href: "/contact", label: "Contact" },
 ];
+
+const companyLinks = [
+    { href: "/about", label: "À propos" },
+    { href: "/team", label: "Notre Équipe" },
+    { href: "/gallery", label: "Galerie" },
+    { href: "/blog", label: "Blog" },
+    { href: "/support#faq", label: "FAQ" },
+]
 
 export function Header() {
   const pathname = usePathname();
@@ -53,6 +65,30 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+             <DropdownMenu>
+              <DropdownMenuTrigger className={cn(
+                  "flex items-center gap-1 transition-colors hover:text-foreground/80 font-medium focus:outline-none",
+                  companyLinks.some(link => pathname.startsWith(link.href.split('#')[0]) && link.href !== '/') ? "text-foreground" : "text-foreground/60"
+              )}>
+                Entreprise <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {companyLinks.map(link => (
+                    <DropdownMenuItem key={link.href} asChild>
+                        <Link href={link.href}>{link.label}</Link>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link
+                href="/contact"
+                className={cn(
+                  "transition-colors hover:text-foreground/80 font-medium",
+                  pathname === "/contact" ? "text-foreground" : "text-foreground/60"
+                )}
+              >
+                Contact
+              </Link>
           </nav>
         </div>
 
@@ -104,6 +140,32 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
+                 <p className="text-xl font-medium text-foreground/80 mt-4">Entreprise</p>
+                 <div className="flex flex-col gap-4 pl-4">
+                    {companyLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={cn(
+                          "text-lg font-medium transition-colors hover:text-foreground/80",
+                          pathname === link.href ? "text-foreground" : "text-foreground/60"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                </div>
+                 <Link
+                    href="/contact"
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(
+                      "text-xl font-medium transition-colors hover:text-foreground/80 pt-4",
+                      pathname === "/contact" ? "text-foreground" : "text-foreground/60"
+                    )}
+                  >
+                    Contact
+                  </Link>
               </nav>
             </div>
 
@@ -127,7 +189,7 @@ export function Header() {
         <Link href="/" className="flex items-center space-x-2 md:hidden">
           {logo && <Image 
             src={logo.imageUrl}
-            alt={logo.description} 
+            alt={logo.description}
             width={40} 
             height={40} 
             className="rounded-full"

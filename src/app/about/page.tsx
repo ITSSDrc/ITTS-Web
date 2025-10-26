@@ -6,6 +6,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import type { Metadata } from 'next';
 import { Lightbulb, Target, Users } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: 'À Propos - ITSS',
@@ -43,8 +45,7 @@ const values = [
 
 export default function AboutPage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
-  const teamImages = PlaceHolderImages.filter(p => p.id.startsWith('team-member'));
-
+  
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
@@ -103,23 +104,13 @@ export default function AboutPage() {
             <span className="text-primary font-semibold">NOTRE ÉQUIPE</span>
             <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Les Experts Derrière Notre Succès</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-              Découvrez les esprits brillants qui pilotent l'innovation chez ITSS.
+              Découvrez les esprits brillants qui pilotent l'innovation chez ITSS. Notre équipe est notre plus grande force.
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member) => {
-              const memberImage = teamImages.find(img => img.id === member.imageId);
-              return (
-                <Link key={member.id} href={`/team/${member.id}`} className="text-center group block">
-                  <Avatar className="h-32 w-32 mx-auto mb-4 ring-2 ring-primary/50 ring-offset-4 ring-offset-secondary transform group-hover:scale-105 transition-transform duration-300">
-                    {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Photo de ${member.name}`} data-ai-hint={memberImage.imageHint} />}
-                    <AvatarFallback className="text-3xl bg-muted">{member.initials}</AvatarFallback>
-                  </Avatar>
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.role}</p>
-                </Link>
-              )
-            })}
+            <Button asChild className="mt-8" size="lg">
+              <Link href="/team">
+                Rencontrer l'équipe <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
