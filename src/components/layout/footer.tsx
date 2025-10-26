@@ -16,9 +16,8 @@ export function Footer() {
   }, []);
   
   return (
-    <footer className={cn("border-t bg-secondary/50 relative overflow-hidden")}>
-      <div className="absolute inset-0 tech-mesh-background" />
-      <div className="container mx-auto max-w-screen-xl px-4 py-16 relative z-10">
+    <footer className={cn("border-t bg-secondary/50")}>
+      <div className="container mx-auto max-w-screen-xl px-4 py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
