@@ -16,9 +16,9 @@ export function Footer() {
   }, []);
   
   return (
-    <footer className={cn("border-t bg-secondary/50")}>
+    <footer className={cn("border-t bg-background/50")}>
       <div className="container mx-auto max-w-screen-xl px-4 py-16">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
                {logo && <Image 
@@ -33,6 +33,17 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Votre partenaire de confiance pour l'innovation et la transformation numérique.
             </p>
+            <div className="flex items-center gap-4 mt-6">
+              <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+              </Link>
+              <Link href="https://github.com/ITSSDrc" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+              </Link>
+              <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <Youtube className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+              </Link>
+            </div>
           </div>
           
           <div>
@@ -64,31 +75,15 @@ export function Footer() {
               <li><Link href="/portfolio" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Portfolio</Link></li>
             </ul>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground">Légal</h3>
-            <ul className="space-y-3">
-              <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Conditions d'utilisation</Link></li>
-              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Politique de confidentialité</Link></li>
-               <li><Link href="/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Politique des cookies</Link></li>
-            </ul>
-          </div>
-
         </div>
         <div className="mt-16 border-t pt-8 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center sm:text-left">
               © {year} ITSS, Inc. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 mt-4 sm:mt-0">
-              <Link href="https://x.com/ITSSDrc" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
-              </Link>
-              <Link href="https://github.com/ITSSDrc" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
-              </Link>
-              <Link href="https://www.youtube.com/channel/UCEKykRG6I-5G5CE54FB3-4A" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                <Youtube className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
-              </Link>
+               <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Conditions d'utilisation</Link>
+               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Confidentialité</Link>
+               <Link href="/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookies</Link>
             </div>
         </div>
       </div>
