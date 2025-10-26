@@ -148,49 +148,49 @@
     {
       "id": "blog-transformation-numerique-bunia",
       "description": "Image illustrant la transformation numérique à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/bunia-digital/600/400",
+      "imageUrl": "/images/itss-website-showcase.jpg",
       "imageHint": "digital transformation"
     },
     {
       "id": "blog-agritech-ituri",
       "description": "Image illustrant l'AgriTech en Ituri.",
-      "imageUrl": "https://picsum.photos/seed/agritech/600/400",
+      "imageUrl": "/images/blog-agritech.jpg",
       "imageHint": "agritech africa"
     },
     {
       "id": "blog-commerce-bunia-digitalisation",
       "description": "Image illustrant la digitalisation du commerce à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/ecommerce-bunia/600/400",
+      "imageUrl": "/images/case-study-1.jpg",
       "imageHint": "online store"
     },
     {
       "id": "blog-fintech-bunia",
       "description": "Image illustrant la finance mobile à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/fintech-bunia/600/400",
+      "imageUrl": "/images/case-study-2.jpg",
       "imageHint": "mobile finance"
     },
     {
       "id": "blog-education-universite-bunia",
       "description": "Image illustrant l'éducation supérieure à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/university-bunia/600/400",
+      "imageUrl": "/images/blog-edtech-rdc.jpg",
       "imageHint": "university education"
     },
     {
       "id": "blog-education-tech-bunia",
       "description": "Image illustrant l'EdTech à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/edtech-bunia/600/400",
+      "imageUrl": "/images/blog-edtech-rdc.jpg",
       "imageHint": "online education"
     },
     {
       "id": "blog-cybersecurite-pme-bunia",
       "description": "Image illustrant la cybersécurité pour les PME.",
-      "imageUrl": "https://picsum.photos/seed/cybersecurity-bunia/600/400",
+      "imageUrl": "/images/service-security.jpg",
       "imageHint": "cyber security"
     },
     {
       "id": "blog-religion-technologie-bunia",
       "description": "Image illustrant la technologie dans les communautés religieuses.",
-      "imageUrl": "https://picsum.photos/seed/community-tech/600/400",
+      "imageUrl": "/images/mateya-podcast-app.jpg",
       "imageHint": "community technology"
     },
     {
@@ -202,19 +202,19 @@
     {
       "id": "blog-sante-connectee-rdc",
       "description": "Image illustrant la santé connectée en RDC.",
-      "imageUrl": "https://picsum.photos/seed/telemedicine-drc/600/400",
+      "imageUrl": "/images/blog-health-rdc.jpg",
       "imageHint": "telemedicine health"
     },
     {
       "id": "blog-education-ecole-ituri",
       "description": "Image illustrant la numérisation des écoles en Ituri.",
-      "imageUrl": "https://picsum.photos/seed/school-digital-ituri/600/400",
+      "imageUrl": "/images/blog-edtech-rdc.jpg",
       "imageHint": "school digitalization"
     },
     {
       "id": "blog-hub-innovation-bunia",
       "description": "Image illustrant un hub d'innovation à Bunia.",
-      "imageUrl": "https://picsum.photos/seed/innovation-hub-bunia/600/400",
+      "imageUrl": "/images/mission-image.jpg",
       "imageHint": "innovation hub"
     },
     {
