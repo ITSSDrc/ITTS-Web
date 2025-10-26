@@ -109,7 +109,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "services-hero",
       "description": "Data visualization and analytics dashboard on a screen.",
-      "imageUrl": "/images/services-hero.jpg",
+      "imageUrl": "/images/services-hero-new.jpg",
       "imageHint": "data visualization"
     },
     {
