@@ -38,23 +38,33 @@ const services = [
   },
 ];
 
+const Orb = () => (
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="orb-sphere">
+                {[...Array(10)].map((_, i) => (
+                    <div key={i} className="orb" />
+                ))}
+            </div>
+            <div className="orb-arcs">
+                {[...Array(4)].map((_, i) => (
+                    <div key={i} className={`arc arc-${i + 1}`} />
+                ))}
+            </div>
+        </div>
+    </div>
+);
+
+
 export default function Home() {
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
-  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
       <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
-         {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-contain p-16"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <div className="absolute inset-0">
+          <Orb />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="container mx-auto px-4 grid grid-cols-1 gap-12 items-center justify-items-center relative z-10">
           <div className="text-center">
