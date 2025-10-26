@@ -4,18 +4,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, UserCircle } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/blog-data";
+import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
 
 
 const POSTS_PER_PAGE = 6;
 
 export default function BlogPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'blog-hero');
   const [visiblePosts, setVisiblePosts] = useState(POSTS_PER_PAGE);
 
   const loadMorePosts = () => {
@@ -25,16 +24,7 @@ export default function BlogPage() {
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Le Blog ITSS</h1>

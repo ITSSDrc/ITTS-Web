@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import type { Metadata } from 'next';
 import Link from "next/link";
 import { teamMembers } from '@/app/about/page';
+import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
 
 export const metadata: Metadata = {
   title: 'Notre Équipe - ITSS',
@@ -13,21 +14,11 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
     const teamImages = PlaceHolderImages.filter(p => p.id.startsWith('team-member'));
-    const heroImage = PlaceHolderImages.find(p => p.id === 'about-us-hero');
 
     return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Notre Équipe</h1>

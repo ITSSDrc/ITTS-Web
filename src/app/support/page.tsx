@@ -1,10 +1,11 @@
 
 import type { Metadata } from 'next';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LifeBuoy, Book, MessageSquare, CreditCard, Cloud, Shield, Code, BrainCircuit } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { LifeBuoy, Book, MessageSquare, Cloud, Shield, Code, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 
 export const metadata: Metadata = {
   title: 'Support - ITSS',
@@ -69,8 +70,10 @@ const faqItems = [
 export default function SupportPage() {
   return (
     <>
-        <section className="bg-secondary py-24 md:py-32">
-            <div className="container mx-auto px-4 text-center">
+        <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+            <ConnectionMeshAnimation />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+            <div className="relative z-10 container mx-auto px-4 text-center">
                 <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Centre d'Aide</h1>
                 <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
                     Nous sommes là pour vous aider. Trouvez des réponses rapides ou contactez notre équipe d'experts.

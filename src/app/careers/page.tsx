@@ -1,11 +1,10 @@
 
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, Building, MapPin, Users, Calendar } from 'lucide-react';
+import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 
 export const metadata: Metadata = {
   title: 'Carrières - ITSS',
@@ -62,21 +61,10 @@ const companyValues = [
 ]
 
 export default function CareersPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'about-us-hero');
-
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Rejoignez Notre Équipe</h1>

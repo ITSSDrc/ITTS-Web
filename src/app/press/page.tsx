@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, Mail, Newspaper } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 
 
 export const metadata: Metadata = {
@@ -18,23 +19,13 @@ export const metadata: Metadata = {
 
 export default function PressPage() {
   const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
-  const heroImage = PlaceHolderImages.find(p => p.id === 'contact-hero');
   const leadershipTeam = teamMembers.slice(0, 3);
   const teamImages = PlaceHolderImages.filter(p => p.id.startsWith('team-member'));
 
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Kit Média & Presse</h1>

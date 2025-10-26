@@ -3,8 +3,7 @@ import * as React from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Cloud, Code, Palette, Shield, Network, BarChart, BrainCircuit, Wrench } from "lucide-react";
 import type { Metadata } from 'next';
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
 
 export const metadata: Metadata = {
   title: 'Nos Services - ITSS',
@@ -63,21 +62,10 @@ const serviceDetails = [
 ];
 
 export default function ServicesPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'services-hero');
-
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center">
-        {heroImage && heroImage.imageUrl && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description || "ITSS Services"}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Nos Services</h1>

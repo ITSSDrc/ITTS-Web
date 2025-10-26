@@ -2,11 +2,11 @@
 "use client";
 
 import { useState } from 'react';
-import type { Metadata } from 'next';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Search, Book, Cloud, Code } from 'lucide-react';
 import Link from 'next/link';
+import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 
 // Since this is a client component, we can't export metadata directly.
 // This should be moved to a layout file or parent server component if SEO is critical.
@@ -48,8 +48,10 @@ export default function DocumentationPage() {
 
   return (
     <>
-      <section className="bg-secondary py-24 md:py-32">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+        <ConnectionMeshAnimation />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Portail de Documentation</h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
                 Toutes les ressources dont vous avez besoin pour intégrer et maîtriser nos solutions.
