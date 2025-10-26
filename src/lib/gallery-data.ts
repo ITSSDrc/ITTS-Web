@@ -41,10 +41,16 @@ export const practicalActivities = [
     title: 'Séance de travail au serveur',
     description: "De la conception à la livraison, nous collaborons étroitement avec nos clients pour garantir que leur vision devienne une réalité.",
     gallery: [
-      PlaceHolderImages.find(p => p.id === 'presentation-gallery-1'),
-      PlaceHolderImages.find(p => p.id === 'presentation-gallery-2'),
-      PlaceHolderImages.find(p => p.id === 'presentation-gallery-3'),
-      PlaceHolderImages.find(p => p.id === 'presentation-gallery-4'),
+      PlaceHolderImages.find(p => p.id === 'server-work-1'),
+      PlaceHolderImages.find(p => p.id === 'server-work-2'),
+      PlaceHolderImages.find(p => p.id === 'server-work-3'),
+      PlaceHolderImages.find(p => p.id === 'server-work-4'),
+      PlaceHolderImages.find(p => p.id === 'server-work-5'),
+      PlaceHolderImages.find(p => p.id === 'server-work-6'),
+      PlaceHolderImages.find(p => p.id === 'server-work-7'),
+      PlaceHolderImages.find(p => p.id === 'server-work-8'),
+      PlaceHolderImages.find(p => p.id === 'server-work-9'),
+      PlaceHolderImages.find(p => p.id === 'server-work-10'),
     ].filter(Boolean) as GalleryImage[]
   }
 ];

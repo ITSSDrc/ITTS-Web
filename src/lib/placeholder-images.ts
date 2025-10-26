@@ -202,9 +202,15 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "network-gallery-2", "src": "/images/network-team/team-2.jpg", "alt": "Technicien sur un poteau tirant un câble de fibre optique.", "hint": "fiber optic installation" },
     { "id": "network-gallery-3", "src": "/images/network-team/team-3.jpg", "alt": "Configuration d'un routeur dans un data center.", "hint": "network configuration" },
     { "id": "network-gallery-4", "src": "/images/network-team/team-4.jpg", "alt": "Vue d'ensemble d'une antenne de transmission.", "hint": "telecom tower" },
-    { "id": "presentation-gallery-1", "src": "/images/gallery/presentation-1.jpg", "alt": "Présentation d'un projet client dans une salle de réunion.", "hint": "client presentation" },
-    { "id": "presentation-gallery-2", "src": "/images/gallery/presentation-2.jpg", "alt": "Démonstration d'une application sur un grand écran.", "hint": "app demonstration" },
-    { "id": "presentation-gallery-3", "src": "/images/gallery/presentation-3.jpg", "alt": "Équipe projet célébrant le lancement d'un produit.", "hint": "product launch" },
-    { "id": "presentation-gallery-4", "src": "/images/gallery/presentation-4.jpg", "alt": "Atelier de co-conception avec un client.", "hint": "client workshop" }
+    { "id": "server-work-1", "src": "/images/server-work/config-1.jpg", "alt": "Technicien travaillant sur une baie de serveurs.", "hint": "server rack" },
+    { "id": "server-work-2", "src": "/images/server-work/config-2.jpg", "alt": "Câblage réseau dans une salle de serveurs.", "hint": "network cables" },
+    { "id": "server-work-3", "src": "/images/server-work/config-3.jpg", "alt": "Vue de près d'un technicien connectant des câbles Ethernet.", "hint": "ethernet connection" },
+    { "id": "server-work-4", "src": "/images/server-work/config-4.jpg", "alt": "Inspection d'un serveur lame.", "hint": "server blade" },
+    { "id": "server-work-5", "src": "/images/server-work/config-5.jpg", "alt": "Salle de serveurs avec des rangées de racks.", "hint": "data center" },
+    { "id": "server-work-6", "src": "/images/server-work/config-6.jpg", "alt": "Administrateur système surveillant les performances du réseau.", "hint": "network monitoring" },
+    { "id": "server-work-7", "src": "/images/server-work/config-7.jpg", "alt": "Installation d'un nouveau serveur dans un rack.", "hint": "server installation" },
+    { "id": "server-work-8", "src": "/images/server-work/config-8.jpg", "alt": "Gestion des câbles dans une armoire de serveur.", "hint": "cable management" },
+    { "id": "server-work-9", "src": "/images/server-work/config-9.jpg", "alt": "Diagnostic d'un problème matériel sur un serveur.", "hint": "server diagnostics" },
+    { "id": "server-work-10", "src": "/images/server-work/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" }
   ]
 ;
