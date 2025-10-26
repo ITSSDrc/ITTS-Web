@@ -50,11 +50,12 @@ export default function Home() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-contain opacity-10 dark:opacity-20 p-16"
+            className="object-contain p-16"
             data-ai-hint={heroImage.imageHint}
+            priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         <div className="container mx-auto px-4 grid grid-cols-1 gap-12 items-center justify-items-center relative z-10">
           <div className="text-center">
             <FadeInOnScroll>

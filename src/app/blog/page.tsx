@@ -30,11 +30,12 @@ export default function BlogPage() {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-20 md:opacity-30"
+            className="object-cover"
             data-ai-hint={heroImage.imageHint}
+            priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Le Blog ITSS</h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
