@@ -14,49 +14,49 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     name: "Solutions Cloud",
-    icon: <Cloud />,
+    image: PlaceHolderImages.find(p => p.id === 'service-cloud'),
     description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Nous construisons des architectures cloud évolutives, résilientes et rentables sur AWS, Azure et Google Cloud.",
     features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur (Serverless)", "Conteneurisation (Docker & Kubernetes)"],
   },
   {
     name: "Logiciels sur Mesure",
-    icon: <Code />,
+    image: PlaceHolderImages.find(p => p.id === 'service-software'),
     description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales.",
     features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Maintenance et support continus"],
   },
   {
     name: "Design UI/UX",
-    icon: <Palette />,
+    image: PlaceHolderImages.find(p => p.id === 'service-design'),
     description: "Créez des expériences utilisateur exceptionnelles avec notre expertise en design. Nous concevons des interfaces intuitives et esthétiques qui captivent vos utilisateurs et renforcent votre marque.",
     features: ["Recherche utilisateur & Personas", "Prototypage & Wireframing", "Conception d'interfaces (UI)", "Création de systèmes de design"],
   },
   {
     name: "Cybersécurité",
-    icon: <Shield />,
+    image: PlaceHolderImages.find(p => p.id === 'service-security'),
     description: "Nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures proactives.",
     features: ["Tests d'intrusion & Audits", "Détection et réponse gérées (MDR)", "Conformité (RGPD, ISO 27001)", "Formation à la sécurité"],
   },
   {
     name: "Infrastructure & Réseau",
-    icon: <Wifi />,
+    image: PlaceHolderImages.find(p => p.id === 'service-network'),
     description: "Concentrez-vous sur votre métier grâce à une infrastructure réseau fiable, sécurisée et performante, gérée par nos experts.",
     features: ["Conception d'architecture LAN/WAN", "Gestion et surveillance de réseau", "Sécurité des infrastructures", "Solutions de connectivité et VPN"],
   },
   {
     name: "Analyse de Données & BI",
-    icon: <LineChart />,
+    image: PlaceHolderImages.find(p => p.id === 'service-data'),
     description: "Transformez vos données en informations exploitables. Nous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées et découvrir de nouvelles opportunités.",
     features: ["Entreposage de données", "Développement de pipelines ETL", "Tableaux de bord interactifs (Power BI, Tableau)", "Analyse prédictive et Machine Learning"],
   },
   {
     name: "Conseil en IA & DevOps",
-    icon: <BrainCircuit />,
+    image: PlaceHolderImages.find(p => p.id === 'service-ai'),
     description: "Accélérez votre cycle de développement et intégrez l'intelligence artificielle. Nous automatisons vos processus et mettons en œuvre des solutions d'IA pour booster l'efficacité et l'innovation.",
     features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Stratégie et intégration de l'IA", "Développement de modèles personnalisés"],
   },
   {
     name: "Maintenance Matériel",
-    icon: <Wrench />,
+    image: PlaceHolderImages.find(p => p.id === 'service-maintenance'),
     description: "Assurez la longévité et la performance de votre parc informatique avec nos services de maintenance préventive et curative sur serveurs, postes de travail et périphériques.",
     features: ["Diagnostic et réparation de matériel", "Mises à niveau de composants (RAM, SSD)", "Nettoyage physique et dépoussiérage", "Gestion du cycle de vie du matériel"],
   },
@@ -91,14 +91,21 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceDetails.map((service) => (
-              <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 hover:-translate-y-2 transition-transform duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary/10 p-3 rounded-lg text-primary">
-                      {React.cloneElement(service.icon, { className: "h-7 w-7" })}
+              <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                {service.image && (
+                    <div className="aspect-video overflow-hidden">
+                        <Image
+                            src={service.image.imageUrl}
+                            alt={service.image.description || service.name}
+                            width={600}
+                            height={338}
+                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                            data-ai-hint={service.image.imageHint}
+                        />
                     </div>
-                    <CardTitle className="text-2xl font-headline">{service.name}</CardTitle>
-                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-2xl font-headline">{service.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <p className="text-muted-foreground mb-6">{service.description}</p>

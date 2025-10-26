@@ -211,6 +211,14 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "server-work-7", "src": "/images/server-config/config-7.jpg", "alt": "Installation d'un nouveau serveur dans un rack.", "hint": "server installation" },
     { "id": "server-work-8", "src": "/images/server-config/config-8.jpg", "alt": "Gestion des câbles dans une armoire de serveur.", "hint": "cable management" },
     { "id": "server-work-9", "src": "/images/server-config/config-9.jpg", "alt": "Diagnostic d'un problème matériel sur un serveur.", "hint": "server diagnostics" },
-    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" }
+    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" },
+    { "id": "service-cloud", "description": "Illustration de services cloud avec des serveurs et des nuages.", "imageUrl": "/images/service-cloud.jpg", "imageHint": "cloud computing" },
+    { "id": "service-software", "description": "Développeur écrivant du code sur plusieurs écrans.", "imageUrl": "/images/service-software.jpg", "imageHint": "software development" },
+    { "id": "service-design", "description": "Designer travaillant sur une interface utilisateur sur une tablette graphique.", "imageUrl": "/images/service-design.jpg", "imageHint": "ui design" },
+    { "id": "service-security", "description": "Cadenas numérique symbolisant la cybersécurité.", "imageUrl": "/images/service-security.jpg", "imageHint": "cyber security" },
+    { "id": "service-network", "description": "Techniciens travaillant dans une salle de serveurs.", "imageUrl": "/images/service-network.jpg", "imageHint": "network infrastructure" },
+    { "id": "service-data", "description": "Graphiques et tableaux de bord d'analyse de données.", "imageUrl": "/images/service-data.jpg", "imageHint": "data analytics" },
+    { "id": "service-ai", "description": "Cerveau numérique avec des circuits lumineux, représentant l'IA.", "imageUrl": "/images/service-ai.jpg", "imageHint": "artificial intelligence" },
+    { "id": "service-maintenance", "description": "Technicien réparant un ordinateur portable.", "imageUrl": "/images/service-maintenance.jpg", "imageHint": "hardware maintenance" }
   ]
 ;
