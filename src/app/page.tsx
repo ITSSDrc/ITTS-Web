@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
-      <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section className="relative w-full pt-12 pb-12 md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
         <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="container mx-auto px-4 grid grid-cols-1 gap-12 items-center justify-items-center relative z-10">
