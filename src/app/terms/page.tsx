@@ -1,14 +1,6 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import type { Metadata } from 'next';
-
-/*
-export const metadata: Metadata = {
-  title: 'Conditions d\'Utilisation - ITSS',
-  description: 'Consultez les conditions d\'utilisation de nos services.',
-};
-*/
 
 export default function TermsPage() {
     const [currentDate, setCurrentDate] = useState('');

@@ -1,14 +1,6 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import type { Metadata } from 'next';
-
-/*
-export const metadata: Metadata = {
-  title: 'Politique de Confidentialité - ITSS',
-  description: 'Découvrez comment ITSS collecte, utilise et protège vos données personnelles.',
-};
-*/
 
 export default function PrivacyPage() {
     const [currentDate, setCurrentDate] = useState('');

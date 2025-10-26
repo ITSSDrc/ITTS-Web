@@ -1,14 +1,6 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import type { Metadata } from 'next';
-
-/*
-export const metadata: Metadata = {
-  title: 'Politique des Cookies - ITSS',
-  description: 'Comprendre comment ITSS utilise les cookies sur son site web.',
-};
-*/
 
 export default function CookiesPage() {
   const [currentDate, setCurrentDate] = useState('');
