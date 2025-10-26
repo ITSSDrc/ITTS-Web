@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 
 export const runtime = 'nodejs';
 
@@ -19,13 +20,10 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+        <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="flex justify-center items-center gap-4">
-              <Phone className="w-10 h-10 md:w-14 md:h-14 text-primary animate-pulse" />
-              <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Contactez-Nous</h1>
-              <Phone className="w-10 h-10 md:w-14 md:h-14 text-primary animate-pulse" />
-          </div>
+          <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight">Contactez-Nous</h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Nous sommes là pour vous aider. Une question ? Un projet en tête ? Contactez notre équipe d'experts.
           </p>
