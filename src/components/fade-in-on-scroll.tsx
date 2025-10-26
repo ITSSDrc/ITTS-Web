@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef, useEffect, useState } from "react";
@@ -58,3 +59,5 @@ export function FadeInOnScroll({ children, className, delay = 0 }: FadeInOnScrol
     </div>
   );
 }
+
+    
