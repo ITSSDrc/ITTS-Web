@@ -37,8 +37,8 @@ export const practicalActivities = [
     ].filter(Boolean) as GalleryImage[]
   },
   {
-    id: 'client-project-presentation',
-    title: 'Présentation de Projets Clients',
+    id: 'server-work-session',
+    title: 'Séance de travail au serveur',
     description: "De la conception à la livraison, nous collaborons étroitement avec nos clients pour garantir que leur vision devienne une réalité.",
     gallery: [
       PlaceHolderImages.find(p => p.id === 'presentation-gallery-1'),
