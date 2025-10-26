@@ -3,8 +3,9 @@
 
 import React, { useRef, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
-export function ConnectionMeshAnimation() {
+export function ConnectionMeshAnimation({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme } = useTheme();
 
@@ -20,7 +21,7 @@ export function ConnectionMeshAnimation() {
     let mouse = {
       x: null as number | null,
       y: null as number | null,
-      radius: 200, // Increased interaction radius
+      radius: 200,
     };
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -50,13 +51,13 @@ export function ConnectionMeshAnimation() {
       constructor(x: number, y: number, color: string) {
         this.x = x;
         this.y = y;
-        this.size = 1.5; // Slightly larger particles
+        this.size = 1.5;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 40) + 5; // Increased density range
+        this.density = (Math.random() * 40) + 5;
         this.color = color;
-        this.vx = (Math.random() - 0.5) * 0.5; // Initial random velocity
-        this.vy = (Math.random() - 0.5) * 0.5; // Initial random velocity
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
       }
 
       draw() {
@@ -69,7 +70,6 @@ export function ConnectionMeshAnimation() {
       }
 
       update() {
-        // Interaction with mouse
         if (mouse.x !== null && mouse.y !== null) {
             let dx_mouse = mouse.x - this.x;
             let dy_mouse = mouse.y - this.y;
@@ -80,19 +80,15 @@ export function ConnectionMeshAnimation() {
                 this.x -= (dx_mouse / distance_mouse) * force * this.density * 0.1;
                 this.y -= (dy_mouse / distance_mouse) * force * this.density * 0.1;
             } else {
-                 // Return to base position
                 this.returnToBase();
             }
         } else {
-             // Return to base position if mouse is out
             this.returnToBase();
         }
         
-        // Add constant subtle movement
         this.x += this.vx;
         this.y += this.vy;
 
-        // Wall bouncing
         if (this.x > canvas.width || this.x < 0) {
             this.vx *= -1;
         }
@@ -119,7 +115,7 @@ export function ConnectionMeshAnimation() {
       particles = [];
       const isDark = theme === 'dark';
       const particleColor = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)';
-      const numberOfParticles = (canvas.height * canvas.width) / 9000; // Adjusted density
+      const numberOfParticles = (canvas.height * canvas.width) / 9000;
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -151,7 +147,7 @@ export function ConnectionMeshAnimation() {
             Math.pow(particles[a].y - particles[b].y, 2)
           );
 
-          if (distance < 140) { // Increased connection distance
+          if (distance < 140) {
             opacityValue = 1 - (distance / 140);
             ctx.strokeStyle = lineColor.replace(/, [0-9.]+\)/, `, ${opacityValue})`);
             ctx.lineWidth = 0.8;
@@ -186,5 +182,5 @@ export function ConnectionMeshAnimation() {
     };
   }, [theme]);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 z-0 h-full w-full" />;
+  return <canvas ref={canvasRef} className={cn("absolute inset-0 z-0 h-full w-full", className)} />;
 }

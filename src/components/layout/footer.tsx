@@ -17,7 +17,7 @@ export function Footer() {
   
   return (
     <footer className={cn("relative border-t bg-background/50 backdrop-blur-sm overflow-hidden")}>
-      <ConnectionMeshAnimation />
+      <ConnectionMeshAnimation className="opacity-30" />
       <div className="relative z-10 container mx-auto max-w-screen-xl px-4 py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-2">
