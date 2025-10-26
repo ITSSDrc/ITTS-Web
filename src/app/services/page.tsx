@@ -1,6 +1,6 @@
 
 import * as React from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Cloud, Code, Palette, Shield, Network, BarChart, BrainCircuit, Wrench } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
@@ -63,7 +63,7 @@ const serviceDetails = [
 ];
 
 export default function ServicesPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'itss-logo');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'services-hero');
 
   return (
     <>
@@ -71,9 +71,9 @@ export default function ServicesPage() {
         {heroImage && heroImage.imageUrl && (
           <Image
             src={heroImage.imageUrl}
-            alt={heroImage.description || "ITSS Logo"}
+            alt={heroImage.description || "ITSS Services"}
             fill
-            className="object-contain p-16 md:p-24"
+            className="object-cover"
             data-ai-hint={heroImage.imageHint}
             priority
           />
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                   </div>
                   <CardTitle className="text-2xl font-headline text-center">{service.name}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
+                <div className="flex-grow flex flex-col justify-between p-6 pt-0">
                   <p className="text-muted-foreground mb-6 text-center">{service.description}</p>
                   <ul className="space-y-3 text-sm">
                     {service.features.map((feature) => (
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>
