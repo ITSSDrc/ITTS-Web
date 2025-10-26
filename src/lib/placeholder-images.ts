@@ -1,9 +1,12 @@
 
 export type ImagePlaceholder = {
   id: string;
-  description: string;
-  imageUrl: string;
-  imageHint: string;
+  description?: string;
+  imageUrl?: string;
+  imageHint?: string;
+  src?: string;
+  alt?: string;
+  hint?: string;
 };
 
 export const PlaceHolderImages: ImagePlaceholder[] = [
@@ -190,6 +193,18 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "training-session-3", "src": "/images/gallery/training-3.jpg", "alt": "Un développeur présente une nouvelle architecture.", "hint": "developer presentation" },
     { "id": "training-session-4", "src": "/images/gallery/training-4.jpg", "alt": "Session de brainstorming de l'équipe design.", "hint": "design brainstorming" },
     { "id": "training-session-5", "src": "/images/gallery/training-5.jpg", "alt": "Formation sur les nouvelles techniques de cybersécurité.", "hint": "cybersecurity training" },
-    { "id": "training-session-6", "src": "/images/gallery/training-6.jpg", "alt": "Vue d'ensemble d'une session de codage en pair-programming.", "hint": "pair programming" }
+    { "id": "training-session-6", "src": "/images/gallery/training-6.jpg", "alt": "Vue d'ensemble d'une session de codage en pair-programming.", "hint": "pair programming" },
+    { "id": "training-session-7", "src": "/images/gallery/training-7.jpg", "alt": "Un membre de l'équipe explique un concept sur un tableau blanc.", "hint": "whiteboard explanation" },
+    { "id": "training-session-8", "src": "/images/gallery/training-8.jpg", "alt": "Vue de près d'un développeur codant sur son ordinateur portable.", "hint": "developer coding" },
+    { "id": "training-session-9", "src": "/images/gallery/training-9.jpg", "alt": "Équipe célébrant la fin d'une formation réussie.", "hint": "team celebration" },
+    { "id": "training-session-10", "src": "/images/gallery/training-10.jpg", "alt": "Discussion de groupe pendant un atelier technique.", "hint": "group discussion" },
+    { "id": "network-gallery-1", "src": "/images/network-team/team-1.jpg", "alt": "Équipe technique installant des équipements réseau.", "hint": "technicians working" },
+    { "id": "network-gallery-2", "src": "/images/network-team/team-2.jpg", "alt": "Technicien sur un poteau tirant un câble de fibre optique.", "hint": "fiber optic installation" },
+    { "id": "network-gallery-3", "src": "/images/network-team/team-3.jpg", "alt": "Configuration d'un routeur dans un data center.", "hint": "network configuration" },
+    { "id": "network-gallery-4", "src": "/images/network-team/team-4.jpg", "alt": "Vue d'ensemble d'une antenne de transmission.", "hint": "telecom tower" },
+    { "id": "presentation-gallery-1", "src": "/images/gallery/presentation-1.jpg", "alt": "Présentation d'un projet client dans une salle de réunion.", "hint": "client presentation" },
+    { "id": "presentation-gallery-2", "src": "/images/gallery/presentation-2.jpg", "alt": "Démonstration d'une application sur un grand écran.", "hint": "app demonstration" },
+    { "id": "presentation-gallery-3", "src": "/images/gallery/presentation-3.jpg", "alt": "Équipe projet célébrant le lancement d'un produit.", "hint": "product launch" },
+    { "id": "presentation-gallery-4", "src": "/images/gallery/presentation-4.jpg", "alt": "Atelier de co-conception avec un client.", "hint": "client workshop" }
   ]
 ;
