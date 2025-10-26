@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Cloud, Code, Palette, Shield, Network, BarChart, BrainCircuit, Wrench } from "lucide-react";
 import type { Metadata } from 'next';
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -14,49 +14,49 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     name: "Solutions Cloud",
-    image: PlaceHolderImages.find(p => p.id === 'service-cloud'),
+    icon: <Cloud className="h-8 w-8 text-primary" />,
     description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Nous construisons des architectures cloud évolutives, résilientes et rentables sur AWS, Azure et Google Cloud.",
     features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur (Serverless)", "Conteneurisation (Docker & Kubernetes)"],
   },
   {
     name: "Logiciels sur Mesure",
-    image: PlaceHolderImages.find(p => p.id === 'service-software'),
+    icon: <Code className="h-8 w-8 text-primary" />,
     description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales.",
     features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Maintenance et support continus"],
   },
   {
     name: "Design UI/UX",
-    image: PlaceHolderImages.find(p => p.id === 'service-design'),
+    icon: <Palette className="h-8 w-8 text-primary" />,
     description: "Créez des expériences utilisateur exceptionnelles avec notre expertise en design. Nous concevons des interfaces intuitives et esthétiques qui captivent vos utilisateurs et renforcent votre marque.",
     features: ["Recherche utilisateur & Personas", "Prototypage & Wireframing", "Conception d'interfaces (UI)", "Création de systèmes de design"],
   },
   {
     name: "Cybersécurité",
-    image: PlaceHolderImages.find(p => p.id === 'service-security'),
+    icon: <Shield className="h-8 w-8 text-primary" />,
     description: "Nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures proactives.",
     features: ["Tests d'intrusion & Audits", "Détection et réponse gérées (MDR)", "Conformité (RGPD, ISO 27001)", "Formation à la sécurité"],
   },
   {
     name: "Infrastructure & Réseau",
-    image: PlaceHolderImages.find(p => p.id === 'service-network'),
+    icon: <Network className="h-8 w-8 text-primary" />,
     description: "Concentrez-vous sur votre métier grâce à une infrastructure réseau fiable, sécurisée et performante, gérée par nos experts.",
     features: ["Conception d'architecture LAN/WAN", "Gestion et surveillance de réseau", "Sécurité des infrastructures", "Solutions de connectivité et VPN"],
   },
   {
     name: "Analyse de Données & BI",
-    image: PlaceHolderImages.find(p => p.id === 'service-data'),
+    icon: <BarChart className="h-8 w-8 text-primary" />,
     description: "Transformez vos données en informations exploitables. Nous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées et découvrir de nouvelles opportunités.",
     features: ["Entreposage de données", "Développement de pipelines ETL", "Tableaux de bord interactifs (Power BI, Tableau)", "Analyse prédictive et Machine Learning"],
   },
   {
     name: "Conseil en IA & DevOps",
-    image: PlaceHolderImages.find(p => p.id === 'service-ai'),
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     description: "Accélérez votre cycle de développement et intégrez l'intelligence artificielle. Nous automatisons vos processus et mettons en œuvre des solutions d'IA pour booster l'efficacité et l'innovation.",
     features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Stratégie et intégration de l'IA", "Développement de modèles personnalisés"],
   },
   {
     name: "Maintenance Matériel",
-    image: PlaceHolderImages.find(p => p.id === 'service-maintenance'),
+    icon: <Wrench className="h-8 w-8 text-primary" />,
     description: "Assurez la longévité et la performance de votre parc informatique avec nos services de maintenance préventive et curative sur serveurs, postes de travail et périphériques.",
     features: ["Diagnostic et réparation de matériel", "Mises à niveau de composants (RAM, SSD)", "Nettoyage physique et dépoussiérage", "Gestion du cycle de vie du matériel"],
   },
@@ -92,23 +92,16 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceDetails.map((service) => (
               <Card key={service.name} className="glow-card flex flex-col bg-card/80 backdrop-blur-sm border-white/10 overflow-hidden hover:-translate-y-2 transition-transform duration-300 group">
-                {service.image && service.image.imageUrl && (
-                    <div className="aspect-video overflow-hidden">
-                        <Image
-                            src={service.image.imageUrl}
-                            alt={service.image.description || service.name}
-                            width={600}
-                            height={338}
-                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                            data-ai-hint={service.image.imageHint}
-                        />
-                    </div>
-                )}
                 <CardHeader>
-                  <CardTitle className="text-2xl font-headline">{service.name}</CardTitle>
+                  <div className="flex justify-center items-center h-24">
+                     <div className="bg-primary/10 p-4 rounded-full">
+                       {service.icon}
+                     </div>
+                  </div>
+                  <CardTitle className="text-2xl font-headline text-center">{service.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
+                  <p className="text-muted-foreground mb-6 text-center">{service.description}</p>
                   <ul className="space-y-3 text-sm">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start">
@@ -126,5 +119,3 @@ export default function ServicesPage() {
     </>
   );
 }
-
-    
