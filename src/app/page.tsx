@@ -42,12 +42,12 @@ const Orb = () => (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="relative w-72 h-72 md:w-96 md:h-96">
             <div className="orb-sphere">
-                {[...Array(10)].map((_, i) => (
+                {[...Array(30)].map((_, i) => (
                     <div key={i} className="orb" />
                 ))}
             </div>
             <div className="orb-arcs">
-                {[...Array(4)].map((_, i) => (
+                {[...Array(10)].map((_, i) => (
                     <div key={i} className={`arc arc-${i + 1}`} />
                 ))}
             </div>

@@ -144,38 +144,25 @@
     border-radius: 50%;
   }
 
-  .arc-1 {
-    animation: arc-rotate-1 10s infinite linear;
-  }
-  .arc-2 {
-    animation: arc-rotate-2 8s infinite linear;
-    transform: rotateY(45deg) rotateX(25deg);
-  }
-  .arc-3 {
-    animation: arc-rotate-3 12s infinite linear;
-    transform: rotateY(-45deg) rotateX(-25deg);
-  }
-  .arc-4 {
-    animation: arc-rotate-4 15s infinite linear;
-    transform: rotateY(90deg) rotateX(45deg);
-    border-style: dashed;
-  }
+  .arc-1 { animation: arc-rotate-1 10s infinite linear; }
+  .arc-2 { animation: arc-rotate-2 8s infinite linear; transform: rotateY(45deg) rotateX(25deg); }
+  .arc-3 { animation: arc-rotate-3 12s infinite linear; transform: rotateY(-45deg) rotateX(-25deg); }
+  .arc-4 { animation: arc-rotate-4 15s infinite linear; transform: rotateY(90deg) rotateX(45deg); border-style: dashed; }
+  .arc-5 { animation: arc-rotate-5 9s infinite linear; transform: rotateY(20deg) rotateX(70deg); border-style: dotted; }
+  .arc-6 { animation: arc-rotate-6 13s infinite linear; transform: rotateY(-60deg) rotateX(-10deg); }
+  .arc-7 { animation: arc-rotate-7 11s infinite linear; transform: rotateY(120deg) rotateX(50deg); border-style: dashed; }
+  .arc-8 { animation: arc-rotate-8 14s infinite linear; transform: rotateY(-150deg) rotateX(-35deg); }
+  .arc-9 { animation: arc-rotate-9 7s infinite linear; transform: rotateY(180deg) rotateX(90deg); border-style: dotted; }
+  .arc-10 { animation: arc-rotate-10 16s infinite linear; transform: rotateY(-100deg) rotateX(15deg); }
 
-  @keyframes arc-rotate-1 {
-    0% { transform: rotateZ(0deg); }
-    100% { transform: rotateZ(360deg); }
-  }
-  @keyframes arc-rotate-2 {
-    0% { transform: rotateY(45deg) rotateX(25deg) rotateZ(0deg); }
-    100% { transform: rotateY(45deg) rotateX(25deg) rotateZ(-360deg); }
-  }
-  @keyframes arc-rotate-3 {
-    0% { transform: rotateY(-45deg) rotateX(-25deg) rotateZ(0deg); }
-    100% { transform: rotateY(-45deg) rotateX(-25deg) rotateZ(360deg); }
-  }
-  @keyframes arc-rotate-4 {
-    0% { transform: rotateY(90deg) rotateX(45deg) rotateZ(0deg); }
-    100% { transform: rotateY(90deg) rotateX(45deg) rotateZ(-360deg); }
-  }
-
+  @keyframes arc-rotate-1 { 0% { transform: rotateZ(0deg); } 100% { transform: rotateZ(360deg); } }
+  @keyframes arc-rotate-2 { 0% { transform: rotateY(45deg) rotateX(25deg) rotateZ(0deg); } 100% { transform: rotateY(45deg) rotateX(25deg) rotateZ(-360deg); } }
+  @keyframes arc-rotate-3 { 0% { transform: rotateY(-45deg) rotateX(-25deg) rotateZ(0deg); } 100% { transform: rotateY(-45deg) rotateX(-25deg) rotateZ(360deg); } }
+  @keyframes arc-rotate-4 { 0% { transform: rotateY(90deg) rotateX(45deg) rotateZ(0deg); } 100% { transform: rotateY(90deg) rotateX(45deg) rotateZ(-360deg); } }
+  @keyframes arc-rotate-5 { 0% { transform: rotateY(20deg) rotateX(70deg) rotateZ(0deg); } 100% { transform: rotateY(20deg) rotateX(70deg) rotateZ(360deg); } }
+  @keyframes arc-rotate-6 { 0% { transform: rotateY(-60deg) rotateX(-10deg) rotateZ(0deg); } 100% { transform: rotateY(-60deg) rotateX(-10deg) rotateZ(-360deg); } }
+  @keyframes arc-rotate-7 { 0% { transform: rotateY(120deg) rotateX(50deg) rotateZ(0deg); } 100% { transform: rotateY(120deg) rotateX(50deg) rotateZ(360deg); } }
+  @keyframes arc-rotate-8 { 0% { transform: rotateY(-150deg) rotateX(-35deg) rotateZ(0deg); } 100% { transform: rotateY(-150deg) rotateX(-35deg) rotateZ(-360deg); } }
+  @keyframes arc-rotate-9 { 0% { transform: rotateY(180deg) rotateX(90deg) rotateZ(0deg); } 100% { transform: rotateY(180deg) rotateX(90deg) rotateZ(360deg); } }
+  @keyframes arc-rotate-10 { 0% { transform: rotateY(-100deg) rotateX(15deg) rotateZ(0deg); } 100% { transform: rotateY(-100deg) rotateX(15deg) rotateZ(-360deg); } }
 }
