@@ -67,7 +67,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[50vh] flex items-center justify-center">
         {heroImage && heroImage.imageUrl && (
           <Image
             src={heroImage.imageUrl}
