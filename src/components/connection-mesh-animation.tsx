@@ -48,10 +48,10 @@ export function ConnectionMeshAnimation({ className }: { className?: string }) {
       vx: number; // velocity x
       vy: number; // velocity y
 
-      constructor(x: number, y: number, color: string) {
+      constructor(x: number, y: number, color: string, size: number) {
         this.x = x;
         this.y = y;
-        this.size = 1.5;
+        this.size = size;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = (Math.random() * 40) + 5;
@@ -114,12 +114,13 @@ export function ConnectionMeshAnimation({ className }: { className?: string }) {
     const init = () => {
       particles = [];
       const isDark = theme === 'dark';
-      const particleColor = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)';
+      const particleColor = isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.5)';
+      const particleSize = isDark ? 2 : 1.5;
       const numberOfParticles = (canvas.height * canvas.width) / 9000;
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        particles.push(new Particle(x, y, particleColor));
+        particles.push(new Particle(x, y, particleColor, particleSize));
       }
     };
 
@@ -138,7 +139,7 @@ export function ConnectionMeshAnimation({ className }: { className?: string }) {
       if (!ctx) return;
       let opacityValue = 1;
       const isDark = theme === 'dark';
-      const lineColor = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)';
+      const lineColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)';
 
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
@@ -150,7 +151,7 @@ export function ConnectionMeshAnimation({ className }: { className?: string }) {
           if (distance < 140) {
             opacityValue = 1 - (distance / 140);
             ctx.strokeStyle = lineColor.replace(/, [0-9.]+\)/, `, ${opacityValue})`);
-            ctx.lineWidth = 0.8;
+            ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(particles[b].x, particles[b].y);
