@@ -9,7 +9,7 @@ export const blogPosts = [
         image: {
             id: "blog-transformation-numerique-bunia",
             description: "Image illustrant la transformation numérique à Bunia.",
-            imageUrl: "/images/blog-transformation-numerique-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/bunia-digital/600/400",
             imageHint: "digital transformation"
         },
         excerpt: "Découvrez comment les innovations technologiques, de la finance mobile à l'éducation en ligne, redessinent le paysage économique et social de Bunia.",
@@ -23,7 +23,7 @@ export const blogPosts = [
         image: {
             id: "blog-agritech-ituri",
             description: "Image illustrant l'AgriTech en Ituri.",
-            imageUrl: "/images/blog-agritech-ituri.jpg",
+            imageUrl: "https://picsum.photos/seed/agritech/600/400",
             imageHint: "agritech africa"
         },
         excerpt: "Des drones pour la cartographie des champs aux applications de gestion de récoltes, l'agriculture en Ituri se modernise et gagne en efficacité.",
@@ -37,7 +37,7 @@ export const blogPosts = [
         image: {
             id: "blog-commerce-bunia-digitalisation",
             description: "Image illustrant la digitalisation du commerce à Bunia.",
-            imageUrl: "/images/blog-commerce-bunia-digitalisation.jpg",
+            imageUrl: "https://picsum.photos/seed/ecommerce-bunia/600/400",
             imageHint: "online store"
         },
         excerpt: "Un guide pratique pour les commerçants de Bunia souhaitant digitaliser leur activité, attirer plus de clients et gérer leurs opérations efficacement.",
@@ -51,7 +51,7 @@ export const blogPosts = [
         image: {
             id: "blog-fintech-bunia",
             description: "Image illustrant la finance mobile à Bunia.",
-            imageUrl: "/images/blog-fintech-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/fintech-bunia/600/400",
             imageHint: "mobile finance"
         },
         excerpt: "L'adoption massive du mobile money transforme le commerce et la vie quotidienne, ouvrant la voie à une nouvelle ère d'inclusion financière pour tous.",
@@ -65,7 +65,7 @@ export const blogPosts = [
         image: {
             id: "blog-education-universite-bunia",
             description: "Image illustrant l'éducation supérieure à Bunia.",
-            imageUrl: "/images/blog-education-universite-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/university-bunia/600/400",
             imageHint: "university education"
         },
         excerpt: "Analyse de l'intégration des technologies de l'information et de la communication dans l'enseignement supérieur à Bunia et de leur rôle dans la formation des futurs leaders.",
@@ -79,7 +79,7 @@ export const blogPosts = [
         image: {
             id: "blog-education-tech-bunia",
             description: "Image illustrant l'EdTech à Bunia.",
-            imageUrl: "/images/blog-education-tech-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/edtech-bunia/600/400",
             imageHint: "online education"
         },
         excerpt: "Analyse des solutions d'e-learning et de leur impact sur l'accès à une éducation de qualité pour les jeunes de la région.",
@@ -93,7 +93,7 @@ export const blogPosts = [
         image: {
             id: "blog-cybersecurite-pme-bunia",
             description: "Image illustrant la cybersécurité pour les PME.",
-            imageUrl: "/images/blog-cybersecurite-pme-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/cybersecurity-bunia/600/400",
             imageHint: "cyber security"
         },
         excerpt: "Alors que les entreprises se numérisent, la protection des données devient cruciale. Nos experts partagent des conseils pratiques pour sécuriser votre activité.",
@@ -107,7 +107,7 @@ export const blogPosts = [
         image: {
             id: "blog-religion-technologie-bunia",
             description: "Image illustrant la technologie dans les communautés religieuses.",
-            imageUrl: "/images/blog-religion-technologie-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/community-tech/600/400",
             imageHint: "community technology"
         },
         excerpt: "Comment les outils numériques aident les églises et organisations religieuses à mieux gérer leurs membres, à communiquer et à étendre leur portée.",
@@ -121,7 +121,7 @@ export const blogPosts = [
         image: {
             id: "blog-energie-solaire-ituri",
             description: "Image illustrant l'énergie solaire en Ituri.",
-            imageUrl: "/images/blog-energie-solaire-ituri.jpg",
+            imageUrl: "https://picsum.photos/seed/solar-ituri/600/400",
             imageHint: "solar energy"
         },
         excerpt: "L'accès à une énergie fiable et abordable grâce au solaire est un catalyseur pour le déploiement de nouvelles solutions numériques dans les zones urbaines et rurales.",
@@ -135,7 +135,7 @@ export const blogPosts = [
         image: {
             id: "blog-sante-connectee-rdc",
             description: "Image illustrant la santé connectée en RDC.",
-            imageUrl: "/images/blog-sante-connectee-rdc.jpg",
+            imageUrl: "https://picsum.photos/seed/telemedicine-drc/600/400",
             imageHint: "telemedicine health"
         },
         excerpt: "La télémédecine et les dossiers médicaux numériques promettent de révolutionner le secteur de la santé, même dans les régions les plus reculées.",
@@ -149,7 +149,7 @@ export const blogPosts = [
         image: {
             id: "blog-education-ecole-ituri",
             description: "Image illustrant la numérisation des écoles en Ituri.",
-            imageUrl: "/images/blog-education-ecole-ituri.jpg",
+            imageUrl: "https://picsum.photos/seed/school-digital-ituri/600/400",
             imageHint: "school digitalization"
         },
         excerpt: "Découvrez comment ITSS aide les écoles primaires et secondaires à intégrer le numérique pour améliorer l'administration et l'apprentissage.",
@@ -163,7 +163,7 @@ export const blogPosts = [
         image: {
             id: "blog-hub-innovation-bunia",
             description: "Image illustrant un hub d'innovation à Bunia.",
-            imageUrl: "/images/blog-hub-innovation-bunia.jpg",
+            imageUrl: "https://picsum.photos/seed/innovation-hub-bunia/600/400",
             imageHint: "innovation hub"
         },
         excerpt: "ITSS s'engage à soutenir les talents locaux en créant un espace de collaboration, de formation et d'incubation pour les startups de demain.",
