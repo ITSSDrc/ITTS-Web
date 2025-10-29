@@ -6,9 +6,9 @@ import {
     SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazon, SiGooglecloud, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet,
     SiTypescript, SiJavascript, SiHtml5, SiCss3,
     SiPhp, SiGraphql,
-    SiFirebase, SiSqlite, SiMicrosoftsqlserver,
+    SiFirebase, SiSqlite,
     SiGit, SiGithubactions, SiJenkins, SiTerraform,
-    SiFigma, SiAdobeillustrator, SiAdobephotoshop, SiMicrosoftazure
+    SiFigma, SiAdobeillustrator, SiAdobephotoshop
 } from '@icons-pack/react-simple-icons';
 
 export const metadata: Metadata = {
@@ -41,7 +41,6 @@ const technologies = {
         { name: 'Redis', icon: <SiRedis size={40} /> },
         { name: 'Firebase', icon: <SiFirebase size={40} /> },
         { name: 'SQLite', icon: <SiSqlite size={40} /> },
-        { name: 'SQL Server', icon: <SiMicrosoftsqlserver size={40} /> },
     ],
     design: [
         { name: 'Figma', icon: <SiFigma size={40} /> },
@@ -60,7 +59,6 @@ const technologies = {
     cloud: [
         { name: 'AWS', icon: <SiAmazon size={40} /> },
         { name: 'Google Cloud', icon: <SiGooglecloud size={40} /> },
-        { name: 'Azure', icon: <SiMicrosoftazure size={40} /> },
     ],
     network: [
         { name: 'Cisco', icon: <SiCisco size={40} /> },
