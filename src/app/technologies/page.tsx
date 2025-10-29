@@ -5,7 +5,7 @@ import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation'
 import {
     SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazon, SiGooglecloud, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet,
     SiTypescript, SiJavascript, SiHtml5, SiCss3,
-    SiJava, SiPhp, SiGraphql,
+    SiPhp, SiGraphql,
     SiFirebase, SiSqlite, SiMicrosoftsqlserver,
     SiGit, SiGithubactions, SiJenkins, SiTerraform,
     SiFigma, SiAdobeillustrator, SiAdobephotoshop, SiMicrosoftazure
@@ -31,7 +31,6 @@ const technologies = {
         { name: 'Node.js', icon: <SiNodedotjs size={40} /> },
         { name: 'Python', icon: <SiPython size={40} /> },
         { name: 'Go', icon: <SiGo size={40} /> },
-        { name: 'Java', icon: <SiJava size={40} /> },
         { name: 'PHP', icon: <SiPhp size={40} /> },
         { name: 'GraphQL', icon: <SiGraphql size={40} /> },
     ],
