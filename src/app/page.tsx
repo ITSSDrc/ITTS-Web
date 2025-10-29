@@ -14,8 +14,6 @@ import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import Typewriter from 'typewriter-effect';
 import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
-
-
 const services = [
   {
     icon: <Cloud className="h-8 w-8 text-primary" />,

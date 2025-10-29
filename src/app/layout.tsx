@@ -68,10 +68,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' },
-      { url: '/images/itss-logo.png', type: 'image/png' },
+      { url: '/favicon.ico', type: 'image/x-icon', sizes: 'any' },
+      { url: '/images/itss-logo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/itss-logo.png', type: 'image/png', sizes: '16x16' },
     ],
-    shortcut: '/images/itss-logo.png',
     apple: '/images/itss-logo.png',
   },
 };
@@ -89,7 +89,7 @@ export default function RootLayout({
       <body className={cn("font-body antialiased", "bg-background text-foreground")}>
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
         >
