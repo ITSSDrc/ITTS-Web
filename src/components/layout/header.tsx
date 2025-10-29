@@ -28,6 +28,7 @@ const navLinks = [
 const companyLinks = [
     { href: "/about", label: "À propos" },
     { href: "/team", label: "Notre Équipe" },
+    { href: "/technologies", label: "Nos Technologies" },
     { href: "/gallery", label: "Galerie" },
     { href: "/blog", label: "Blog" },
     { href: "/support#faq", label: "FAQ" },

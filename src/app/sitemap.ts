@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blog-data';
 import { portfolioProjects } from '@/lib/portfolio-data';
@@ -24,7 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
     '/cookies',
     '/team',
-    '/gallery'
+    '/gallery',
+    '/technologies'
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date().toISOString(),
