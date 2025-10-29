@@ -3,7 +3,12 @@ import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 import {
-    SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazon, SiGooglecloud, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet
+    SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazon, SiGooglecloud, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet,
+    SiTypescript, SiJavascript, SiHtml5, SiCss3,
+    SiJava, SiPhp, SiGraphql,
+    SiFirebase, SiSqlite, SiMicrosoftsqlserver,
+    SiGit, SiGithubactions, SiJenkins, SiTerraform,
+    SiFigma, SiAdobeillustrator, SiAdobephotoshop, SiMicrosoftazure
 } from '@icons-pack/react-simple-icons';
 
 export const metadata: Metadata = {
@@ -15,28 +20,48 @@ const technologies = {
     frontend: [
         { name: 'Next.js', icon: <SiNextdotjs size={40} /> },
         { name: 'React', icon: <SiReact size={40} /> },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss size={40} /> },
         { name: 'Flutter', icon: <SiFlutter size={40} /> },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss size={40} /> },
+        { name: 'TypeScript', icon: <SiTypescript size={40} /> },
+        { name: 'JavaScript', icon: <SiJavascript size={40} /> },
+        { name: 'HTML5', icon: <SiHtml5 size={40} /> },
+        { name: 'CSS3', icon: <SiCss3 size={40} /> },
     ],
     backend: [
         { name: 'Node.js', icon: <SiNodedotjs size={40} /> },
         { name: 'Python', icon: <SiPython size={40} /> },
         { name: 'Go', icon: <SiGo size={40} /> },
+        { name: 'Java', icon: <SiJava size={40} /> },
+        { name: 'PHP', icon: <SiPhp size={40} /> },
+        { name: 'GraphQL', icon: <SiGraphql size={40} /> },
     ],
     database: [
         { name: 'PostgreSQL', icon: <SiPostgresql size={40} /> },
         { name: 'MySQL', icon: <SiMysql size={40} /> },
         { name: 'MongoDB', icon: <SiMongodb size={40} /> },
         { name: 'Redis', icon: <SiRedis size={40} /> },
+        { name: 'Firebase', icon: <SiFirebase size={40} /> },
+        { name: 'SQLite', icon: <SiSqlite size={40} /> },
+        { name: 'SQL Server', icon: <SiMicrosoftsqlserver size={40} /> },
+    ],
+    design: [
+        { name: 'Figma', icon: <SiFigma size={40} /> },
+        { name: 'Illustrator', icon: <SiAdobeillustrator size={40} /> },
+        { name: 'Photoshop', icon: <SiAdobephotoshop size={40} /> },
     ],
     devops: [
         { name: 'Docker', icon: <SiDocker size={40} /> },
         { name: 'Kubernetes', icon: <SiKubernetes size={40} /> },
         { name: 'Vercel', icon: <SiVercel size={40} /> },
+        { name: 'Git', icon: <SiGit size={40} /> },
+        { name: 'GitHub Actions', icon: <SiGithubactions size={40} /> },
+        { name: 'Jenkins', icon: <SiJenkins size={40} /> },
+        { name: 'Terraform', icon: <SiTerraform size={40} /> },
     ],
     cloud: [
         { name: 'AWS', icon: <SiAmazon size={40} /> },
         { name: 'Google Cloud', icon: <SiGooglecloud size={40} /> },
+        { name: 'Azure', icon: <SiMicrosoftazure size={40} /> },
     ],
     network: [
         { name: 'Cisco', icon: <SiCisco size={40} /> },
@@ -79,6 +104,7 @@ export default function TechnologiesPage() {
                     <TechSection title="Développement Frontend" techs={technologies.frontend} />
                     <TechSection title="Développement Backend" techs={technologies.backend} />
                     <TechSection title="Bases de Données" techs={technologies.database} />
+                    <TechSection title="Outils de Design" techs={technologies.design} />
                     <TechSection title="DevOps & Déploiement" techs={technologies.devops} />
                     <TechSection title="Plateformes Cloud" techs={technologies.cloud} />
                     <TechSection title="Infrastructure Réseau & Sécurité" techs={technologies.network} />
