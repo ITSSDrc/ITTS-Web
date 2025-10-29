@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 import {
-    SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazonaws, SiGooglecloud, SiMicrosoftazure, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet
+    SiNextdotjs, SiReact, SiTailwindcss, SiVercel, SiNodedotjs, SiPython, SiGo, SiFlutter, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiAmazon, SiGooglecloud, SiMicrosoftazure, SiCisco, SiJunipernetworks, SiPaloaltonetworks, SiFortinet
 } from '@icons-pack/react-simple-icons';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ const technologies = {
         { name: 'Vercel', icon: <SiVercel size={40} /> },
     ],
     cloud: [
-        { name: 'AWS', icon: <SiAmazonaws size={40} /> },
+        { name: 'AWS', icon: <SiAmazon size={40} /> },
         { name: 'Google Cloud', icon: <SiGooglecloud size={40} /> },
         { name: 'Azure', icon: <SiMicrosoftazure size={40} /> },
     ],
