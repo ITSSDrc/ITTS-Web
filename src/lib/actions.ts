@@ -2,11 +2,8 @@
 "use server";
 
 import { z } from "zod";
-import { Resend } from 'resend';
-import { ContactEmailTemplate } from '@/components/contact-email-template';
 import * as React from 'react';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Le nom doit comporter au moins 2 caractères."),
@@ -50,22 +47,24 @@ export async function submitContactForm(
 
   const { name, email, subject, message } = validatedFields.data;
 
-  try {
-    const { data, error } = await resend.emails.send({
-      from: 'ITSS Website <onboarding@resend.dev>',
-      to: ['innovatechsolutionservice@gmail.com'],
-      subject: subject || 'Nouveau message depuis le site ITSS',
-      reply_to: email,
-      react: ContactEmailTemplate({ name, email, message }),
-    });
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
 
-    if (error) {
-      console.error("Resend error:", error);
-      return {
-        message: "Une erreur s'est produite lors de l'envoi de l'e-mail. Veuillez réessayer.",
-        success: false,
-      };
-    }
+  try {
+    await transporter.sendMail({
+      from: `"${name}" <${process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER}>`,
+      to: process.env.SMTP_TO_EMAIL,
+      subject: subject || 'Nouveau message depuis le site ITSS',
+      replyTo: email,
+      html: `<h1>Nouveau message de ${name} (${email})</h1><p>${message.replace(/\n/g, '<br>')}</p>`,
+    });
 
     return {
       message: "Merci pour votre message ! Nous vous répondrons sous peu.",
@@ -74,7 +73,7 @@ export async function submitContactForm(
   } catch (error) {
     console.error("Failed to send email:", error);
     return {
-      message: "Une erreur inattendue est survenue. Veuillez réessayer plus tard.",
+      message: "Une erreur est survenue lors de l'envoi de l'e-mail. Veuillez réessayer.",
       success: false,
     };
   }
