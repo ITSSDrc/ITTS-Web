@@ -21,6 +21,8 @@ export default function PressPage() {
   const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
   const leadershipTeam = teamMembers.slice(0, 3);
   const teamImages = PlaceHolderImages.filter(p => p.id.startsWith('team-member'));
+  const officeImage1 = PlaceHolderImages.find(p => p.id === 'office-1');
+  const officeImage2 = PlaceHolderImages.find(p => p.id === 'office-2');
 
   return (
     <>
@@ -60,7 +62,9 @@ export default function PressPage() {
                     <CardContent>
                         <p className="font-semibold mb-2">ITSS Lance une Initiative pour Former 100 Jeunes Développeurs en Ituri</p>
                         <p className='text-sm text-muted-foreground mb-4'>24 Octobre 2024</p>
-                        <Button variant="outline" disabled>Lire le communiqué</Button>
+                        <Button variant="outline" asChild>
+                            <Link href="#">Lire le communiqué</Link>
+                        </Button>
                     </CardContent>
                 </Card>
                  <Card>
@@ -94,8 +98,10 @@ export default function PressPage() {
                         {logo && <div className='bg-background p-6 rounded-lg flex justify-center items-center mb-4'>
                             <Image src={logo.imageUrl} alt={logo.description} width={100} height={100} />
                         </div>}
-                        <Button className='w-full' disabled>
-                            <Download className='mr-2' /> Télécharger les logos
+                        <Button className='w-full' asChild>
+                            <Link href="/downloads/itss-brand-kit.zip" download>
+                                <Download className='mr-2' /> Télécharger les logos
+                            </Link>
                         </Button>
                     </CardContent>
                 </Card>
@@ -122,8 +128,10 @@ export default function PressPage() {
                                 )
                             })}
                         </div>
-                         <Button className='w-full mt-6' variant="outline" disabled>
-                            <Download className='mr-2' /> Télécharger les portraits
+                         <Button className='w-full mt-6' variant="outline" asChild>
+                            <Link href="/downloads/itss-leadership-portraits.zip" download>
+                                <Download className='mr-2' /> Télécharger les portraits
+                            </Link>
                         </Button>
                     </CardContent>
                 </Card>
@@ -134,11 +142,13 @@ export default function PressPage() {
                     </CardHeader>
                     <CardContent>
                         <div className='grid grid-cols-2 gap-2 mb-4'>
-                            <Image src="/images/office-1.jpg" width={200} height={200} alt="Bureau ITSS 1" className='rounded-md' data-ai-hint="office workspace" />
-                            <Image src="/images/office-2.jpg" width={200} height={200} alt="Bureau ITSS 2" className='rounded-md' data-ai-hint="team meeting" />
+                            {officeImage1?.imageUrl && <Image src={officeImage1.imageUrl} width={200} height={200} alt={officeImage1.description || "Bureau ITSS 1"} className='rounded-md' data-ai-hint={officeImage1.imageHint} />}
+                            {officeImage2?.imageUrl && <Image src={officeImage2.imageUrl} width={200} height={200} alt={officeImage2.description || "Bureau ITSS 2"} className='rounded-md' data-ai-hint={officeImage2.imageHint} />}
                         </div>
-                         <Button className='w-full' variant="outline" disabled>
-                            <Download className='mr-2' /> Télécharger les images
+                         <Button className='w-full' variant="outline" asChild>
+                            <Link href="/downloads/itss-brand-images.zip" download>
+                                <Download className='mr-2' /> Télécharger les images
+                            </Link>
                         </Button>
                     </CardContent>
                 </Card>
