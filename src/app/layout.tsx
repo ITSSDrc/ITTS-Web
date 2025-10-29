@@ -66,6 +66,11 @@ export const metadata: Metadata = {
     creator: '@ITSSDrc',
     images: [`${siteUrl}/images/og-image.png`],
   },
+  icons: {
+    icon: '/images/itss-logo.png',
+    shortcut: '/images/itss-logo.png',
+    apple: '/images/itss-logo.png',
+  },
 };
 
 export default function RootLayout({
