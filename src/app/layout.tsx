@@ -67,7 +67,10 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/images/og-image.png`],
   },
   icons: {
-    icon: '/images/itss-logo.png',
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/images/itss-logo.png', type: 'image/png' },
+    ],
     shortcut: '/images/itss-logo.png',
     apple: '/images/itss-logo.png',
   },
