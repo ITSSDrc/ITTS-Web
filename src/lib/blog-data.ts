@@ -39,15 +39,6 @@ export const blogPosts = [
         date: "08 Oct, 2024",
     },
     {
-        id: "education-universite-bunia",
-        title: "L'impact des TICE dans les universités de Bunia : Entre défis et opportunités",
-        category: "Éducation Supérieure",
-        author: "Jacques Uwonda",
-        image: PlaceHolderImages.find(p => p.id === 'blog-edtech-rdc-portfolio'),
-        excerpt: "Analyse de l'intégration des technologies de l'information et de la communication dans l'enseignement supérieur à Bunia et de leur rôle dans la formation des futurs leaders.",
-        date: "02 Oct, 2024",
-    },
-    {
         id: "education-tech-bunia",
         title: "EdTech en RDC : Comment les Plateformes en Ligne Renforcent l'Éducation à Bunia",
         category: "Éducation",
