@@ -28,7 +28,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "partner-college-emmanuel",
       "description": "Logo du Collège Emmanuel",
-      "imageUrl": "/images/college-emmanuel-logo.jpg",
+      "imageUrl": "/images/college-emmanuel-logo.png",
       "imageHint": "school logo"
     },
     {
@@ -46,7 +46,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "kongoschool-project-main",
       "description": "Interface du logiciel KongoSchool pour le Collège Emmanuel.",
-      "imageUrl": "/images/kongoschool-project-main.jpg",
+      "imageUrl": "/images/kongoschool-project-main.png",
       "imageHint": "dashboard view"
     },
     {
