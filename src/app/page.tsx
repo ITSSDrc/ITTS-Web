@@ -1,19 +1,20 @@
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Cloud, Code, Shield, BrainCircuit } from "lucide-react";
+import { ArrowRight, Cloud, Code, Shield, BrainCircuit, Quote } from "lucide-react";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { portfolioProjects } from "@/lib/portfolio-data";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
 import Typewriter from 'typewriter-effect';
 import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
+import { StatsSection } from "@/components/stats-section";
+import { SolutionRecommender } from "@/components/solution-recommender";
+
 const services = [
   {
     icon: <Cloud className="h-8 w-8 text-primary" />,
@@ -37,6 +38,26 @@ const services = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Jean-Pierre Kabila",
+    role: "Directeur Général, Entreprise Ituri",
+    content: "ITSS a transformé notre gestion de données. Leur expertise en cloud est inégalée à Bunia.",
+    initials: "JK"
+  },
+  {
+    name: "Marie-Louise Mado",
+    role: "Fondatrice de ModePlus",
+    content: "Leur équipe a conçu un site web magnifique qui a doublé nos ventes en quelques mois.",
+    initials: "MM"
+  },
+  {
+    name: "Pasteur Samuel",
+    role: "Coordinateur Mateya App",
+    content: "L'application mobile Mateya nous permet de rester connectés avec nos fidèles partout en RDC.",
+    initials: "PS"
+  }
+];
 
 export default function Home() {
   const missionImage = PlaceHolderImages.find(p => p.id === 'mission-image');
@@ -56,7 +77,7 @@ export default function Home() {
                   alt={logo.description}
                   width={128}
                   height={128}
-                  className="mx-auto mb-8 rounded-full"
+                  className="mx-auto mb-8 rounded-full shadow-2xl"
                   priority
                   data-ai-hint={logo.imageHint}
                 />
@@ -88,52 +109,10 @@ export default function Home() {
               </div>
             </FadeInOnScroll>
           </div>
-          <FadeInOnScroll delay={600} className="w-full max-w-md mx-auto">
-             <Carousel 
-              opts={{
-                loop: true,
-                align: "start",
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 4000,
-                  stopOnInteraction: false,
-                })
-              ]}
-              className="w-full"
-            >
-              <CarouselContent>
-                {portfolioProjects.map((project) => (
-                  <CarouselItem key={project.id}>
-                    <Link href={`/portfolio/${project.id}`}>
-                      <Card className="overflow-hidden group glow-card bg-background border">
-                         {project.image && (
-                          <div className="aspect-video overflow-hidden">
-                              <Image
-                                src={project.image.imageUrl}
-                                alt={project.image.description}
-                                width={600}
-                                height={400}
-                                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                                data-ai-hint={project.image.imageHint}
-                              />
-                          </div>
-                         )}
-                        <CardHeader>
-                          <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
-                          <CardDescription>{project.client}</CardDescription>
-                        </CardHeader>
-                      </Card>
-                    </Link>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
-            </Carousel>
-          </FadeInOnScroll>
         </div>
       </section>
+
+      <StatsSection />
 
       <FadeInOnScroll>
         <section id="mission" className="py-20 md:py-32">
@@ -145,16 +124,16 @@ export default function Home() {
                     src={missionImage.imageUrl}
                     alt={missionImage.description}
                     fill
-                    className="object-cover rounded-2xl"
+                    className="object-cover rounded-2xl shadow-2xl"
                     data-ai-hint={missionImage.imageHint}
                   />
                 )}
-                 <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-primary/20" />
+                 <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-primary/20 -z-10" />
               </div>
               <div>
                 <span className="text-primary font-semibold">NOTRE MISSION</span>
                 <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Accélérer Votre Transformation Numérique</h2>
-                <p className="mt-6 text-muted-foreground text-lg">
+                <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
                   Notre mission est de doter les entreprises de technologies de pointe et de conseils d'experts. Nous croyons en la construction de partenariats à long terme, en fournissant des solutions qui non seulement relèvent les défis d'aujourd'hui, mais ouvrent également la voie au succès futur. Nous nous engageons à l'excellence, à l'innovation et à l'intégrité dans tout ce que nous faisons.
                 </p>
                  <Button variant="link" className="p-0 h-auto text-lg mt-6" asChild>
@@ -167,6 +146,12 @@ export default function Home() {
           </div>
         </section>
       </FadeInOnScroll>
+
+      <section className="py-12 bg-primary/5">
+        <div className="container mx-auto px-4 text-center">
+            <SolutionRecommender />
+        </div>
+      </section>
 
       <FadeInOnScroll>
         <section id="services" className="py-20 md:py-32 bg-secondary">
@@ -195,16 +180,56 @@ export default function Home() {
                 </FadeInOnScroll>
               ))}
             </div>
-            <div className="text-center mt-16">
-              <Button size="lg" variant="outline" className="rounded-full font-semibold" asChild>
-                <Link href="/services">
-                  Découvrir tous les services <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+          </div>
+        </section>
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <section id="testimonials" className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <span className="text-primary font-semibold uppercase tracking-widest">Témoignages</span>
+              <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Ce Que Nos Clients Disent</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, idx) => (
+                <Card key={idx} className="bg-card border-none shadow-lg relative pt-12">
+                   <div className="absolute top-0 left-6 -translate-y-1/2 bg-primary text-primary-foreground p-3 rounded-xl">
+                      <Quote className="h-6 w-6" />
+                   </div>
+                   <CardContent className="space-y-6">
+                      <p className="text-lg italic text-muted-foreground leading-relaxed">
+                        "{t.content}"
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
+                          {t.initials}
+                        </div>
+                        <div>
+                          <p className="font-bold">{t.name}</p>
+                          <p className="text-sm text-muted-foreground">{t.role}</p>
+                        </div>
+                      </div>
+                   </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
       </FadeInOnScroll>
+
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary opacity-5 -z-10" />
+        <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-8">Prêt à propulser votre entreprise ?</h2>
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+                Rejoignez les leaders qui font confiance à ITSS pour leur transformation numérique.
+            </p>
+            <Button size="lg" className="rounded-full px-12 py-8 text-xl" asChild>
+                <Link href="/contact">Démarrer un projet aujourd'hui</Link>
+            </Button>
+        </div>
+      </section>
     </div>
   );
 }
