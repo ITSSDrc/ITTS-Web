@@ -16,13 +16,13 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "partner-acf",
       "description": "Logo de Action Contre la Faim",
-      "imageUrl": "/images/acf-logo.jpg",
+      "imageUrl": "/images/acf-logo.jpeg",
       "imageHint": "humanitarian logo"
     },
     {
       "id": "partner-karibuni",
       "description": "Logo de l'Hôtel Karibuni",
-      "imageUrl": "/images/karibuni-logo.png",
+      "imageUrl": "/images/karibuni-logo.jpeg",
       "imageHint": "hotel logo"
     },
     {
