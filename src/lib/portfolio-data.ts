@@ -3,6 +3,27 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export const portfolioProjects = [
   {
+    id: 'acf-mungwalu-starlink',
+    client: 'ONGD ACF (Action Contre la Faim)',
+    title: 'Installation Réseau LAN & Connexion Starlink à Mungwalu',
+    image: {
+        id: "project-acf-mungwalu",
+        description: "Installation d'une antenne Starlink et configuration réseau à Mungwalu.",
+        imageUrl: "https://picsum.photos/seed/acf-starlink/1200/600",
+        imageHint: "satellite antenna"
+    },
+    summary: 'Déploiement d\'une infrastructure réseau locale (LAN) et mise en place d\'une connexion internet haut débit par satellite via Starlink pour les bureaux de l\'ONGD ACF à Mungwalu.',
+    tags: ['Starlink', 'Réseau LAN', 'Mungwalu', 'Connectivité Critique', 'Humanitaire'],
+    metrics: [
+      { label: 'Débit Internet', value: '150+ Mbps' },
+      { label: 'Utilisateurs Connectés', value: '25+' },
+      { label: 'Disponibilité', value: '99.9%' },
+    ],
+    challenge: "Mungwalu est une zone enclavée où la connectivité internet traditionnelle est quasi-existante ou très instable. L'ONGD ACF avait besoin d'une connexion fiable et performante pour coordonner ses opérations humanitaires vitales, ainsi que d'un réseau local sécurisé pour ses équipements de bureau.",
+    solution: "ITSS a conçu une solution hybride combinant la technologie satellite de pointe Starlink pour l'accès internet et un réseau local (LAN) structuré. Nous avons procédé à l'installation physique de l'antenne, au câblage structuré des bureaux, et à la configuration de routeurs et pare-feu pour garantir une sécurité optimale des données de l'organisation.",
+    result: "Grâce à cette intervention, le personnel d'ACF à Mungwalu dispose désormais d'une connexion internet stable et rapide, permettant des visioconférences fluides et un transfert de données efficace avec le bureau national et international. Le réseau LAN interne assure une collaboration transparente entre les différents départements."
+  },
+  {
     id: 'itss-website-showcase',
     client: 'ITSS DRC (Projet Interne)',
     title: 'Site Web Officiel & Vitrine Numérique d\'ITSS',
@@ -121,85 +142,5 @@ export const portfolioProjects = [
     challenge: "L'ancienne plateforme e-commerce du client était lente, difficile à mettre à jour et ne pouvait pas gérer les pics de trafic pendant les périodes de soldes, entraînant des pertes de revenus importantes.",
     solution: "Nous avons conçu et exécuté une migration complète vers une architecture de microservices sur Amazon Web Services (AWS). La boutique a été reconstruite avec React et Node.js, et déployée sur des conteneurs auto-évolutifs pour une flexibilité maximale.",
     result: "La nouvelle plateforme a non seulement géré le trafic du Black Friday sans aucun temps d'arrêt, mais a également permis à l'équipe de développement de déployer de nouvelles fonctionnalités 5 fois plus rapidement. La réduction des coûts d'infrastructure a atteint 40%."
-  },
-  {
-    id: 'fintech-app-securite',
-    client: 'FinSecure Bank',
-    title: 'Application bancaire mobile avec sécurité de niveau militaire',
-    image: PlaceHolderImages.find(p => p.id === 'case-study-2'),
-    summary: 'Création d\'une application bancaire pour iOS et Android avec chiffrement de bout en bout, authentification biométrique et conformité PCI DSS.',
-    tags: ['Cybersécurité', 'Développement Mobile', 'Fintech', 'Swift', 'Kotlin'],
-     metrics: [
-      { label: 'Failles de sécurité', value: '0' },
-      { label: 'Adoption utilisateur', value: '+200k' },
-      { label: 'Satisfaction App Store', value: '4.8/5' },
-    ],
-    challenge: "La banque avait besoin de lancer une nouvelle application mobile pour rester compétitive, mais la sécurité était la priorité absolue pour protéger les données sensibles des clients et se conformer aux réglementations financières strictes.",
-    solution: "Notre équipe a développé des applications natives pour iOS (Swift) et Android (Kotlin) en intégrant des protocoles de sécurité de pointe, notamment le chiffrement de bout en bout, la détection de jailbreak/root, et une authentification multi-facteurs incluant la biométrie.",
-    result: "L'application a passé avec succès plusieurs audits de sécurité externes et a été lancée en toute confiance. Elle a rapidement gagné la confiance des utilisateurs, avec plus de 200 000 téléchargements au cours des six premiers mois et des notes exceptionnelles sur les app stores."
-  },
-  {
-    id: 'saas-ia-automatisation',
-    client: 'Innovate SaaS',
-    title: 'Intégration de l\'IA pour automatiser le support client',
-    image: PlaceHolderImages.find(p => p.id === 'case-study-3'),
-    summary: 'Mise en place d\'un agent conversationnel basé sur l\'IA pour résoudre les tickets de support, améliorer le temps de réponse et augmenter la satisfaction client.',
-    tags: ['IA', 'SaaS', 'Automatisation', 'Python', 'TensorFlow'],
-     metrics: [
-      { label: 'Tickets résolus par IA', value: '65%' },
-      { label: 'Temps de réponse moyen', value: '-80%' },
-      { label: 'Satisfaction client', value: '+30%' },
-    ],
-    challenge: "L'équipe de support client était submergée par un volume croissant de tickets répétitifs, ce qui entraînait des temps de réponse lents pour les problèmes plus complexes et une baisse de la satisfaction client.",
-    solution: "Nous avons développé et intégré un chatbot intelligent utilisant le traitement du langage naturel (NLP). L'agent a été entraîné sur la base de connaissances de l'entreprise pour comprendre et résoudre de manière autonome les questions les plus fréquentes, et pour trier et acheminer intelligemment les demandes complexes vers le bon agent humain.",
-    result: "L'automatisation a permis de résoudre instantanément 65% des tickets entrants, libérant ainsi l'équipe humaine pour se concentrer sur les problèmes à forte valeur ajoutée. Le temps de réponse moyen a été réduit de 80%, et la satisfaction client a augmenté de 30% en un trimestre."
-  },
-   {
-    id: 'healthtech-data-platform',
-    client: 'SantéData Plus',
-    title: 'Plateforme d\'analyse de données pour la recherche médicale',
-    image: PlaceHolderImages.find(p => p.id === 'blog-health-rdc-portfolio'),
-    summary: 'Développement d’une plateforme web sécurisée pour la collecte et l’analyse de données de santé anonymisées, permettant d’accélérer la recherche clinique.',
-    tags: ['HealthTech', 'Big Data', 'Vue.js', 'Django', 'PostgreSQL'],
-     metrics: [
-      { label: 'Temps d\'analyse', value: '÷10' },
-      { label: 'Conformité HIPAA', value: '100%' },
-      { label: 'Nouveaux partenariats', value: '12' },
-    ],
-    challenge: "Les chercheurs perdaient un temps précieux à agréger et nettoyer des données provenant de sources multiples. La collaboration était difficile et la sécurité des données patient était une préoccupation majeure.",
-    solution: "Nous avons construit une plateforme centralisée et conforme aux normes de santé (HIPAA) avec un backend Django robuste et une interface intuitive en Vue.js. La plateforme automatise l'ingestion de données, fournit des outils d'analyse visuelle et gère des contrôles d'accès stricts pour garantir la confidentialité.",
-    result: "Les cycles de recherche ont été considérablement réduits, passant de plusieurs mois à quelques semaines pour certaines analyses. La plateforme a permis à l'institution de nouer 12 nouveaux partenariats de recherche en un an grâce à sa fiabilité et sa sécurité."
-  },
-   {
-    id: 'edtech-learning-platform',
-    client: 'EduSphere',
-    title: 'Plateforme d\'apprentissage en ligne personnalisée',
-    image: PlaceHolderImages.find(p => p.id === 'blog-edtech-rdc-portfolio'),
-    summary: 'Création d\'une plateforme EdTech avec des parcours d\'apprentissage adaptatifs basés sur l\'IA, des classes virtuelles et des outils collaboratifs.',
-    tags: ['EdTech', 'IA', 'Next.js', 'Firebase', 'WebRTC'],
-     metrics: [
-      { label: 'Engagement étudiant', value: '+45%' },
-      { label: 'Taux de complétion', value: '+25%' },
-      { label: 'Coûts de tutorat', value: '-35%' },
-    ],
-    challenge: "Les plateformes d'apprentissage traditionnelles 'taille unique' ne parvenaient pas à maintenir l'engagement des étudiants, entraînant de faibles taux de complétion des cours.",
-    solution: "Nous avons développé une plateforme entièrement nouvelle avec Next.js et Firebase. Le cœur de l'innovation réside dans un moteur d'IA qui analyse les performances des étudiants et adapte dynamiquement le contenu et les exercices. Nous avons également intégré des classes virtuelles en temps réel avec WebRTC.",
-    result: "La nouvelle approche personnalisée a augmenté l'engagement des étudiants de 45 %. Le taux de réussite des cours a bondi de 25 %, et la plateforme a pu réduire la nécessité d'un tutorat humain coûteux de 35 % grâce à son support automatisé et adaptatif."
-  },
-  {
-    id: 'agropastoral',
-    client: 'Agropastoral',
-    title: 'Plateforme de mise en relation pour produits agricoles',
-    image: PlaceHolderImages.find(p => p.id === 'blog-agritech-portfolio'),
-    summary: 'Création d\'une marketplace web et mobile pour connecter directement les producteurs agricoles locaux avec les acheteurs, restaurants et consommateurs.',
-    tags: ['AgriTech', 'Marketplace', 'React Native', 'Firebase', 'Géolocalisation'],
-     metrics: [
-      { label: 'Transactions / mois', value: '1,200+' },
-      { label: 'Producteurs inscrits', value: '300+' },
-      { label: 'Temps de livraison', value: '-40%' },
-    ],
-    challenge: "Les producteurs agricoles locaux avaient du mal à accéder à un marché plus large et subissaient les pressions des intermédiaires. Les acheteurs, de leur côté, manquaient de visibilité sur la disponibilité et la qualité des produits locaux.",
-    solution: "Nous avons développé une plateforme complète comprenant une application mobile en React Native pour les producteurs et les acheteurs, ainsi qu'un tableau de bord web pour l'administration. La plateforme intègre la géolocalisation pour trouver les produits les plus proches, un système de paiement mobile sécurisé, et un module de notation pour garantir la qualité et la confiance.",
-    result: "Agropastoral a créé un circuit court plus efficace, augmentant les revenus des producteurs de 30% en moyenne. Les acheteurs bénéficient de produits plus frais et d'une meilleure traçabilité. La plateforme a réduit le temps moyen de la commande à la livraison de 40%."
   },
 ];
