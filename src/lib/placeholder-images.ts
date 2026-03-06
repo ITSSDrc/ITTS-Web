@@ -1,4 +1,3 @@
-
 export type ImagePlaceholder = {
   id: string;
   description?: string;
@@ -16,7 +15,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "partner-acf",
       "description": "Logo de Action Contre la Faim",
-      "imageUrl": "/images/acf-logo.jpeg",
+      "imageUrl": "/images/acf-logo.jpg",
       "imageHint": "humanitarian logo"
     },
     {
