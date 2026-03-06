@@ -158,7 +158,7 @@ export const portfolioProjects = [
       { label: 'Temps de chargement', value: '-60%' },
     ],
     challenge: "L'ancienne plateforme e-commerce du client était lente, difficile à mettre à jour et ne pouvait pas gérer les pics de trafic pendant les périodes de soldes, entraînant des pertes de revenus importantes.",
-    solution: "Nous avons conçu et exécuté une migration complète vers une architecture de microservices sur Amazon Web Services (AWS). La boutique a été reconstruite avec React et Node.js, et déployée sur des conteneurs auto-évolutifs pour une flexibilité maximale.",
+    solution: "Nous avons conçu et exécuté une migration complète vers une architecture de microservices sur Amazon Web Services (AWS). La boutique a été reconstruite avec React and Node.js, et déployée sur des conteneurs auto-évolutifs pour une flexibilité maximale.",
     result: "La nouvelle plateforme a non seulement géré le trafic du Black Friday sans aucun temps d'arrêt, mais a également permis à l'équipe de développement de déployer de nouvelles fonctionnalités 5 fois plus rapidement. La réduction des coûts d'infrastructure a atteint 40%."
   },
 ];
