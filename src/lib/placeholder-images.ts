@@ -1,4 +1,3 @@
-
 export type ImagePlaceholder = {
   id: string;
   description?: string;
@@ -19,7 +18,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "partner-acf",
       "description": "Logo de Action Contre la Faim",
-      "imageUrl": "https://picsum.photos/seed/acf-logo/400/200",
+      "imageUrl": "/images/acf-logo.jpg",
       "imageHint": "humanitarian logo"
     },
     {
