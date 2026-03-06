@@ -8,6 +8,42 @@
       "imageHint": "company logo"
     },
     {
+      "id": "partner-vodacom",
+      "description": "Logo de Vodacom",
+      "imageUrl": "https://picsum.photos/seed/vodacom/400/200",
+      "imageHint": "telecom logo"
+    },
+    {
+      "id": "partner-orange",
+      "description": "Logo d'Orange",
+      "imageUrl": "https://picsum.photos/seed/orange/400/200",
+      "imageHint": "orange company"
+    },
+    {
+      "id": "partner-airtel",
+      "description": "Logo d'Airtel",
+      "imageUrl": "https://picsum.photos/seed/airtel/400/200",
+      "imageHint": "red logo"
+    },
+    {
+      "id": "partner-cisco",
+      "description": "Logo de Cisco",
+      "imageUrl": "https://picsum.photos/seed/cisco/400/200",
+      "imageHint": "networking logo"
+    },
+    {
+      "id": "partner-aws",
+      "description": "Logo d'AWS",
+      "imageUrl": "https://picsum.photos/seed/aws/400/200",
+      "imageHint": "cloud platform"
+    },
+    {
+      "id": "partner-google",
+      "description": "Logo de Google Cloud",
+      "imageUrl": "https://picsum.photos/seed/googlecloud/400/200",
+      "imageHint": "google logo"
+    },
+    {
       "id": "mateya-podcast-app",
       "description": "Personne écoutant un podcast sur un téléphone avec des icônes religieuses en arrière-plan.",
       "imageUrl": "/images/mateya-podcast-app.jpg",
@@ -39,7 +75,7 @@
     },
     {
       "id": "team-member-0",
-      "description": "Portrait of a confident CEO.",
+      "description": "Portrait of Isaac Alfani, CEO.",
       "imageUrl": "/images/team-member-0.jpg",
       "imageHint": "CEO portrait"
     },
@@ -51,39 +87,33 @@
     },
     {
       "id": "team-member-2",
-      "description": "Portrait of a smiling professional man.",
+      "description": "Portrait of Isaac Diavo, Network Engineer.",
       "imageUrl": "/images/team-member-2.jpg",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
-      "description": "Portrait of a professional person.",
+      "description": "Portrait of Eric Pimbo, Network & Media.",
       "imageUrl": "/images/team-member-3.jpg",
       "imageHint": "professional person"
     },
     {
       "id": "team-member-4",
-      "description": "Portrait of a technology expert.",
+      "description": "Portrait of Dimex Mwanzita, Network & Designer.",
       "imageUrl": "/images/team-member-4.jpg",
       "imageHint": "tech expert"
     },
     {
       "id": "team-member-5",
-      "description": "Portrait of a developer.",
+      "description": "Portrait of Merite Mufungizi, Software Dev & Designer.",
       "imageUrl": "/images/team-member-5.jpg",
       "imageHint": "developer person"
     },
     {
       "id": "team-member-6",
-      "description": "Portrait of a network engineer.",
+      "description": "Portrait of Sam Awenze, Network Coordinator.",
       "imageUrl": "/images/team-member-6.jpg",
       "imageHint": "network engineer"
-    },
-    {
-      "id": "team-member-7",
-      "description": "Portrait of an AI specialist.",
-      "imageUrl": "/images/team-member-7.jpg",
-      "imageHint": "ai specialist"
     },
     {
       "id": "hero-background",
@@ -175,114 +205,20 @@
       "imageUrl": "/images/office-2.jpg",
       "imageHint": "team meeting"
     },
-    {
-      "id": "mateya-gallery-1",
-      "description": "Mateya App Homescreen",
-      "imageUrl": "/images/mateya-gallery/mateya-1.jpg",
-      "imageHint": "app homescreen"
-    },
-    {
-      "id": "mateya-gallery-2",
-      "description": "Mateya App Audio Player",
-      "imageUrl": "/images/mateya-gallery/mateya-2.jpg",
-      "imageHint": "app player"
-    },
-    {
-      "id": "mateya-gallery-3",
-      "description": "Mateya App Sermon List",
-      "imageUrl": "/images/mateya-gallery/mateya-3.jpg",
-      "imageHint": "sermon list"
-    },
-    {
-      "id": "mateya-gallery-4",
-      "description": "Mateya App Offline Mode",
-      "imageUrl": "/images/mateya-gallery/mateya-4.jpg",
-      "imageHint": "offline mode"
-    },
-    {
-      "id": "training-session-1",
-      "src": "/images/gallery/training-1.jpg",
-      "alt": "Équipe ITSS en session de formation sur le cloud.",
-      "hint": "team training"
-    },
-    {
-      "id": "training-session-2",
-      "src": "/images/gallery/training-2.jpg",
-      "alt": "Atelier de développement agile avec post-its.",
-      "hint": "agile workshop"
-    },
-    {
-      "id": "training-session-3",
-      "src": "/images/gallery/training-3.jpg",
-      "alt": "Un développeur présente une nouvelle architecture.",
-      "hint": "developer presentation"
-    },
-    {
-      "id": "training-session-4",
-      "src": "/images/gallery/training-4.jpg",
-      "alt": "Session de brainstorming de l'équipe design.",
-      "hint": "design brainstorming"
-    },
-    {
-      "id": "training-session-5",
-      "src": "/images/gallery/training-5.jpg",
-      "alt": "Formation sur les nouvelles techniques de cybersécurité.",
-      "hint": "cybersecurity training"
-    },
-    {
-      "id": "training-session-6",
-      "src": "/images/gallery/training-6.jpg",
-      "alt": "Vue d'ensemble d'une session de codage en pair-programming.",
-      "hint": "pair programming"
-    },
-    {
-      "id": "training-session-7",
-      "src": "/images/gallery/training-7.jpg",
-      "alt": "Un membre de l'équipe explique un concept sur un tableau blanc.",
-      "hint": "whiteboard explanation"
-    },
-    {
-      "id": "training-session-8",
-      "src": "/images/gallery/training-8.jpg",
-      "alt": "Vue de près d'un développeur codant sur son ordinateur portable.",
-      "hint": "developer coding"
-    },
-    {
-      "id": "training-session-9",
-      "src": "/images/gallery/training-9.jpg",
-      "alt": "Équipe célébrant la fin d'une formation réussie.",
-      "hint": "team celebration"
-    },
-    {
-      "id": "training-session-10",
-      "src": "/images/gallery/training-10.jpg",
-      "alt": "Discussion de groupe pendant un atelier technique.",
-      "hint": "group discussion"
-    },
-    {
-      "id": "network-gallery-1",
-      "src": "/images/network-team/team-1.jpg",
-      "alt": "Équipe technique installant des équipements réseau.",
-      "hint": "technicians working"
-    },
-    {
-      "id": "network-gallery-2",
-      "src": "/images/network-team/team-2.jpg",
-      "alt": "Technicien sur un poteau tirant un câble de fibre optique.",
-      "hint": "fiber optic installation"
-    },
-    {
-      "id": "network-gallery-3",
-      "src": "/images/network-team/team-3.jpg",
-      "alt": "Configuration d'un routeur dans un data center.",
-      "hint": "network configuration"
-    },
-    {
-      "id": "network-gallery-4",
-      "src": "/images/network-team/team-4.jpg",
-      "alt": "Vue d'ensemble d'une antenne de transmission.",
-      "hint": "telecom tower"
-    },
+    { "id": "training-session-1", "src": "/images/gallery/training-1.jpg", "alt": "Équipe ITSS en session de formation sur le cloud.", "hint": "team training" },
+    { "id": "training-session-2", "src": "/images/gallery/training-2.jpg", "alt": "Atelier de développement agile avec post-its.", "hint": "agile workshop" },
+    { "id": "training-session-3", "src": "/images/gallery/training-3.jpg", "alt": "Un développeur présente une nouvelle architecture.", "hint": "developer presentation" },
+    { "id": "training-session-4", "src": "/images/gallery/training-4.jpg", "alt": "Session de brainstorming de l'équipe design.", "hint": "design brainstorming" },
+    { "id": "training-session-5", "src": "/images/gallery/training-5.jpg", "alt": "Formation sur les nouvelles techniques de cybersécurité.", "hint": "cybersecurity training" },
+    { "id": "training-session-6", "src": "/images/gallery/training-6.jpg", "alt": "Vue d'ensemble d'une session de codage en pair-programming.", "hint": "pair programming" },
+    { "id": "training-session-7", "src": "/images/gallery/training-7.jpg", "alt": "Un membre de l'équipe explique un concept sur un tableau blanc.", "hint": "whiteboard explanation" },
+    { "id": "training-session-8", "src": "/images/gallery/training-8.jpg", "alt": "Vue de près d'un développeur codant sur son ordinateur portable.", "hint": "developer coding" },
+    { "id": "training-session-9", "src": "/images/gallery/training-9.jpg", "alt": "Équipe célébrant la fin d'une formation réussie.", "hint": "team celebration" },
+    { "id": "training-session-10", "src": "/images/gallery/training-10.jpg", "alt": "Discussion de groupe pendant un atelier technique.", "hint": "group discussion" },
+    { "id": "network-gallery-1", "src": "/images/network-team/team-1.jpg", "alt": "Équipe technique installant des équipements réseau.", "hint": "technicians working" },
+    { "id": "network-gallery-2", "src": "/images/network-team/team-2.jpg", "alt": "Technicien sur un poteau tirant un câble de fibre optique.", "hint": "fiber optic installation" },
+    { "id": "network-gallery-3", "src": "/images/network-team/team-3.jpg", "alt": "Configuration d'un routeur dans un data center.", "hint": "network configuration" },
+    { "id": "network-gallery-4", "src": "/images/network-team/team-4.jpg", "alt": "Vue d'ensemble d'une antenne de transmission.", "hint": "telecom tower" },
     { "id": "server-work-1", "src": "/images/server-config/config-1.jpg", "alt": "Technicien travaillant sur une baie de serveurs.", "hint": "server rack" },
     { "id": "server-work-2", "src": "/images/server-config/config-2.jpg", "alt": "Câblage réseau dans une salle de serveurs.", "hint": "network cables" },
     { "id": "server-work-3", "src": "/images/server-config/config-3.jpg", "alt": "Vue de près d'un technicien connectant des câbles Ethernet.", "hint": "ethernet connection" },
@@ -292,114 +228,6 @@
     { "id": "server-work-7", "src": "/images/server-config/config-7.jpg", "alt": "Installation d'un nouveau serveur dans un rack.", "hint": "server installation" },
     { "id": "server-work-8", "src": "/images/server-config/config-8.jpg", "alt": "Gestion des câbles dans une armoire de serveur.", "hint": "cable management" },
     { "id": "server-work-9", "src": "/images/server-config/config-9.jpg", "alt": "Diagnostic d'un problème matériel sur un serveur.", "hint": "server diagnostics" },
-    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" },
-    {
-      "id": "service-cloud",
-      "description": "Illustration de services cloud avec des serveurs et des nuages.",
-      "imageUrl": "/images/service-cloud.jpg",
-      "imageHint": "cloud computing"
-    },
-    {
-      "id": "service-software",
-      "description": "Développeur écrivant du code sur plusieurs écrans.",
-      "imageUrl": "/images/service-software.jpg",
-      "imageHint": "software development"
-    },
-    {
-      "id": "service-design",
-      "description": "Designer travaillant sur une interface utilisateur sur une tablette graphique.",
-      "imageUrl": "/images/service-design.jpg",
-      "imageHint": "ui design"
-    },
-    {
-      "id": "service-security",
-      "description": "Cadenas numérique symbolisant la cybersécurité.",
-      "imageUrl": "/images/service-security.jpg",
-      "imageHint": "cyber security"
-    },
-    {
-      "id": "service-network",
-      "description": "Techniciens travaillant dans une salle de serveurs.",
-      "imageUrl": "/images/service-network.jpg",
-      "imageHint": "network infrastructure"
-    },
-    {
-      "id": "service-data",
-      "description": "Graphiques et tableaux de bord d'analyse de données.",
-      "imageUrl": "/images/service-data.jpg",
-      "imageHint": "data analytics"
-    },
-    {
-      "id": "service-ai",
-      "description": "Cerveau numérique avec des circuits lumineux, représentant l'IA.",
-      "imageUrl": "/images/service-ai.jpg",
-      "imageHint": "artificial intelligence"
-    },
-    {
-      "id": "service-maintenance",
-      "description": "Technicien réparant un ordinateur portable.",
-      "imageUrl": "/images/service-maintenance.jpg",
-      "imageHint": "hardware maintenance"
-    },
-    {
-      "id": "design-gallery-1",
-      "src": "/images/design-gallery/design-1.jpg",
-      "alt": "Exemple de design 1",
-      "hint": "modern logo"
-    },
-    {
-      "id": "design-gallery-2",
-      "src": "/images/design-gallery/design-2.jpg",
-      "alt": "Exemple de design 2",
-      "hint": "business card"
-    },
-    {
-      "id": "design-gallery-3",
-      "src": "/images/design-gallery/design-3.jpg",
-      "alt": "Exemple de design 3",
-      "hint": "flyer design"
-    },
-    {
-      "id": "design-gallery-4",
-      "src": "/images/design-gallery/design-4.jpg",
-      "alt": "Exemple de design 4",
-      "hint": "brochure layout"
-    },
-    {
-      "id": "design-gallery-5",
-      "src": "/images/design-gallery/design-5.jpg",
-      "alt": "Exemple de design 5",
-      "hint": "social media banner"
-    },
-    {
-      "id": "design-gallery-6",
-      "src": "/images/design-gallery/design-6.jpg",
-      "alt": "Exemple de design 6",
-      "hint": "packaging design"
-    },
-    {
-      "id": "design-gallery-7",
-      "src": "/images/design-gallery/design-7.jpg",
-      "alt": "Exemple de design 7",
-      "hint": "web design mockup"
-    },
-    {
-      "id": "design-gallery-8",
-      "src": "/images/design-gallery/design-8.jpg",
-      "alt": "Exemple de design 8",
-      "hint": "app icon"
-    },
-    {
-      "id": "design-gallery-9",
-      "src": "/images/design-gallery/design-9.jpg",
-      "alt": "Exemple de design 9",
-      "hint": "poster design"
-    },
-    {
-      "id": "design-gallery-10",
-      "src": "/images/design-gallery/design-10.jpg",
-      "alt": "Exemple de design 10",
-      "hint": "brand identity"
-    }
+    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" }
   ]
 }

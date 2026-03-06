@@ -26,7 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cookies',
     '/team',
     '/gallery',
-    '/technologies'
+    '/technologies',
+    '/partners'
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -36,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages = blogPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.id}`,
-    lastModified: new Date().toISOString(), // Idéalement, utiliser la date du post
+    lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));

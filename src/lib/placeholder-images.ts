@@ -17,6 +17,42 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "company logo"
     },
     {
+      "id": "partner-vodacom",
+      "description": "Logo de Vodacom",
+      "imageUrl": "https://picsum.photos/seed/vodacom/400/200",
+      "imageHint": "telecom logo"
+    },
+    {
+      "id": "partner-orange",
+      "description": "Logo d'Orange",
+      "imageUrl": "https://picsum.photos/seed/orange/400/200",
+      "imageHint": "orange company"
+    },
+    {
+      "id": "partner-airtel",
+      "description": "Logo d'Airtel",
+      "imageUrl": "https://picsum.photos/seed/airtel/400/200",
+      "imageHint": "red logo"
+    },
+    {
+      "id": "partner-cisco",
+      "description": "Logo de Cisco",
+      "imageUrl": "https://picsum.photos/seed/cisco/400/200",
+      "imageHint": "networking logo"
+    },
+    {
+      "id": "partner-aws",
+      "description": "Logo d'AWS",
+      "imageUrl": "https://picsum.photos/seed/aws/400/200",
+      "imageHint": "cloud platform"
+    },
+    {
+      "id": "partner-google",
+      "description": "Logo de Google Cloud",
+      "imageUrl": "https://picsum.photos/seed/googlecloud/400/200",
+      "imageHint": "google logo"
+    },
+    {
       "id": "mateya-podcast-app",
       "description": "Personne écoutant un podcast sur un téléphone avec des icônes religieuses en arrière-plan.",
       "imageUrl": "/images/mateya-podcast-app.jpg",
@@ -48,7 +84,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     },
     {
       "id": "team-member-0",
-      "description": "Portrait of a confident CEO.",
+      "description": "Portrait of Isaac Alfani, CEO.",
       "imageUrl": "/images/team-member-0.jpg",
       "imageHint": "CEO portrait"
     },
@@ -60,39 +96,33 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     },
     {
       "id": "team-member-2",
-      "description": "Portrait of a smiling professional man.",
+      "description": "Portrait of Isaac Diavo, Network Engineer.",
       "imageUrl": "/images/team-member-2.jpg",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
-      "description": "Portrait of a professional person.",
+      "description": "Portrait of Eric Pimbo, Network & Media.",
       "imageUrl": "/images/team-member-3.jpg",
       "imageHint": "professional person"
     },
     {
       "id": "team-member-4",
-      "description": "Portrait of a technology expert.",
+      "description": "Portrait of Dimex Mwanzita, Network & Designer.",
       "imageUrl": "/images/team-member-4.jpg",
       "imageHint": "tech expert"
     },
     {
       "id": "team-member-5",
-      "description": "Portrait of a developer.",
+      "description": "Portrait of Merite Mufungizi, Software Dev & Designer.",
       "imageUrl": "/images/team-member-5.jpg",
       "imageHint": "developer person"
     },
     {
       "id": "team-member-6",
-      "description": "Portrait of a network engineer.",
+      "description": "Portrait of Sam Awenze, Network Coordinator.",
       "imageUrl": "/images/team-member-6.jpg",
       "imageHint": "network engineer"
-    },
-    {
-      "id": "team-member-7",
-      "description": "Portrait of an AI specialist.",
-      "imageUrl": "/images/team-member-7.jpg",
-      "imageHint": "ai specialist"
     },
     {
       "id": "hero-background",
@@ -184,10 +214,6 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageUrl": "/images/office-2.jpg",
       "imageHint": "team meeting"
     },
-    { "id": "mateya-gallery-1", "description": "Mateya App Homescreen", "imageUrl": "/images/mateya-gallery/mateya-1.jpg", "imageHint": "app homescreen" },
-    { "id": "mateya-gallery-2", "description": "Mateya App Audio Player", "imageUrl": "/images/mateya-gallery/mateya-2.jpg", "imageHint": "app player" },
-    { "id": "mateya-gallery-3", "description": "Mateya App Sermon List", "imageUrl": "/images/mateya-gallery/mateya-3.jpg", "imageHint": "sermon list" },
-    { "id": "mateya-gallery-4", "description": "Mateya App Offline Mode", "imageUrl": "/images/mateya-gallery/mateya-4.jpg", "imageHint": "offline mode" },
     { "id": "training-session-1", "src": "/images/gallery/training-1.jpg", "alt": "Équipe ITSS en session de formation sur le cloud.", "hint": "team training" },
     { "id": "training-session-2", "src": "/images/gallery/training-2.jpg", "alt": "Atelier de développement agile avec post-its.", "hint": "agile workshop" },
     { "id": "training-session-3", "src": "/images/gallery/training-3.jpg", "alt": "Un développeur présente une nouvelle architecture.", "hint": "developer presentation" },
@@ -211,16 +237,6 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     { "id": "server-work-7", "src": "/images/server-config/config-7.jpg", "alt": "Installation d'un nouveau serveur dans un rack.", "hint": "server installation" },
     { "id": "server-work-8", "src": "/images/server-config/config-8.jpg", "alt": "Gestion des câbles dans une armoire de serveur.", "hint": "cable management" },
     { "id": "server-work-9", "src": "/images/server-config/config-9.jpg", "alt": "Diagnostic d'un problème matériel sur un serveur.", "hint": "server diagnostics" },
-    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" },
-    { "id": "service-cloud", "description": "Illustration de services cloud avec des serveurs et des nuages.", "imageUrl": "/images/service-cloud.jpg", "imageHint": "cloud computing" },
-    { "id": "service-software", "description": "Développeur écrivant du code sur plusieurs écrans.", "imageUrl": "/images/service-software.jpg", "imageHint": "software development" },
-    { "id": "service-design", "description": "Designer travaillant sur une interface utilisateur sur une tablette graphique.", "imageUrl": "/images/service-design.jpg", "imageHint": "ui design" },
-    { "id": "service-security", "description": "Cadenas numérique symbolisant la cybersécurité.", "imageUrl": "/images/service-security.jpg", "imageHint": "cyber security" },
-    { "id": "service-network", "description": "Techniciens travaillant dans une salle de serveurs.", "imageUrl": "/images/service-network.jpg", "imageHint": "network infrastructure" },
-    { "id": "service-data", "description": "Graphiques et tableaux de bord d'analyse de données.", "imageUrl": "/images/service-data.jpg", "imageHint": "data analytics" },
-    { "id": "service-ai", "description": "Cerveau numérique avec des circuits lumineux, représentant l'IA.", "imageUrl": "/images/service-ai.jpg", "imageHint": "artificial intelligence" },
-    { "id": "service-maintenance", "description": "Technicien réparant un ordinateur portable.", "imageUrl": "/images/service-maintenance.jpg", "imageHint": "hardware maintenance" }
+    { "id": "server-work-10", "src": "/images/server-config/config-10.jpg", "alt": "Vue intérieure d'un serveur avec ses composants.", "hint": "server components" }
   ]
 ;
-
-    

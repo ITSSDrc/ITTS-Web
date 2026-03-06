@@ -28,6 +28,7 @@ const navLinks = [
 const companyLinks = [
     { href: "/about", label: "À propos" },
     { href: "/team", label: "Notre Équipe" },
+    { href: "/partners", label: "Partenaires" },
     { href: "/technologies", label: "Nos Technologies" },
     { href: "/gallery", label: "Galerie" },
     { href: "/blog", label: "Blog" },
@@ -46,7 +47,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             {logo && <Image 
               src={logo.imageUrl}
-              alt={logo.description} 
+              alt={logo.description || "Logo ITSS"} 
               width={40} 
               height={40} 
               className="rounded-full"
@@ -115,7 +116,7 @@ export function Header() {
                 >
                   {logo && <Image 
                     src={logo.imageUrl}
-                    alt={logo.description} 
+                    alt={logo.description || "Logo ITSS"} 
                     width={40} 
                     height={40} 
                     className="mr-2 rounded-full"
@@ -190,7 +191,7 @@ export function Header() {
         <Link href="/" className="flex items-center space-x-2 md:hidden">
           {logo && <Image 
             src={logo.imageUrl}
-            alt={logo.description}
+            alt={logo.description || "Logo ITSS"}
             width={40} 
             height={40} 
             className="rounded-full"
