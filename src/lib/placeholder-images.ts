@@ -1,3 +1,4 @@
+
 export type ImagePlaceholder = {
   id: string;
   description?: string;
@@ -25,6 +26,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "hotel logo"
     },
     {
+      "id": "partner-college-emmanuel",
+      "description": "Logo du Collège Emmanuel",
+      "imageUrl": "/images/college-emmanuel-logo.jpg",
+      "imageHint": "school logo"
+    },
+    {
       "id": "mungwalu-city",
       "description": "Vue de la ville de Mungwalu en Ituri.",
       "imageUrl": "/images/mungwalu-city.jpeg",
@@ -35,6 +42,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "description": "Aperçu du logiciel HSafari et du site web Karibuni.",
       "imageUrl": "/images/karibuni-project-main.jpg",
       "imageHint": "software showcase"
+    },
+    {
+      "id": "kongoschool-project-main",
+      "description": "Interface du logiciel KongoSchool pour le Collège Emmanuel.",
+      "imageUrl": "/images/kongoschool-project-main.jpg",
+      "imageHint": "dashboard view"
     },
     {
       "id": "itss-website-showcase",

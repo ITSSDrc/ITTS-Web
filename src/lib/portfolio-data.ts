@@ -53,8 +53,24 @@ export const portfolioProjects = [
       { label: 'Vitesse du site', value: '< 1.5s' },
     ],
     challenge: "L'Hôtel Karibuni souhaitait moderniser sa gestion interne, autrefois manuelle, pour réduire les erreurs de réservation et optimiser le service client. De plus, une présence web était nécessaire pour attirer les voyageurs internationaux.",
-    solution: "ITSS a développé **HSafari**, une application de gestion hôtelière complète conçue avec **Dart & Flutter**, permettant une gestion fluide des chambres, de la facturation et du personnel. En parallèle, nous avons créé le site web officiel [www.hotelkaribunibunia.com](https://www.hotelkaribunibunia.com) avec **Next.js**, offrant une vitrine élégante et performante, optimisée pour tous les appareils.",
+    solution: "ITSS a développé HSafari, une application de gestion hôtelière complète conçue avec Dart & Flutter, permettant une gestion fluide des chambres, de la facturation et du personnel. En parallèle, nous avons créé le site web officiel www.hotelkaribunibunia.com avec Next.js, offrant une vitrine élégante et performante, optimisée pour tous les appareils.",
     result: "Le logiciel HSafari a centralisé toutes les opérations de l'hôtel, améliorant la productivité du personnel. Le site web a permis à l'Hôtel Karibuni de devenir plus accessible en ligne, facilitant les réservations directes."
+  },
+  {
+    id: 'kongoschool-gestion',
+    client: 'Collège Emmanuel',
+    title: 'KongoSchool - Système de Gestion Scolaire',
+    image: PlaceHolderImages.find(p => p.id === 'kongoschool-project-main'),
+    summary: 'Développement d\'une plateforme intégrée pour la gestion des inscriptions, des notes, des finances et de la communication entre parents et école.',
+    tags: ['Next.js', 'PostgreSQL', 'Gestion Scolaire', 'Bunia', 'Finances'],
+    metrics: [
+      { label: 'Transparence Financière', value: '100%' },
+      { label: 'Gain de temps admin', value: '+60%' },
+      { label: 'Suivi des élèves', value: 'Temps réel' },
+    ],
+    challenge: "Le Collège Emmanuel gérait manuellement des milliers de dossiers d'élèves et des flux financiers complexes, entraînant des lenteurs administratives et des risques d'erreurs dans le suivi des frais scolaires.",
+    solution: "ITSS a conçu KongoSchool, une solution web robuste. La plateforme automatise la génération des bulletins, gère les paiements via des rapports détaillés et offre un portail sécurisé pour le suivi pédagogique. Le système est optimisé pour fonctionner efficacement avec les contraintes locales de connectivité.",
+    result: "La numérisation complète a permis une gestion plus rigoureuse et transparente. Les parents reçoivent des informations précises sur le parcours de leurs enfants et l'administration a réduit drastiquement sa charge de travail manuelle."
   },
   {
     id: 'itss-website-showcase',

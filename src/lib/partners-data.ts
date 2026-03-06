@@ -13,5 +13,12 @@ export const partners = [
     logoId: "partner-karibuni",
     description: "Établissement hôtelier de référence à Bunia. ITSS a accompagné l'hôtel dans sa transformation numérique par le développement de son application de gestion interne HSafari et de son site web officiel.",
     website: "https://www.hotelkaribunibunia.com"
+  },
+  {
+    id: "college-emmanuel",
+    name: "Collège Emmanuel",
+    logoId: "partner-college-emmanuel",
+    description: "Institution d'enseignement de prestige à Bunia. ITSS collabore avec le collège pour moderniser sa gestion administrative et pédagogique via la solution KongoSchool.",
+    website: "#"
   }
 ];
