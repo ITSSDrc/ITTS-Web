@@ -23,22 +23,22 @@ export const portfolioProjects = [
     solution: "ITSS a conçu une solution hybride combinant la technologie satellite de pointe Starlink pour l'accès internet et un réseau local (LAN) structuré. Nous avons procédé à l'installation physique de l'antenne, au câblage structuré des bureaux, et à la configuration de routeurs et pare-feu pour garantir une sécurité optimale des données de l'organisation.",
     gallery: [
       { 
-        src: PlaceHolderImages.find(p => p.id === 'acf-team-1')?.imageUrl || "/images/acf-team-1.jpg", 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-1')?.imageUrl || "/images/acf-team-1.jpeg", 
         alt: "L'équipe ITSS préparant l'antenne Starlink à Mungwalu", 
         hint: "tech team" 
       },
       { 
-        src: PlaceHolderImages.find(p => p.id === 'acf-team-2')?.imageUrl || "/images/acf-team-2.jpg", 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-2')?.imageUrl || "/images/acf-team-2.jpeg", 
         alt: "Installation du câblage réseau dans les bureaux d'ACF", 
         hint: "network wiring" 
       },
       { 
-        src: PlaceHolderImages.find(p => p.id === 'acf-team-3')?.imageUrl || "/images/acf-team-3.jpg", 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-3')?.imageUrl || "/images/acf-team-3.jpeg", 
         alt: "Configuration des serveurs et du routeur Starlink", 
         hint: "server config" 
       },
       { 
-        src: PlaceHolderImages.find(p => p.id === 'acf-team-4')?.imageUrl || "/images/acf-team-4.jpg", 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-4')?.imageUrl || "/images/acf-team-4.jpeg", 
         alt: "L'équipe ITSS et le personnel d'ACF après l'installation réussie", 
         hint: "satisfied team" 
       },
