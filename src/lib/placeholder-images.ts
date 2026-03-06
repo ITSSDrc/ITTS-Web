@@ -33,7 +33,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "karibuni-project-main",
       "description": "Aperçu du logiciel HSafari et du site web Karibuni.",
-      "imageUrl": "https://picsum.photos/seed/karibuni/1200/600",
+      "imageUrl": "/images/karibuni-project-main.jpeg",
       "imageHint": "software showcase"
     },
     {
