@@ -4,9 +4,6 @@ export type ImagePlaceholder = {
   description?: string;
   imageUrl?: string;
   imageHint?: string;
-  src?: string;
-  alt?: string;
-  hint?: string;
 };
 
 export const PlaceHolderImages: ImagePlaceholder[] = [
@@ -23,40 +20,10 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "humanitarian logo"
     },
     {
-      "id": "partner-vodacom",
-      "description": "Logo de Vodacom",
-      "imageUrl": "https://picsum.photos/seed/vodacom/400/200",
-      "imageHint": "telecom logo"
-    },
-    {
-      "id": "partner-orange",
-      "description": "Logo d'Orange",
-      "imageUrl": "https://picsum.photos/seed/orange/400/200",
-      "imageHint": "orange company"
-    },
-    {
-      "id": "partner-airtel",
-      "description": "Logo d'Airtel",
-      "imageUrl": "https://picsum.photos/seed/airtel/400/200",
-      "imageHint": "red logo"
-    },
-    {
-      "id": "partner-cisco",
-      "description": "Logo de Cisco",
-      "imageUrl": "https://picsum.photos/seed/cisco/400/200",
-      "imageHint": "networking logo"
-    },
-    {
-      "id": "partner-aws",
-      "description": "Logo d'AWS",
-      "imageUrl": "https://picsum.photos/seed/aws/400/200",
-      "imageHint": "cloud platform"
-    },
-    {
-      "id": "partner-google",
-      "description": "Logo de Google Cloud",
-      "imageUrl": "https://picsum.photos/seed/googlecloud/400/200",
-      "imageHint": "google logo"
+      "id": "partner-karibuni",
+      "description": "Logo de l'Hôtel Karibuni",
+      "imageUrl": "/images/karibuni-logo.png",
+      "imageHint": "hotel logo"
     },
     {
       "id": "mungwalu-city",
@@ -65,28 +32,10 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "city view"
     },
     {
-      "id": "mateya-podcast-app",
-      "description": "Personne écoutant un podcast sur un téléphone avec des icônes religieuses en arrière-plan.",
-      "imageUrl": "/images/mateya-podcast-app.jpg",
-      "imageHint": "podcast app"
-    },
-    {
-      "id": "portfolio-graphic-design",
-      "description": "Montage de diverses créations graphiques incluant logos et flyers.",
-      "imageUrl": "/images/graphic-design-portfolio.jpg",
-      "imageHint": "graphic design portfolio"
-    },
-    {
-      "id": "network-deployment",
-      "description": "Techniciens installant des câbles de fibre optique sur un poteau en milieu urbain.",
-      "imageUrl": "/images/network-deployment.jpg",
-      "imageHint": "network deployment"
-    },
-    {
-      "id": "computer-maintenance-project",
-      "description": "Technicien en train de réparer un ordinateur portable dans un atelier.",
-      "imageUrl": "/images/computer-maintenance.jpg",
-      "imageHint": "computer repair"
+      "id": "karibuni-project-main",
+      "description": "Aperçu du logiciel HSafari et du site web Karibuni.",
+      "imageUrl": "https://picsum.photos/seed/karibuni/1200/600",
+      "imageHint": "software showcase"
     },
     {
       "id": "itss-website-showcase",
@@ -95,88 +44,9 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
       "imageHint": "website screenshot"
     },
     {
-      "id": "team-member-0",
-      "description": "Portrait of Isaac Alfani, CEO.",
-      "imageUrl": "/images/team-member-0.jpg",
-      "imageHint": "CEO portrait"
-    },
-    {
-      "id": "team-member-1",
-      "description": "Portrait de Prince Ongala, Développeur.",
-      "imageUrl": "/images/team-member-1.jpg",
-      "imageHint": "male developer"
-    },
-    {
-      "id": "team-member-2",
-      "description": "Portrait of Isaac Diavo, Network Engineer.",
-      "imageUrl": "/images/team-member-2.jpg",
-      "imageHint": "professional man"
-    },
-    {
-      "id": "team-member-3",
-      "description": "Portrait of Eric Pimbo, Network & Media.",
-      "imageUrl": "/images/team-member-3.jpg",
-      "imageHint": "professional person"
-    },
-    {
-      "id": "team-member-4",
-      "description": "Portrait of Dimex Mwanzita, Network & Designer.",
-      "imageUrl": "/images/team-member-4.jpg",
-      "imageHint": "tech expert"
-    },
-    {
-      "id": "team-member-5",
-      "description": "Portrait of Merite Mufungizi, Software Dev & Designer.",
-      "imageUrl": "/images/team-member-5.jpg",
-      "imageHint": "developer person"
-    },
-    {
-      "id": "team-member-6",
-      "description": "Portrait of Sam Awenze, Network Coordinator.",
-      "imageUrl": "/images/team-member-6.jpg",
-      "imageHint": "network engineer"
-    },
-    {
       "id": "mission-image",
       "description": "A rocket launching into the sky, symbolizing innovation and ambition.",
       "imageUrl": "/images/mission-image.jpg",
       "imageHint": "rocket launch"
-    },
-    {
-      "id": "office-1",
-      "description": "Photo of ITSS office space.",
-      "imageUrl": "/images/office-1.jpg",
-      "imageHint": "office workspace"
-    },
-    {
-      "id": "office-2",
-      "description": "Photo of ITSS team meeting.",
-      "imageUrl": "/images/office-2.jpg",
-      "imageHint": "team meeting"
-    },
-    {
-      "id": "acf-team-1",
-      "description": "L'équipe ITSS préparant l'antenne Starlink à Mungwalu.",
-      "imageUrl": "/images/acf-team-1.jpeg",
-      "imageHint": "tech team"
-    },
-    {
-      "id": "acf-team-2",
-      "description": "Installation du câblage réseau dans les bureaux d'ACF.",
-      "imageUrl": "/images/acf-team-2.jpeg",
-      "imageHint": "network wiring"
-    },
-    {
-      "id": "acf-team-3",
-      "description": "Configuration des serveurs et du routeur Starlink.",
-      "imageUrl": "/images/acf-team-3.jpeg",
-      "imageHint": "server config"
-    },
-    {
-      "id": "acf-team-4",
-      "description": "L'équipe ITSS et le personnel d'ACF après l'installation réussie.",
-      "imageUrl": "/images/acf-team-4.jpeg",
-      "imageHint": "satisfied team"
     }
-  ]
-;
+];
