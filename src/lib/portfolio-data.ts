@@ -21,6 +21,12 @@ export const portfolioProjects = [
     ],
     challenge: "Mungwalu est une zone enclavée où la connectivité internet traditionnelle est quasi-existante ou très instable. L'ONGD ACF avait besoin d'une connexion fiable et performante pour coordonner ses opérations humanitaires vitales, ainsi que d'un réseau local sécurisé pour ses équipements de bureau.",
     solution: "ITSS a conçu une solution hybride combinant la technologie satellite de pointe Starlink pour l'accès internet et un réseau local (LAN) structuré. Nous avons procédé à l'installation physique de l'antenne, au câblage structuré des bureaux, et à la configuration de routeurs et pare-feu pour garantir une sécurité optimale des données de l'organisation.",
+    gallery: [
+      { src: "https://picsum.photos/seed/acf-team-1/800/600", alt: "L'équipe ITSS préparant l'antenne Starlink à Mungwalu", hint: "tech team" },
+      { src: "https://picsum.photos/seed/acf-team-2/800/600", alt: "Installation du câblage réseau dans les bureaux d'ACF", hint: "network wiring" },
+      { src: "https://picsum.photos/seed/acf-team-3/800/600", alt: "Configuration des serveurs et du routeur Starlink", hint: "server config" },
+      { src: "https://picsum.photos/seed/acf-team-4/800/600", alt: "L'équipe ITSS et le personnel d'ACF après l'installation réussie", hint: "satisfied team" },
+    ],
     result: "Grâce à cette intervention, le personnel d'ACF à Mungwalu dispose désormais d'une connexion internet stable et rapide, permettant des visioconférences fluides et un transfert de données efficace avec le bureau national et international. Le réseau LAN interne assure une collaboration transparente entre les différents départements."
   },
   {
@@ -54,10 +60,10 @@ export const portfolioProjects = [
     challenge: "De nombreuses églises à Bunia souhaitaient partager leurs messages audio avec leurs membres, en particulier ceux qui ne pouvaient pas assister aux services. Il n'existait aucune plateforme centralisée, simple d'utilisation et adaptée au contexte local (faible connectivité).",
     solution: "Nous avons développé 'Mateya', une application mobile multiplateforme (iOS/Android) avec Flutter, ce qui garantit une expérience utilisateur fluide et native. L'application permet aux églises de téléverser facilement des fichiers audio, de les classer par prédicateur ou par série. Pour les utilisateurs, l'application offre une écoute en streaming et une option de téléchargement pour une écoute hors ligne, cruciale pour les zones à faible connectivité. Nous avons utilisé Supabase pour une base de données robuste, l'authentification des utilisateurs et le stockage des fichiers audio.",
     gallery: [
-      { src: "/images/mateya-gallery/mateya-1.jpg", alt: "Capture d'écran de l'accueil de Mateya", hint: "app homescreen" },
-      { src: "/images/mateya-gallery/mateya-2.jpg", alt: "Capture d'écran du lecteur audio de Mateya", hint: "app player" },
-      { src: "/images/mateya-gallery/mateya-3.jpg", alt: "Capture d'écran de la liste des prédications", hint: "sermon list" },
-      { src: "/images/mateya-gallery/mateya-4.jpg", alt: "Capture d'écran du mode hors-ligne", hint: "offline mode" },
+      { src: "https://picsum.photos/seed/mateya-1/800/600", alt: "Capture d'écran de l'accueil de Mateya", hint: "app homescreen" },
+      { src: "https://picsum.photos/seed/mateya-2/800/600", alt: "Capture d'écran du lecteur audio de Mateya", hint: "app player" },
+      { src: "https://picsum.photos/seed/mateya-3/800/600", alt: "Capture d'écran de la liste des prédications", hint: "sermon list" },
+      { src: "https://picsum.photos/seed/mateya-4/800/600", alt: "Capture d'écran du mode hors-ligne", hint: "offline mode" },
     ],
     result: "Mateya est devenue l'application de référence pour la communauté chrétienne de Bunia. En 6 mois, elle a attiré plus de 5 000 utilisateurs actifs et a permis à plus de 25 églises de diffuser leurs messages. L'option de téléchargement a été un succès majeur, permettant de toucher des membres dans des zones rurales sans accès internet stable."
   },
@@ -76,16 +82,9 @@ export const portfolioProjects = [
     challenge: "De nombreuses entreprises et organisations à Bunia, mais aussi à l'international, manquaient d'une identité visuelle professionnelle et cohérente pour se démarquer. Elles avaient besoin de supports de communication (numériques et imprimés) pour asseoir leur crédibilité et attirer des clients.",
     solution: `Notre pôle design a travaillé en étroite collaboration avec chaque client pour comprendre leur vision, leurs valeurs et leur public cible. À partir de là, nous avons développé des chartes graphiques complètes, incluant la création de logos, le choix des typographies et des palettes de couleurs. Nous avons ensuite décliné ces identités sur une multitude de supports : cartes de visite, brochures, bannières pour les réseaux sociaux, et maquettes pour les sites web, garantissant une communication visuelle cohérente sur tous les canaux.`,
     gallery: [
-      { src: "/images/design-gallery/design-1.jpg", alt: "Exemple de design 1", hint: "modern logo" },
-      { src: "/images/design-gallery/design-2.jpg", alt: "Exemple de design 2", hint: "business card" },
-      { src: "/images/design-gallery/design-3.jpg", alt: "Exemple de design 3", hint: "flyer design" },
-      { src: "/images/design-gallery/design-4.jpg", alt: "Exemple de design 4", hint: "brochure layout" },
-      { src: "/images/design-gallery/design-5.jpg", alt: "Exemple de design 5", hint: "social media banner" },
-      { src: "/images/design-gallery/design-6.jpg", alt: "Exemple de design 6", hint: "packaging design" },
-      { src: "/images/design-gallery/design-7.jpg", alt: "Exemple de design 7", hint: "web design mockup" },
-      { src: "/images/design-gallery/design-8.jpg", alt: "Exemple de design 8", hint: "app icon" },
-      { src: "/images/design-gallery/design-9.jpg", alt: "Exemple de design 9", hint: "poster design" },
-      { src: "/images/design-gallery/design-10.jpg", alt: "Exemple de design 10", hint: "brand identity" },
+      { src: "https://picsum.photos/seed/design-1/800/600", alt: "Exemple de design 1", hint: "modern logo" },
+      { src: "https://picsum.photos/seed/design-2/800/600", alt: "Exemple de design 2", hint: "business card" },
+      { src: "https://picsum.photos/seed/design-3/800/600", alt: "Exemple de design 3", hint: "flyer design" },
     ],
     result: "Grâce à des identités visuelles fortes et professionnelles, nos clients ont vu leur notoriété et leur crédibilité augmenter. Des supports de communication clairs et esthétiques leur ont permis d'améliorer leurs campagnes marketing et d'attirer une nouvelle clientèle, renforçant ainsi leur positionnement sur le marché."
   },
@@ -104,10 +103,8 @@ export const portfolioProjects = [
     challenge: "La connectivité internet à Bunia était limitée, peu fiable et coûteuse. Les entreprises et les résidents souffraient d'un manque d'infrastructures robustes, ce qui freinait le développement économique et l'accès à l'information.",
     solution: "Notre équipe réseau a mené une étude topographique complète de la ville pour planifier un déploiement optimal. Nous avons déployé des kilomètres de fibre optique dans les artères principales et mis en place des points d'accès sans fil (Wi-Fi et liaisons point-à-point) pour couvrir les zones moins denses. Nous avons configuré des cœurs de réseau redondants et mis en place des politiques de sécurité strictes pour garantir la fiabilité et la protection des données.",
     gallery: [
-      { src: "/images/network-team/team-1.jpg", alt: "Équipe technique installant des équipements", hint: "technicians working" },
-      { src: "/images/network-team/team-2.jpg", alt: "Technicien sur un poteau tirant un câble", hint: "fiber optic installation" },
-      { src: "/images/network-team/team-3.jpg" , alt: "Configuration d'un routeur dans un data center", hint: "network configuration" },
-      { src: "/images/network-team/team-4.jpg", alt: "Vue d'ensemble d'une antenne de transmission", hint: "telecom tower" },
+      { src: "https://picsum.photos/seed/network-1/800/600", alt: "Équipe technique installant des équipements", hint: "technicians working" },
+      { src: "https://picsum.photos/seed/network-2/800/600", alt: "Technicien sur un poteau tirant un câble", hint: "fiber optic installation" },
     ],
     result: "Ce projet a considérablement amélioré la connectivité dans les zones couvertes, offrant un accès internet plus rapide et plus stable. Plusieurs entreprises ont pu migrer vers des solutions cloud, et les fournisseurs d'accès locaux ont amélioré la qualité de leur service, stimulant ainsi l'économie numérique locale."
   },
@@ -124,14 +121,19 @@ export const portfolioProjects = [
       { label: 'Clients Satisfaits', value: '99%' },
     ],
     challenge: "De nombreuses entreprises et particuliers à Bunia faisaient face à des pannes matérielles récurrentes, des ralentissements systèmes et une obsolescence rapide de leur matériel, entraînant des pertes de productivité et des coûts imprévus.",
-    solution: "Nous avons mis en place un service de maintenance complet incluant des diagnostics précis, des réparations rapides (changement de pièces, réinstallation de systèmes) et des programmes de maintenance préventive pour les entreprises. Nous proposons également des services de mise à niveau (ajout de RAM, remplacement par des SSD) pour prolonger la durée de vie des équipements et améliorer leurs performances.",
+    solution: "Nous avons maintenu un service de maintenance complet incluant des diagnostics précis, des réparations rapides (changement de pièces, réinstallation de systèmes) et des programmes de maintenance préventive pour les entreprises. Nous proposons également des services de mise à niveau (ajout de RAM, remplacement par des SSD) pour prolonger la durée de vie des équipements et améliorer leurs performances.",
     result: "Nos services ont permis de réduire de 70% les temps d'arrêt pour nos clients sous contrat de maintenance. La durée de vie moyenne de leur parc informatique a été prolongée de 2 ans, offrant un excellent retour sur investissement. Les particuliers bénéficient d'un service rapide et fiable, restaurant leurs outils de travail et de communication."
   },
   {
     id: 'e-commerce-migration-cloud',
     client: 'RetailNext Corp',
     title: 'Migration et modernisation d\'une plateforme e-commerce',
-    image: PlaceHolderImages.find(p => p.id === 'case-study-1'),
+    image: {
+        id: "project-ecommerce",
+        description: "Migration cloud pour RetailNext.",
+        imageUrl: "https://picsum.photos/seed/ecommerce/1200/600",
+        imageHint: "ecommerce tech"
+    },
     summary: 'Migration d\'une infrastructure monolithique vers une architecture microservices sur AWS, optimisant les performances et la scalabilité.',
     tags: ['AWS', 'E-commerce', 'React', 'Node.js', 'Microservices'],
     metrics: [
