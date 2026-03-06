@@ -49,6 +49,12 @@
       "imageHint": "google logo"
     },
     {
+      "id": "mungwalu-city",
+      "description": "Vue de la ville de Mungwalu en Ituri.",
+      "imageUrl": "/images/mungwalu-city.jpeg",
+      "imageHint": "city view"
+    },
+    {
       "id": "mateya-podcast-app",
       "description": "Personne écoutant un podcast sur un téléphone avec des icônes religieuses en arrière-plan.",
       "imageUrl": "/images/mateya-podcast-app.jpg",

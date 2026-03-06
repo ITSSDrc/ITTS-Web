@@ -6,12 +6,7 @@ export const portfolioProjects = [
     id: 'acf-mungwalu-starlink',
     client: 'ONGD ACF (Action Contre la Faim)',
     title: 'Installation Réseau LAN & Connexion Starlink à Mungwalu',
-    image: {
-        id: "project-acf-mungwalu",
-        description: "Installation d'une antenne Starlink et configuration réseau à Mungwalu.",
-        imageUrl: "https://picsum.photos/seed/acf-starlink/1200/600",
-        imageHint: "satellite antenna"
-    },
+    image: PlaceHolderImages.find(p => p.id === 'mungwalu-city'),
     summary: 'Déploiement d\'une infrastructure réseau locale (LAN) et mise en place d\'une connexion internet haut débit par satellite via Starlink pour les bureaux de l\'ONGD ACF à Mungwalu.',
     tags: ['Starlink', 'Réseau LAN', 'Mungwalu', 'Connectivité Critique', 'Humanitaire'],
     metrics: [
