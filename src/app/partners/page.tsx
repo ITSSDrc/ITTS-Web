@@ -60,7 +60,7 @@ export default function PartnersPage() {
                       {partner.description}
                     </p>
                     <Button variant="outline" asChild className="rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Link href={partner.website} target="_blank" rel="noopener noreferrer">
+                      <Link href={`/partners/${partner.id}`}>
                         En savoir plus <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
