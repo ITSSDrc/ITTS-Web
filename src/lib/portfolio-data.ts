@@ -61,16 +61,16 @@ export const portfolioProjects = [
     client: 'Collège Emmanuel',
     title: 'KongoSchool - Système de Gestion Scolaire',
     image: PlaceHolderImages.find(p => p.id === 'kongoschool-project-main'),
-    summary: 'Développement d\'une plateforme intégrée pour la gestion des inscriptions, des notes, des finances et de la communication entre parents et école.',
-    tags: ['Next.js', 'PostgreSQL', 'Gestion Scolaire', 'Bunia', 'Finances'],
+    summary: 'Développement de KongoSchool, un logiciel Windows robuste pour la gestion administrative et une application mobile dédiée aux parents pour le suivi en temps réel.',
+    tags: ['Windows App', 'Mobile App', 'C#', 'Flutter', 'Gestion Scolaire', 'Bunia'],
     metrics: [
       { label: 'Transparence Financière', value: '100%' },
       { label: 'Gain de temps admin', value: '+60%' },
       { label: 'Suivi des élèves', value: 'Temps réel' },
     ],
-    challenge: "Le Collège Emmanuel gérait manuellement des milliers de dossiers d'élèves et des flux financiers complexes, entraînant des lenteurs administratives et des risques d'erreurs dans le suivi des frais scolaires.",
-    solution: "ITSS a conçu KongoSchool, une solution web robuste. La plateforme automatise la génération des bulletins, gère les paiements via des rapports détaillés et offre un portail sécurisé pour le suivi pédagogique. Le système est optimisé pour fonctionner efficacement avec les contraintes locales de connectivité.",
-    result: "La numérisation complète a permis une gestion plus rigoureuse et transparente. Les parents reçoivent des informations précises sur le parcours de leurs enfants et l'administration a réduit drastiquement sa charge de travail manuelle."
+    challenge: "Le Collège Emmanuel gérait manuellement des milliers de dossiers d'élèves et des flux financiers complexes, entraînant des lenteurs administratives et un manque de communication directe avec les parents sur les performances et les frais.",
+    solution: "ITSS a conçu KongoSchool, une solution hybride puissante. Elle comprend un logiciel de bureau Windows pour une administration scolaire rapide et sécurisée (inscriptions, bulletins, finances), couplé à une application mobile intuitive pour les parents. Cette application permet de recevoir des notifications instantanées sur les notes, les absences et l'état des paiements.",
+    result: "La numérisation complète a permis une gestion plus rigoureuse et transparente. Les parents sont désormais connectés directement à la vie scolaire de leurs enfants, renforçant la confiance et l'efficacité de l'institution."
   },
   {
     id: 'itss-website-showcase',
