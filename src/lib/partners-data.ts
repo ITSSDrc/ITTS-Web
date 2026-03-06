@@ -19,6 +19,6 @@ export const partners = [
     name: "Collège Emmanuel",
     logoId: "partner-college-emmanuel",
     description: "Institution d'enseignement de prestige à Bunia. ITSS collabore avec le collège pour moderniser sa gestion administrative et pédagogique via la solution KongoSchool.",
-    website: "#"
+    website: "https://www.collegeemmanuel.org"
   }
 ];
