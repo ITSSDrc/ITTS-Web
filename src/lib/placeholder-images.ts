@@ -151,25 +151,25 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "acf-team-1",
       "description": "L'équipe ITSS préparant l'antenne Starlink à Mungwalu.",
-      "imageUrl": "https://picsum.photos/seed/acf-team-1/800/600",
+      "imageUrl": "/images/acf-team-1.jpg",
       "imageHint": "tech team"
     },
     {
       "id": "acf-team-2",
       "description": "Installation du câblage réseau dans les bureaux d'ACF.",
-      "imageUrl": "https://picsum.photos/seed/acf-team-2/800/600",
+      "imageUrl": "/images/acf-team-2.jpg",
       "imageHint": "network wiring"
     },
     {
       "id": "acf-team-3",
       "description": "Configuration des serveurs et du routeur Starlink.",
-      "imageUrl": "https://picsum.photos/seed/acf-team-3/800/600",
+      "imageUrl": "/images/acf-team-3.jpg",
       "imageHint": "server config"
     },
     {
       "id": "acf-team-4",
       "description": "L'équipe ITSS et le personnel d'ACF après l'installation réussie.",
-      "imageUrl": "https://picsum.photos/seed/acf-team-4/800/600",
+      "imageUrl": "/images/acf-team-4.jpg",
       "imageHint": "satisfied team"
     }
   ]

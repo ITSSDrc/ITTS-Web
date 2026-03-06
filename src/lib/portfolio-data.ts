@@ -22,10 +22,26 @@ export const portfolioProjects = [
     challenge: "Mungwalu est une zone enclavée où la connectivité internet traditionnelle est quasi-existante ou très instable. L'ONGD ACF avait besoin d'une connexion fiable et performante pour coordonner ses opérations humanitaires vitales, ainsi que d'un réseau local sécurisé pour ses équipements de bureau.",
     solution: "ITSS a conçu une solution hybride combinant la technologie satellite de pointe Starlink pour l'accès internet et un réseau local (LAN) structuré. Nous avons procédé à l'installation physique de l'antenne, au câblage structuré des bureaux, et à la configuration de routeurs et pare-feu pour garantir une sécurité optimale des données de l'organisation.",
     gallery: [
-      { src: "https://picsum.photos/seed/acf-team-1/800/600", alt: "L'équipe ITSS préparant l'antenne Starlink à Mungwalu", hint: "tech team" },
-      { src: "https://picsum.photos/seed/acf-team-2/800/600", alt: "Installation du câblage réseau dans les bureaux d'ACF", hint: "network wiring" },
-      { src: "https://picsum.photos/seed/acf-team-3/800/600", alt: "Configuration des serveurs et du routeur Starlink", hint: "server config" },
-      { src: "https://picsum.photos/seed/acf-team-4/800/600", alt: "L'équipe ITSS et le personnel d'ACF après l'installation réussie", hint: "satisfied team" },
+      { 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-1')?.imageUrl || "/images/acf-team-1.jpg", 
+        alt: "L'équipe ITSS préparant l'antenne Starlink à Mungwalu", 
+        hint: "tech team" 
+      },
+      { 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-2')?.imageUrl || "/images/acf-team-2.jpg", 
+        alt: "Installation du câblage réseau dans les bureaux d'ACF", 
+        hint: "network wiring" 
+      },
+      { 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-3')?.imageUrl || "/images/acf-team-3.jpg", 
+        alt: "Configuration des serveurs et du routeur Starlink", 
+        hint: "server config" 
+      },
+      { 
+        src: PlaceHolderImages.find(p => p.id === 'acf-team-4')?.imageUrl || "/images/acf-team-4.jpg", 
+        alt: "L'équipe ITSS et le personnel d'ACF après l'installation réussie", 
+        hint: "satisfied team" 
+      },
     ],
     result: "Grâce à cette intervention, le personnel d'ACF à Mungwalu dispose désormais d'une connexion internet stable et rapide, permettant des visioconférences fluides et un transfert de données efficace avec le bureau national et international. Le réseau LAN interne assure une collaboration transparente entre les différents départements."
   },
