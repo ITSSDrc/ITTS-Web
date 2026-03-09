@@ -41,45 +41,48 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-theme(spacing.14))]">
-      <section className="relative w-full pt-8 pb-12 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative w-full pt-12 pb-16 md:pt-24 md:pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
         <ConnectionMeshAnimation />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
-        <div className="container mx-auto px-4 grid grid-cols-1 gap-12 items-center justify-items-center relative z-10">
-          <div className="text-center">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
             <FadeInOnScroll>
               {logo && (
-                <Image
-                  src={logo.imageUrl || "/images/itss-logo.png"}
-                  alt={logo.description || "Logo ITSS"}
-                  width={128}
-                  height={128}
-                  className="mx-auto mb-8 rounded-full shadow-2xl"
-                  priority
-                  data-ai-hint={logo.imageHint}
-                />
+                <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-8">
+                  <Image
+                    src={logo.imageUrl || "/images/itss-logo.png"}
+                    alt={logo.description || "Logo ITSS"}
+                    fill
+                    className="object-contain rounded-full shadow-2xl"
+                    priority
+                    data-ai-hint={logo.imageHint}
+                  />
+                </div>
               )}
-              <h1 className="text-5xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60 min-h-[180px] md:min-h-[240px] lg:min-h-[280px]">
+              <h1 className="text-4xl font-headline font-extrabold md:text-6xl lg:text-7xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60 leading-tight">
                 <Typewriter
                     options={{
                         strings: ["Votre Partenaire d'Innovation Technologique"],
                         autoStart: true,
                         loop: true,
                         delay: 75,
+                        wrapperClassName: "inline-block",
                     }}
                 />
               </h1>
             </FadeInOnScroll>
             <FadeInOnScroll delay={200}>
-              <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl text-muted-foreground">
+              <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
                 ITSS propulse votre entreprise vers l'avenir avec des solutions de pointe en Cloud, Logiciel, Cybersécurité et Intelligence Artificielle.
               </p>
             </FadeInOnScroll>
             <FadeInOnScroll delay={400}>
               <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
+                <Button size="lg" className="rounded-full font-semibold text-lg px-8 py-6 w-full sm:w-auto" asChild>
                   <Link href="/services">Explorer nos Services</Link>
                 </Button>
-                <Button size="lg" variant="ghost" className="rounded-full font-semibold text-lg px-8 py-6" asChild>
+                <Button size="lg" variant="ghost" className="rounded-full font-semibold text-lg px-8 py-6 w-full sm:w-auto" asChild>
                   <Link href="/contact">Nous Contacter <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
               </div>
@@ -88,13 +91,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
       <StatsSection />
 
+      {/* Mission Section */}
       <FadeInOnScroll>
-        <section id="mission" className="py-20 md:py-32">
+        <section id="mission" className="py-16 md:py-32">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-square">
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+              <div className="relative aspect-square max-w-md mx-auto md:max-w-none w-full">
                 {missionImage && (
                   <Image
                     src={missionImage.imageUrl || "/images/mission-image.jpg"}
@@ -104,47 +109,50 @@ export default function Home() {
                     data-ai-hint={missionImage.imageHint}
                   />
                 )}
-                 <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-primary/20 -z-10" />
+                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-primary/20 -z-10" />
               </div>
-              <div>
-                <span className="text-primary font-semibold">NOTRE MISSION</span>
-                <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Accélérer Votre Transformation Numérique</h2>
+              <div className="text-center md:text-left">
+                <span className="text-primary font-semibold tracking-wider">NOTRE MISSION</span>
+                <h2 className="text-3xl font-headline font-bold md:text-5xl mt-4">Accélérer Votre Transformation Numérique</h2>
                 <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                  Notre mission est de doter les entreprises de technologies de pointe et de conseils d'experts. Nous croyons en la construction de partenariats à long terme, en fournissant des solutions qui non seulement relèvent les défis d'aujourd'hui, mais ouvrent également la voie au succès futur. Nous nous engageons à l'excellence, à l'innovation et à l'intégrité dans tout ce que nous faisons.
+                  Notre mission est de doter les entreprises de technologies de pointe et de conseils d'experts. Nous croyons en la construction de partenariats à long terme, en fournissant des solutions qui non seulement relèvent les défis d'aujourd'hui, mais ouvrent également la voie au succès futur.
                 </p>
-                 <Button variant="link" className="p-0 h-auto text-lg mt-6" asChild>
+                <div className="mt-8">
+                  <Button variant="link" className="p-0 h-auto text-lg group" asChild>
                     <Link href="/about">
-                      En savoir plus sur nous <ArrowRight className="ml-2 h-5 w-5" />
+                      En savoir plus sur nous <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </FadeInOnScroll>
 
+      {/* Services Section */}
       <FadeInOnScroll>
-        <section id="services" className="py-20 md:py-32 bg-secondary/50">
+        <section id="services" className="py-16 md:py-32 bg-secondary/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <span className="text-primary font-semibold uppercase tracking-wider">Expertise</span>
-              <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Des Solutions Complètes Pour Votre Croissance</h2>
+              <h2 className="text-3xl font-headline font-bold md:text-5xl mt-4">Des Solutions Complètes Pour Votre Croissance</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
                 Du cloud à l'IA, nous offrons une gamme complète de services pour répondre à tous vos besoins technologiques.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {services.map((service, index) => (
                 <FadeInOnScroll key={service.title} delay={index * 100}>
-                  <Card className="glow-card h-full text-center bg-card/80 backdrop-blur-sm border-white/10 hover:-translate-y-2 transition-transform duration-300">
-                    <CardHeader className="items-center">
-                      <div className="bg-primary/10 p-4 rounded-full">
+                  <Card className="glow-card h-full text-center bg-card/80 backdrop-blur-sm border-white/10 hover:-translate-y-2 transition-all duration-300">
+                    <CardHeader className="items-center pb-2">
+                      <div className="bg-primary/10 p-4 rounded-full mb-4">
                         {service.icon}
                       </div>
-                      <CardTitle className="mt-4 text-xl font-semibold">{service.title}</CardTitle>
+                      <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription>{service.description}</CardDescription>
+                      <CardDescription className="text-base">{service.description}</CardDescription>
                     </CardContent>
                   </Card>
                 </FadeInOnScroll>
@@ -154,16 +162,19 @@ export default function Home() {
         </section>
       </FadeInOnScroll>
 
-      <section className="py-20 md:py-32 relative overflow-hidden text-center">
-        <div className="absolute inset-0 bg-primary opacity-5 -z-10" />
-        <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-8">Prêt à propulser votre entreprise ?</h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Rejoignez les leaders qui font confiance à ITSS pour leur transformation numérique.
+      {/* CTA Section */}
+      <section className="py-20 md:py-32 relative overflow-hidden text-center bg-primary/5">
+        <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-6">Prêt à propulser votre entreprise ?</h2>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+                Rejoignez les leaders qui font confiance à ITSS pour leur transformation numérique à Bunia et au-delà.
             </p>
-            <Button size="lg" className="rounded-full px-12 py-8 text-xl" asChild>
+            <Button size="lg" className="rounded-full px-10 py-7 text-lg md:text-xl w-full sm:w-auto" asChild>
                 <Link href="/contact">Démarrer un projet aujourd'hui</Link>
             </Button>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <ConnectionMeshAnimation />
         </div>
       </section>
     </div>

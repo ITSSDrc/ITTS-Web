@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -44,7 +45,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [value]);
 
   return (
-    <span ref={elementRef} className="text-4xl md:text-5xl font-bold text-primary font-headline">
+    <span ref={elementRef} className="text-3xl md:text-5xl font-bold text-primary font-headline">
       {count}{suffix}
     </span>
   );
@@ -52,13 +53,15 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="py-12 border-y bg-background/50 backdrop-blur-sm">
+    <section className="py-12 border-y bg-background/50 backdrop-blur-sm relative z-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {stats.map((stat, index) => (
-            <div key={stat.label}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 text-center">
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center">
               <Counter value={stat.value} suffix={stat.suffix} />
-              <p className="mt-2 text-muted-foreground font-medium uppercase tracking-wider text-sm">{stat.label}</p>
+              <p className="mt-2 text-muted-foreground font-medium uppercase tracking-wider text-xs md:text-sm">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
