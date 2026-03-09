@@ -5,59 +5,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Cloud, Code, Shield, BrainCircuit, Quote } from "lucide-react";
+import { ArrowRight, Cloud, Code, Shield, BrainCircuit } from "lucide-react";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
-import { portfolioProjects } from "@/lib/portfolio-data";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import Typewriter from 'typewriter-effect';
 import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
 import { StatsSection } from "@/components/stats-section";
-import { SolutionRecommender } from "@/components/solution-recommender";
 
 const services = [
   {
     icon: <Cloud className="h-8 w-8 text-primary" />,
     title: "Solutions Cloud",
-    description: "Infrastructure cloud évolutive et sécurisée.",
+    description: "Infrastructure cloud évolutive et sécurisée pour vos opérations.",
   },
   {
     icon: <Code className="h-8 w-8 text-primary" />,
     title: "Logiciels sur mesure",
-    description: "Solutions logicielles adaptées à vos besoins uniques.",
+    description: "Solutions logicielles adaptées à vos besoins métier uniques.",
   },
   {
     icon: <Shield className="h-8 w-8 text-primary" />,
     title: "Cybersécurité",
-    description: "Protégez vos actifs numériques avec une sécurité avancée.",
+    description: "Protégez vos actifs numériques avec une sécurité de pointe.",
   },
   {
     icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     title: "Intelligence Artificielle",
-    description: "Intégrez l'IA pour automatiser et innover.",
+    description: "Intégrez l'IA pour automatiser et innover vos processus.",
   },
-];
-
-const testimonials = [
-  {
-    name: "Jean-Pierre Kabila",
-    role: "Directeur Général, Entreprise Ituri",
-    content: "ITSS a transformé notre gestion de données. Leur expertise en cloud est inégalée à Bunia.",
-    initials: "JK"
-  },
-  {
-    name: "Marie-Louise Mado",
-    role: "Fondatrice de ModePlus",
-    content: "Leur équipe a conçu un site web magnifique qui a doublé nos ventes en quelques mois.",
-    initials: "MM"
-  },
-  {
-    name: "Pasteur Samuel",
-    role: "Coordinateur Mateya App",
-    content: "L'application mobile Mateya nous permet de rester connectés avec nos fidèles partout en RDC.",
-    initials: "PS"
-  }
 ];
 
 export default function Home() {
@@ -74,8 +49,8 @@ export default function Home() {
             <FadeInOnScroll>
               {logo && (
                 <Image
-                  src={logo.imageUrl}
-                  alt={logo.description}
+                  src={logo.imageUrl || "/images/itss-logo.png"}
+                  alt={logo.description || "Logo ITSS"}
                   width={128}
                   height={128}
                   className="mx-auto mb-8 rounded-full shadow-2xl"
@@ -122,8 +97,8 @@ export default function Home() {
               <div className="relative aspect-square">
                 {missionImage && (
                   <Image
-                    src={missionImage.imageUrl}
-                    alt={missionImage.description}
+                    src={missionImage.imageUrl || "/images/mission-image.jpg"}
+                    alt={missionImage.description || "Notre Mission"}
                     fill
                     className="object-cover rounded-2xl shadow-2xl"
                     data-ai-hint={missionImage.imageHint}
@@ -148,17 +123,11 @@ export default function Home() {
         </section>
       </FadeInOnScroll>
 
-      <section className="py-12 bg-primary/5">
-        <div className="container mx-auto px-4 text-center">
-            <SolutionRecommender />
-        </div>
-      </section>
-
       <FadeInOnScroll>
-        <section id="services" className="py-20 md:py-32 bg-secondary">
+        <section id="services" className="py-20 md:py-32 bg-secondary/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <span className="text-primary font-semibold">NOS SERVICES</span>
+              <span className="text-primary font-semibold uppercase tracking-wider">Expertise</span>
               <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Des Solutions Complètes Pour Votre Croissance</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
                 Du cloud à l'IA, nous offrons une gamme complète de services pour répondre à tous vos besoins technologiques.
@@ -185,43 +154,9 @@ export default function Home() {
         </section>
       </FadeInOnScroll>
 
-      <FadeInOnScroll>
-        <section id="testimonials" className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <span className="text-primary font-semibold uppercase tracking-widest">Témoignages</span>
-              <h2 className="text-4xl font-headline font-bold md:text-5xl mt-2">Ce Que Nos Clients Disent</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((t, idx) => (
-                <Card key={idx} className="bg-card border-none shadow-lg relative pt-12">
-                   <div className="absolute top-0 left-6 -translate-y-1/2 bg-primary text-primary-foreground p-3 rounded-xl">
-                      <Quote className="h-6 w-6" />
-                   </div>
-                   <CardContent className="space-y-6">
-                      <p className="text-lg italic text-muted-foreground leading-relaxed">
-                        "{t.content}"
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
-                          {t.initials}
-                        </div>
-                        <div>
-                          <p className="font-bold">{t.name}</p>
-                          <p className="text-sm text-muted-foreground">{t.role}</p>
-                        </div>
-                      </div>
-                   </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      </FadeInOnScroll>
-
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-20 md:py-32 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-primary opacity-5 -z-10" />
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-headline font-bold mb-8">Prêt à propulser votre entreprise ?</h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
                 Rejoignez les leaders qui font confiance à ITSS pour leur transformation numérique.
