@@ -14,6 +14,10 @@ interface InvitationPageProps {
   params: Promise<{ token: string }>;
 }
 
+/**
+ * Page d'affichage de l'invitation individuelle
+ * Utilise React.use() pour déballer les params asynchrones de Next.js 15
+ */
 export default function InvitationPage({ params }: InvitationPageProps) {
   const { token } = use(params);
   const [invitation, setInvitation] = useState<any>(null);
