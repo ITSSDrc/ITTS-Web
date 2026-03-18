@@ -2,15 +2,21 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * GET /api/invitation/[token]
- * Récupère les détails de l'invitation, l'événement et l'invité.
+ * Récupère les détails de l'invitation avec gestion asynchrone des params pour Next.js 15
  */
 export async function GET(
   request: Request,
-  { params }: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
-  const { token } = params;
+  const { token } = await params;
+
+  if (!token) {
+    return NextResponse.json({ error: 'Token manquant' }, { status: 400 });
+  }
 
   // 1. Récupérer l'invitation avec jointures
   const { data: invitation, error } = await supabase
@@ -24,7 +30,8 @@ export async function GET(
     .single();
 
   if (error || !invitation) {
-    return NextResponse.json({ error: 'Invitation non trouvée' }, { status: 404 });
+    console.error('Supabase error or invitation not found:', error);
+    return NextResponse.json({ error: 'Invitation non trouvée dans la base de données' }, { status: 404 });
   }
 
   // 2. Mettre à jour Viewed At si c'est la première fois
@@ -43,13 +50,12 @@ export async function GET(
 
 /**
  * POST /api/invitation/[token]
- * Met à jour le statut de l'invitation (confirmé/décliné)
  */
 export async function POST(
   request: Request,
-  { params }: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
-  const { token } = params;
+  const { token } = await params;
   const { status } = await request.json(); // 'confirmed' ou 'declined'
 
   if (!['confirmed', 'declined'].includes(status)) {
