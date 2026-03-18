@@ -19,15 +19,24 @@ https://itssdrc.com/invitation/{token}
 
 ### Configuration de la base de données (Supabase)
 
-Pour que l'intégration fonctionne, assurez-vous que votre projet Supabase contient les tables suivantes :
+Assurez-vous que votre projet Supabase contient les tables suivantes :
 
 1.  **events** : `id`, `title`, `date`, `location`, `image_url`, `description`.
 2.  **guests** : `id`, `name`, `email`, `status`.
 3.  **invitations** : `id`, `token` (unique), `event_id`, `guest_id`, `status`, `viewed_at`.
 
+### ⚠️ Sécurité et Protection des Données
+
+Comme les clés `NEXT_PUBLIC` sont visibles côté client, la sécurité repose sur le **Row Level Security (RLS)** de Supabase :
+
+1.  Allez dans votre tableau de bord Supabase > **Authentication** > **Policies**.
+2.  Activez le RLS pour les tables `invitations`, `events`, et `guests`.
+3.  Créez une politique "Select" publique pour permettre la lecture des invitations uniquement via le token.
+4.  **Ne partagez jamais** votre `SERVICE_ROLE_KEY`, elle donne un accès total sans restriction.
+
 ### Déploiement
 
-Le projet est prêt pour Vercel. Les variables d'environnement Supabase sont déjà configurées.
+Le projet est prêt pour Vercel. Les variables d'environnement Supabase doivent être configurées dans le tableau de bord Vercel.
 
 ```bash
 # Tester en local
