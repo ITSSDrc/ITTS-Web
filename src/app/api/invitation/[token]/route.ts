@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
@@ -17,6 +18,7 @@ export async function GET(
     return NextResponse.json({ error: 'Configuration Supabase manquante' }, { status: 500 });
   }
 
+  // Jointure des trois tables : invitations, events, guests
   const { data: invitation, error } = await supabase
     .from('invitations')
     .select(`
@@ -33,7 +35,7 @@ export async function GET(
   }
 
   // Marquer comme vue si ce n'est pas déjà fait
-  if (!invitation.viewed_at) {
+  if (invitation.status === 'pending') {
     await supabase
       .from('invitations')
       .update({ 
@@ -51,7 +53,7 @@ export async function POST(
   { params }: { params: Promise<{ token: string }> }
 ) {
   const { token } = await params;
-  const { status } = await request.json();
+  const { status } = await request.json(); // 'confirmed' ou 'declined'
 
   if (!['confirmed', 'declined'].includes(status)) {
     return NextResponse.json({ error: 'Statut invalide' }, { status: 400 });
@@ -61,6 +63,7 @@ export async function POST(
     return NextResponse.json({ error: 'Configuration Supabase manquante' }, { status: 500 });
   }
 
+  // Récupérer l'invitation pour avoir les IDs
   const { data: invitation, error: fetchError } = await supabase
     .from('invitations')
     .select('id, guest_id')
@@ -71,16 +74,23 @@ export async function POST(
     return NextResponse.json({ error: 'Invitation non trouvée' }, { status: 404 });
   }
 
+  const now = new Date().toISOString();
+  
   // Mise à jour de l'invitation
+  const invitationUpdates: any = { status };
+  if (status === 'confirmed') invitationUpdates.confirmed_at = now;
+  if (status === 'declined') invitationUpdates.declined_at = now;
+
   const { error: invError } = await supabase
     .from('invitations')
-    .update({ status })
+    .update(invitationUpdates)
     .eq('token', token);
 
   // Mise à jour du statut du guest
+  const guestStatus = status === 'confirmed' ? 'confirmed' : 'cancelled';
   const { error: guestError } = await supabase
     .from('guests')
-    .update({ status: status === 'confirmed' ? 'attending' : 'not_attending' })
+    .update({ status: guestStatus })
     .eq('id', invitation.guest_id);
 
   if (invError || guestError) {

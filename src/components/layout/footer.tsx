@@ -7,14 +7,19 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ConnectionMeshAnimation } from "../connection-mesh-animation";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
   const logo = PlaceHolderImages.find(p => p.id === 'itss-logo');
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
+
+  // Masquer le footer sur la page d'invitation
+  if (pathname?.startsWith('/invitation/')) return null;
   
   return (
     <footer className={cn("relative border-t bg-background/50 backdrop-blur-sm overflow-hidden")}>
