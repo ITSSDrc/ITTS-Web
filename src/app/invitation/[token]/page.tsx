@@ -4,7 +4,7 @@ import { useEffect, useState, use } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { format, isValid, parseISO } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { MapPin, Calendar, Clock, Check, Loader2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { MapPin, Calendar, Clock, Check, Loader2, AlertCircle, ArrowLeft, CheckCircle2, ShieldCheck, Ticket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -67,7 +67,16 @@ export default function InvitationPage({ params }: InvitationPageProps) {
       });
       if (!res.ok) throw new Error('Erreur lors de la réponse');
       
-      setInvitation({ ...invitation, status });
+      // Mettre à jour localement l'état de l'invitation et du guest
+      setInvitation((prev: any) => ({
+        ...prev,
+        status: status,
+        guest: {
+          ...prev.guest,
+          status: status === 'confirmed' ? 'confirmed' : 'cancelled'
+        }
+      }));
+      
       setSuccessMessage(status === 'confirmed' ? 'Votre présence est confirmée !' : 'Nous avons bien noté votre absence.');
     } catch (err: any) {
       alert(err.message);
@@ -102,8 +111,13 @@ export default function InvitationPage({ params }: InvitationPageProps) {
     );
   }
 
-  const { event, guest, invitation_data } = invitation;
+  const { event, guest, invitation_data, status: invStatus } = invitation;
   
+  // États de l'invitation
+  const isCheckedIn = guest.status === 'checked_in';
+  const isConfirmed = invStatus === 'confirmed';
+  const isDeclined = invStatus === 'declined';
+
   // Date formatée
   let displayDate = 'Date à confirmer';
   let displayTime = '--:--';
@@ -115,7 +129,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
     }
   }
 
-  // Données de message (priorité au JSONB d'invitation_data)
   const msgTitle = invitation_data?.message?.title || "Vous êtes invité !";
   const msgSubtitle = invitation_data?.message?.subtitle || event.name;
   const msgBody = invitation_data?.message?.body || event.description;
@@ -125,7 +138,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
   return (
     <div className="min-h-screen bg-neutral-950 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900 to-neutral-950 py-12 px-4 flex flex-col items-center justify-start overflow-x-hidden">
       
-      {/* Bouton retour accueil - Seul élément externe */}
       <Link href="/" className="mb-8 flex items-center gap-2 text-neutral-500 hover:text-white transition-colors">
         <ArrowLeft className="h-4 w-4" />
         <span>Retour au site</span>
@@ -134,7 +146,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
       <div className="w-full max-w-md animate-in fade-in slide-in-from-bottom-10 duration-700">
         <Card className="overflow-hidden border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.8)] rounded-[2.5rem] bg-white text-neutral-900">
           
-          {/* Header Image dynamique de l'événement */}
           <div className="relative h-72 w-full bg-neutral-200">
             <Image
               src={event.image_url || `https://picsum.photos/seed/${event.id}/1200/800`}
@@ -156,7 +167,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
 
           <CardContent className="p-8 md:p-10">
             
-            {/* Message d'en-tête personnalisé */}
             <div className="text-center mb-10">
               <h2 className="text-2xl font-headline font-bold mb-2 text-neutral-800">
                 {msgTitle}
@@ -166,7 +176,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               </p>
             </div>
 
-            {/* Nom des invités */}
             <div className="text-center mb-12 py-8 border-y border-neutral-100 relative">
               <p className="text-neutral-400 uppercase tracking-[0.2em] text-[10px] font-black mb-3">Honneur à</p>
               <h3 className="text-3xl font-extrabold text-neutral-900 tracking-tight font-headline">
@@ -187,7 +196,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               </div>
             </div>
 
-            {/* Détails logistiques */}
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-5">
                 <div className="bg-neutral-100 p-3 rounded-2xl text-primary" style={{ color: primaryColor }}>
@@ -225,7 +233,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               </div>
             </div>
 
-            {/* Corps du message personnalisé */}
             {msgBody && (
               <div className="bg-neutral-50 p-6 rounded-[1.5rem] mb-12 relative border border-neutral-100">
                  <div className="absolute -top-3 left-6 bg-white px-3 py-1 text-[10px] font-bold text-neutral-400 border rounded-full">NOTE DE L'HÔTE</div>
@@ -233,31 +240,70 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               </div>
             )}
 
-            {/* QR Code Section */}
-            <div className="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-[2.5rem] shadow-inner mb-12">
-               <div className="bg-white p-4 rounded-3xl shadow-2xl">
-                <QRCodeSVG 
-                  value={guest.qr_code_data || token} 
-                  size={160} 
-                  level="H" 
-                  includeMargin={false}
-                />
-               </div>
-               <p className="text-[9px] text-neutral-500 mt-6 font-mono tracking-widest uppercase opacity-50">
-                Code de validation unique
-               </p>
+            {/* QR Code Section Sécurisée */}
+            <div className="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-[2.5rem] shadow-inner mb-12 relative overflow-hidden group">
+               {isCheckedIn ? (
+                 <div className="text-center py-6 animate-in zoom-in-95 duration-500">
+                    <div className="bg-accent/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-accent/30 text-accent">
+                      <ShieldCheck className="h-10 w-10" />
+                    </div>
+                    <p className="text-white font-headline text-xl font-bold tracking-tight">INVITATION VALIDÉE</p>
+                    <p className="text-neutral-500 text-xs mt-2 uppercase tracking-widest font-bold">Accès déjà enregistré</p>
+                    <div className="mt-6 flex justify-center opacity-20">
+                       <Ticket className="h-12 w-12 text-white rotate-12" />
+                    </div>
+                 </div>
+               ) : isConfirmed ? (
+                 <>
+                   <div className="bg-white p-4 rounded-3xl shadow-2xl transition-transform hover:scale-105 duration-300">
+                    <QRCodeSVG 
+                      value={guest.qr_code_data || token} 
+                      size={180} 
+                      level="H" 
+                      includeMargin={false}
+                    />
+                   </div>
+                   <div className="mt-8 text-center">
+                     <p className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-1">Code d'Accès</p>
+                     <p className="text-neutral-500 text-[10px] uppercase font-mono tracking-widest opacity-50">
+                      À présenter lors du contrôle à l'entrée
+                     </p>
+                   </div>
+                 </>
+               ) : isDeclined ? (
+                  <div className="text-center py-6">
+                    <AlertCircle className="h-12 w-12 text-red-500/50 mx-auto mb-4" />
+                    <p className="text-neutral-400 text-sm font-bold">VOUS AVEZ DÉCLINÉ L'INVITATION</p>
+                  </div>
+               ) : (
+                 <div className="text-center py-8">
+                   <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-white/5 blur-xl rounded-full" />
+                      <Ticket className="h-16 w-16 text-neutral-700 mx-auto relative z-10" />
+                   </div>
+                   <p className="text-neutral-400 text-sm font-medium px-4">
+                    Veuillez confirmer votre présence pour générer votre code d'accès sécurisé.
+                   </p>
+                 </div>
+               )}
             </div>
 
             {/* Actions / Success Message */}
-            {successMessage || invitation.status === 'confirmed' || invitation.status === 'declined' ? (
+            {isCheckedIn ? (
+               <div className="text-center p-8 bg-accent/5 rounded-[2rem] border border-accent/10">
+                 <p className="text-accent font-bold">Au plaisir de vous accueillir parmi nous !</p>
+               </div>
+            ) : successMessage || isConfirmed || isDeclined ? (
               <div className="text-center p-8 bg-neutral-50 rounded-[2rem] border border-neutral-100 animate-in zoom-in-95 duration-500">
                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15`, color: primaryColor }}>
-                  <Check className="h-8 w-8" />
+                  <CheckCircle2 className="h-8 w-8" />
                 </div>
                 <p className="text-xl font-bold font-headline mb-2">
-                  {successMessage || (invitation.status === 'confirmed' ? "Présence confirmée" : "Absence signalée")}
+                  {successMessage || (isConfirmed ? "Présence confirmée" : "Absence signalée")}
                 </p>
-                <p className="text-sm text-neutral-500">Merci de votre réponse.</p>
+                <p className="text-sm text-neutral-500">
+                  {isConfirmed ? "Votre code d'accès est maintenant actif ci-dessus." : "Nous avons bien noté votre réponse."}
+                </p>
               </div>
             ) : (
               <div className="flex flex-col gap-4">
@@ -280,14 +326,12 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               </div>
             )}
 
-            {/* Footer personnalisé */}
             <div className="mt-12 text-center">
               <p className="text-neutral-400 text-sm italic">{msgFooter}</p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Branding ITSS discret */}
         <div className="text-center mt-12 space-y-2 opacity-30">
           <p className="text-neutral-500 text-[10px] uppercase tracking-[0.3em] font-bold">Expérience de prestige par</p>
           <p className="font-headline font-black text-white text-xl tracking-tighter">ITSS <span className="text-primary">DRC</span></p>
