@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
@@ -33,6 +32,7 @@ export async function GET(
     return NextResponse.json({ error: 'Invitation non trouvée' }, { status: 404 });
   }
 
+  // Marquer comme vue si ce n'est pas déjà fait
   if (!invitation.viewed_at) {
     await supabase
       .from('invitations')
@@ -71,11 +71,13 @@ export async function POST(
     return NextResponse.json({ error: 'Invitation non trouvée' }, { status: 404 });
   }
 
+  // Mise à jour de l'invitation
   const { error: invError } = await supabase
     .from('invitations')
     .update({ status })
     .eq('token', token);
 
+  // Mise à jour du statut du guest
   const { error: guestError } = await supabase
     .from('guests')
     .update({ status: status === 'confirmed' ? 'attending' : 'not_attending' })
