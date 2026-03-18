@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'firebasestudio.googleapis.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'rhdjgttcwlsunbeeuewz.supabase.co',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

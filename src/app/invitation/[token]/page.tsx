@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState, use } from 'react';
@@ -135,7 +134,7 @@ export default function InvitationPage({ params }: InvitationPageProps) {
       <div className="w-full max-w-md animate-in fade-in slide-in-from-bottom-10 duration-700">
         <Card className="overflow-hidden border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.8)] rounded-[2.5rem] bg-white text-neutral-900">
           
-          {/* Header Image */}
+          {/* Header Image dynamique de l'événement */}
           <div className="relative h-72 w-full bg-neutral-200">
             <Image
               src={event.image_url || `https://picsum.photos/seed/${event.id}/1200/800`}
