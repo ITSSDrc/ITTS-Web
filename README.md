@@ -1,16 +1,33 @@
-# Firebase Studio
+# ITSS DRC - Système d'Invitations
 
-This is a NextJS starter in Firebase Studio.
+Ce projet inclut désormais une plateforme de visualisation d'invitations électroniques intégrée à votre backend Supabase.
 
-To get started, take a look at src/app/page.tsx.
+## Système d'Invitations
 
-## Deploying to Vercel
+Le système permet d'afficher des cartes d'invitation personnalisées via des liens uniques générés par votre application Flutter.
 
-To deploy your project to Vercel, especially from a private repository, you need to configure the necessary environment variables.
+### Comment accéder à une invitation ?
 
-1.  **Connect your Git repository to Vercel.**
-2.  In your Vercel project settings, go to the **Environment Variables** section.
-3.  Add the variables listed in the `.env.example` file. Make sure to provide the correct values for your production environment.
-4.  Trigger a new deployment.
+La route est dynamique : `/invitation/[token]`.
 
-This will ensure that your project builds successfully.
+1. **Localement** : `http://localhost:9002/invitation/<token-unique>`
+2. **Production** : `https://itssdrc.com/invitation/<token-unique>`
+
+### Configuration Requise (Variables d'environnement)
+
+Assurez-vous que les variables suivantes sont configurées dans Vercel :
+
+- `NEXT_PUBLIC_SUPABASE_URL` : URL de votre projet Supabase.
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé API anonyme de votre projet Supabase.
+
+### Structure de la base de données (Supabase)
+
+Pour que l'intégration fonctionne, vos tables doivent suivre cette structure :
+
+- **events** : `id`, `title`, `date`, `location`, `image_url`, `description`.
+- **guests** : `id`, `name`, `email`, `status` ('attending', 'not_attending', 'pending').
+- **invitations** : `id`, `token` (unique string), `event_id`, `guest_id`, `status` ('sent', 'viewed', 'confirmed', 'declined'), `viewed_at`.
+
+## Déploiement
+
+Le projet est optimisé pour un déploiement sur Vercel. Les dépendances `@supabase/supabase-js` et `qrcode.react` seront installées automatiquement lors du build.
