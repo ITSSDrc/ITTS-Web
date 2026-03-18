@@ -1,9 +1,11 @@
 
 import * as React from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Cloud, Code, Palette, Shield, Network, BarChart, BrainCircuit, Wrench } from "lucide-react";
+import { CheckCircle, Cloud, Code, Palette, Shield, Network, BarChart, BrainCircuit, Wrench, Mail, Smartphone, QrCode } from "lucide-react";
 import type { Metadata } from 'next';
 import { ConnectionMeshAnimation } from "@/components/connection-mesh-animation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: 'Nos Services - ITSS',
@@ -12,52 +14,41 @@ export const metadata: Metadata = {
 
 const serviceDetails = [
   {
+    name: "Invitations Électroniques",
+    icon: <QrCode className="h-8 w-8 text-primary" />,
+    description: "Système innovant de cartes d'invitation numériques avec QR codes, synchronisé entre une app Flutter et une interface Web élégante.",
+    features: ["Gestion via App Flutter", "Affichage Web Premium", "Validation par QR Code", "Confirmation RSVP en ligne"],
+    link: "/services/invitations"
+  },
+  {
     name: "Solutions Cloud",
     icon: <Cloud className="h-8 w-8 text-primary" />,
-    description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Nous construisons des architectures cloud évolutives, résilientes et rentables sur AWS, Azure et Google Cloud.",
-    features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur (Serverless)", "Conteneurisation (Docker & Kubernetes)"],
+    description: "Tirez parti de la puissance du cloud avec nos services complets, incluant la migration, la gestion et l'optimisation. Architectures AWS, Azure et Google Cloud.",
+    features: ["Migration & Stratégie Cloud", "Infrastructure as Code (IaC)", "Informatique sans serveur", "Conteneurisation (Docker/K8s)"],
   },
   {
     name: "Logiciels sur Mesure",
     icon: <Code className="h-8 w-8 text-primary" />,
-    description: "Obtenez un logiciel sur mesure qui correspond parfaitement à vos processus métier. Notre équipe de développement agile crée des applications web et mobiles robustes, évolutives et conviviales.",
-    features: ["Développement Web Full-Stack", "Applications mobiles (iOS & Android)", "Conception & Intégration d'API", "Maintenance et support continus"],
+    description: "Logiciel sur mesure adapté à vos processus métier. Applications web et mobiles robustes, évolutives et conviviales.",
+    features: ["Développement Web Full-Stack", "Apps mobiles (iOS & Android)", "Conception & Intégration d'API", "Maintenance et support"],
   },
   {
     name: "Design UI/UX",
     icon: <Palette className="h-8 w-8 text-primary" />,
-    description: "Créez des expériences utilisateur exceptionnelles avec notre expertise en design. Nous concevons des interfaces intuitives et esthétiques qui captivent vos utilisateurs et renforcent votre marque.",
-    features: ["Recherche utilisateur & Personas", "Prototypage & Wireframing", "Conception d'interfaces (UI)", "Création de systèmes de design"],
+    description: "Expériences utilisateur exceptionnelles. Interfaces intuitives et esthétiques qui captivent vos utilisateurs et renforcent votre marque.",
+    features: ["Recherche utilisateur", "Prototypage & Wireframing", "Conception d'interfaces (UI)", "Systèmes de design"],
   },
   {
     name: "Cybersécurité",
     icon: <Shield className="h-8 w-8 text-primary" />,
-    description: "Nos services de cybersécurité offrent une défense multicouche pour protéger vos données et infrastructures précieuses. Nous identifions les vulnérabilités et mettons en œuvre des mesures proactives.",
-    features: ["Tests d'intrusion & Audits", "Détection et réponse gérées (MDR)", "Conformité (RGPD, ISO 27001)", "Formation à la sécurité"],
+    description: "Défense multicouche pour protéger vos données et infrastructures. Identification des vulnérabilités et mesures proactives.",
+    features: ["Tests d'intrusion & Audits", "Détection et réponse (MDR)", "Conformité (RGPD, ISO)", "Formation à la sécurité"],
   },
   {
     name: "Infrastructure & Réseau",
     icon: <Network className="h-8 w-8 text-primary" />,
-    description: "Concentrez-vous sur votre métier grâce à une infrastructure réseau fiable, sécurisée et performante, gérée par nos experts.",
-    features: ["Conception d'architecture LAN/WAN", "Gestion et surveillance de réseau", "Sécurité des infrastructures", "Solutions de connectivité et VPN"],
-  },
-  {
-    name: "Analyse de Données & BI",
-    icon: <BarChart className="h-8 w-8 text-primary" />,
-    description: "Transformez vos données en informations exploitables. Nous aidons à collecter, traiter et visualiser les données pour prendre des décisions commerciales éclairées et découvrir de nouvelles opportunités.",
-    features: ["Entreposage de données", "Développement de pipelines ETL", "Tableaux de bord interactifs (Power BI, Tableau)", "Analyse prédictive et Machine Learning"],
-  },
-  {
-    name: "Conseil en IA & DevOps",
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-    description: "Accélérez votre cycle de développement et intégrez l'intelligence artificielle. Nous automatisons vos processus et mettons en œuvre des solutions d'IA pour booster l'efficacité et l'innovation.",
-    features: ["Implémentation de pipeline CI/CD", "Automatisation de l'infrastructure", "Stratégie et intégration de l'IA", "Développement de modèles personnalisés"],
-  },
-  {
-    name: "Maintenance Matériel",
-    icon: <Wrench className="h-8 w-8 text-primary" />,
-    description: "Assurez la longévité et la performance de votre parc informatique avec nos services de maintenance préventive et curative sur serveurs, postes de travail et périphériques.",
-    features: ["Diagnostic et réparation de matériel", "Mises à niveau de composants (RAM, SSD)", "Nettoyage physique et dépoussiérage", "Gestion du cycle de vie du matériel"],
+    description: "Infrastructure réseau fiable et performante, gérée par nos experts pour une connectivité sans faille.",
+    features: ["Conception LAN/WAN", "Gestion et surveillance", "Sécurité des infrastructures", "Solutions VPN"],
   },
 ];
 
@@ -89,15 +80,26 @@ export default function ServicesPage() {
                   <CardTitle className="text-2xl font-headline text-center">{service.name}</CardTitle>
                 </CardHeader>
                 <div className="flex-grow flex flex-col justify-between p-6 pt-0">
-                  <p className="text-muted-foreground mb-6 text-center">{service.description}</p>
-                  <ul className="space-y-3 text-sm">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-accent mr-3 mt-0.5 shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <p className="text-muted-foreground mb-6 text-center">{service.description}</p>
+                    <ul className="space-y-3 text-sm mb-6">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-accent mr-3 mt-0.5 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {service.link ? (
+                    <Button asChild className="w-full mt-auto">
+                      <Link href={service.link}>Découvrir ce service</Link>
+                    </Button>
+                  ) : (
+                    <Button variant="ghost" disabled className="w-full mt-auto opacity-0">
+                      En savoir plus
+                    </Button>
+                  )}
                 </div>
               </Card>
             ))}

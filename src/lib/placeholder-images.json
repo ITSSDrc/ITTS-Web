@@ -53,6 +53,12 @@
       "description": "A rocket launching into the sky, symbolizing innovation and ambition.",
       "imageUrl": "/images/mission-image.jpg",
       "imageHint": "rocket launch"
+    },
+    {
+      "id": "invitation-service-hero",
+      "description": "Une main tenant un smartphone affichant une carte d'invitation élégante avec un QR code.",
+      "imageUrl": "https://picsum.photos/seed/invitation/1200/800",
+      "imageHint": "smartphone invitation"
     }
   ]
 }

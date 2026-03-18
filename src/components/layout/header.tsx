@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Twitter, Github, Youtube, ChevronDown } from "lucide-react";
+import { Menu, Twitter, Github, Youtube, ChevronDown, QrCode } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -21,9 +21,13 @@ import {
 
 const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Nos réalisations" },
 ];
+
+const serviceLinks = [
+  { href: "/services", label: "Tous nos services" },
+  { href: "/services/invitations", label: "Invitations Électroniques", icon: <QrCode className="h-4 w-4 mr-2" /> },
+  { href: "/portfolio", label: "Nos réalisations" },
+]
 
 const companyLinks = [
     { href: "/about", label: "À propos" },
@@ -67,6 +71,26 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(
+                  "flex items-center gap-1 transition-colors hover:text-foreground/80 font-medium focus:outline-none",
+                  pathname.startsWith("/services") || pathname === "/portfolio" ? "text-foreground" : "text-foreground/60"
+              )}>
+                Services <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {serviceLinks.map(link => (
+                    <DropdownMenuItem key={link.href} asChild>
+                        <Link href={link.href} className="flex items-center">
+                          {link.icon}
+                          {link.label}
+                        </Link>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
              <DropdownMenu>
               <DropdownMenuTrigger className={cn(
                   "flex items-center gap-1 transition-colors hover:text-foreground/80 font-medium focus:outline-none",
@@ -127,23 +151,38 @@ export function Header() {
             
             <Separator className="my-4" />
 
-            <div className="flex flex-1 flex-col">
+            <div className="flex flex-1 flex-col overflow-y-auto">
               <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
+                <Link
+                    href="/"
                     onClick={() => setMenuOpen(false)}
                     className={cn(
                       "text-xl font-medium transition-colors hover:text-foreground/80",
-                      pathname === link.href ? "text-foreground" : "text-foreground/60"
+                      pathname === "/" ? "text-foreground" : "text-foreground/60"
                     )}
                   >
-                    {link.label}
-                  </Link>
-                ))}
+                    Accueil
+                </Link>
+
+                <p className="text-xl font-medium text-foreground/80 mt-4">Services</p>
+                <div className="flex flex-col gap-4 pl-4 border-l">
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(
+                        "text-lg font-medium transition-colors hover:text-foreground/80",
+                        pathname === link.href ? "text-foreground" : "text-foreground/60"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+
                  <p className="text-xl font-medium text-foreground/80 mt-4">Entreprise</p>
-                 <div className="flex flex-col gap-4 pl-4">
+                 <div className="flex flex-col gap-4 pl-4 border-l">
                     {companyLinks.map((link) => (
                       <Link
                         key={link.href}
@@ -162,7 +201,7 @@ export function Header() {
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
                     className={cn(
-                      "text-xl font-medium transition-colors hover:text-foreground/80 pt-4",
+                      "text-xl font-medium transition-colors hover:text-foreground/80 pt-4 border-t mt-4",
                       pathname === "/contact" ? "text-foreground" : "text-foreground/60"
                     )}
                   >
