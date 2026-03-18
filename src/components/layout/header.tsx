@@ -25,7 +25,7 @@ const navLinks = [
 
 const serviceLinks = [
   { href: "/services", label: "Tous nos services" },
-  { href: "/services/invitations", label: "Invitations Électroniques", icon: <QrCode className="h-4 w-4 mr-2" /> },
+  { href: "/services/invitations", label: "Invitations Numériques", icon: <QrCode className="h-4 w-4 mr-2" /> },
   { href: "/portfolio", label: "Nos réalisations" },
 ]
 

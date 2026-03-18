@@ -4,45 +4,46 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { 
   QrCode, 
   Smartphone, 
   Globe, 
-  Users, 
   CheckCircle, 
   ArrowRight, 
-  Mail, 
   BarChart3,
-  Sparkles
+  Sparkles,
+  ShieldCheck,
+  Zap
 } from 'lucide-react';
 import { ConnectionMeshAnimation } from '@/components/connection-mesh-animation';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
-  title: 'Invitations Électroniques - ITSS',
-  description: 'Digitalisez vos événements avec notre système d\'invitations intelligentes. Gestion Flutter et affichage Web élégant.',
+  title: 'Invitations Numériques de Prestige - ITSS',
+  description: 'Digitalisez vos événements avec notre système d\'invitations intelligentes. Une expérience élégante pour vos invités et une gestion simplifiée pour vous.',
 };
 
 const features = [
   {
     icon: <Smartphone className="h-10 w-10 text-primary" />,
-    title: "Gestion Mobile (Flutter)",
-    description: "Pilotez vos listes d'invités, envoyez les liens et gérez les entrées depuis notre application mobile dédiée."
+    title: "Gestion Intelligente",
+    description: "Pilotez vos listes d'invités, suivez les confirmations et gérez les entrées depuis une interface mobile intuitive et puissante."
   },
   {
     icon: <Globe className="h-10 w-10 text-primary" />,
-    title: "Affichage Web Premium",
-    description: "Vos invités reçoivent un lien unique ouvrant une page web sublime, optimisée pour tous les smartphones."
+    title: "Expérience Web Premium",
+    description: "Vos invités reçoivent un lien unique ouvrant une page web sublime, conçue pour refléter le prestige de votre événement."
   },
   {
     icon: <QrCode className="h-10 w-10 text-primary" />,
-    title: "Validation par QR Code",
-    description: "Chaque invitation possède un QR code unique. Scannez-le à l'entrée pour valider la présence instantanément."
+    title: "Accès Sécurisé",
+    description: "Chaque invitation possède un code numérique unique. Validez les entrées instantanément le jour J par simple scan."
   },
   {
     icon: <BarChart3 className="h-10 w-10 text-primary" />,
-    title: "Suivi en Temps Réel",
-    description: "Sachez qui a vu l'invitation, qui a confirmé et qui est déjà arrivé, le tout synchronisé via Supabase."
+    title: "Statistiques en Direct",
+    description: "Sachez en temps réel qui a consulté son invitation, qui a confirmé et qui est présent à votre événement."
   }
 ];
 
@@ -51,62 +52,70 @@ export default function InvitationServicePage() {
 
   return (
     <>
-      <section className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden py-20">
-        <ConnectionMeshAnimation />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/90" />
+      {/* Hero Section */}
+      <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden py-20 bg-neutral-950">
+        <ConnectionMeshAnimation className="opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-950/90" />
         <div className="relative z-10 container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-left">
-              <Badge variant="outline" className="mb-4 py-1 px-4 border-primary text-primary font-bold">
-                NOUVEAU SERVICE
-              </Badge>
-              <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight leading-tight">
-                L'Invitation <span className="text-primary">Réinventée</span>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-left space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold">
+                <Sparkles className="h-4 w-4" />
+                L'INNOVATION ÉVÉNEMENTIELLE
+              </div>
+              <h1 className="text-5xl font-headline font-extrabold md:text-7xl tracking-tight text-white leading-[1.1]">
+                L'Invitation <br />
+                <span className="text-primary italic">Réinventée</span>
               </h1>
-              <p className="mt-6 text-xl text-muted-foreground max-w-xl">
-                Dites adieu au papier. Offrez à vos invités une expérience numérique prestigieuse pour vos mariages, galas et conférences à Bunia.
+              <p className="text-xl text-neutral-400 max-w-xl leading-relaxed">
+                Dites adieu aux invitations papier. Offrez à vos convives une expérience numérique d'exception pour vos mariages, galas et conférences de haut standing.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-full px-8" asChild>
-                  <Link href="/contact?subject=Système d'Invitations">Démarrer un projet</Link>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button size="lg" className="rounded-full px-10 h-16 text-lg shadow-xl shadow-primary/20" asChild>
+                  <Link href="/contact?subject=Système d'Invitations">Lancer mon événement</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-                  <Link href="#comment-ca-marche">Comment ça marche ?</Link>
+                <Button size="lg" variant="outline" className="rounded-full px-10 h-16 text-lg border-neutral-700 text-white hover:bg-white hover:text-black transition-all" asChild>
+                  <Link href="#concept">Découvrir le concept</Link>
                 </Button>
               </div>
             </div>
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-8 border-white/5">
+            <div className="relative aspect-[4/5] lg:aspect-square max-w-2xl mx-auto w-full rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-neutral-900/50">
               {heroImage && (
                 <Image 
                   src={heroImage.imageUrl || ""} 
-                  alt={heroImage.description || "Service d'invitations"}
+                  alt="Aperçu du service d'invitation premium"
                   fill
                   className="object-cover"
-                  data-ai-hint={heroImage.imageHint}
+                  priority
+                  data-ai-hint="luxury smartphone invitation"
                 />
               )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-secondary/30">
+      {/* Value Proposition */}
+      <section id="concept" className="py-32 bg-white dark:bg-neutral-950">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-headline font-bold mb-4">Une Solution Complète</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Nous avons combiné la puissance du mobile et l'accessibilité du web pour créer le système d'invitation le plus avancé de la région.
+          <div className="max-w-3xl mx-auto text-center mb-24">
+            <h2 className="text-4xl md:text-5xl font-headline font-bold mb-6">Une Solution Clé en Main</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Nous allions élégance visuelle et rigueur organisationnelle pour garantir le succès de vos réceptions les plus prestigieuses.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, i) => (
-              <Card key={i} className="border-none bg-card/50 backdrop-blur-sm hover:translate-y-[-5px] transition-transform">
+              <Card key={i} className="border-none shadow-none bg-neutral-50 dark:bg-neutral-900 p-4 hover:translate-y-[-8px] transition-all duration-300">
                 <CardHeader>
-                  <div className="mb-4">{feature.icon}</div>
-                  <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
+                  <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="font-headline text-2xl mb-2">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -114,70 +123,88 @@ export default function InvitationServicePage() {
         </div>
       </section>
 
-      <section id="comment-ca-marche" className="py-24">
+      {/* Process Section */}
+      <section className="py-32 bg-neutral-100 dark:bg-neutral-900/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-16">Le Parcours de l'Invité</h2>
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-12">
-              <Step 
-                num="01" 
-                title="Création & Envoi" 
-                desc="Vous créez l'événement et importez vos invités dans l'application mobile. Un lien unique est généré pour chaque personne." 
-              />
-              <Step 
-                num="02" 
-                title="Réception Instantanée" 
-                desc="L'invité reçoit son lien par WhatsApp, SMS ou Email. Pas d'application à installer, tout s'ouvre dans le navigateur." 
-              />
-              <Step 
-                num="03" 
-                title="Confirmation en un Clic" 
-                desc="L'invité consulte les détails (lieu, date, message) et confirme sa présence directement sur la page web." 
-              />
-              <Step 
-                num="04" 
-                title="Check-in Sécurisé" 
-                desc="Le jour J, vous scannez le QR code sur le téléphone de l'invité. La présence est validée et enregistrée en temps réel." 
-              />
+              <div className="space-y-4">
+                <h2 className="text-4xl font-headline font-bold">Un Parcours Sans Friction</h2>
+                <p className="text-lg text-muted-foreground">
+                  Chaque détail a été pensé pour simplifier la vie de l'organisateur et sublimer l'accueil de l'invité.
+                </p>
+              </div>
+              <div className="space-y-10">
+                <StepItem 
+                  num="01" 
+                  title="Planification Digitale" 
+                  desc="Importez vos listes et générez des accès uniques pour chaque convive en quelques secondes." 
+                />
+                <StepItem 
+                  num="02" 
+                  title="Diffusion Instantanée" 
+                  desc="Envoyez les invitations par le canal de votre choix. L'invité accède à son espace sans aucune installation." 
+                />
+                <StepItem 
+                  num="03" 
+                  title="Confirmation RSVP" 
+                  desc="L'invité valide sa présence d'un simple clic. Votre tableau de bord se met à jour instantanément." 
+                />
+                <StepItem 
+                  num="04" 
+                  title="Accueil Prestige" 
+                  desc="Le jour de l'événement, scannez les codes numériques pour un accueil fluide, rapide et sécurisé." 
+                />
+              </div>
+            </div>
+            <div className="relative aspect-video lg:aspect-square bg-primary/5 rounded-[40px] border border-primary/10 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-neutral-950/10 dark:bg-white/5 backdrop-blur-3xl" />
+                <div className="relative z-10 text-center p-12 space-y-6">
+                    <Zap className="h-16 w-16 text-primary mx-auto mb-4" />
+                    <h3 className="text-3xl font-bold">Zéro Papier. <br />Impact Maximum.</h3>
+                    <p className="text-lg text-muted-foreground">
+                        Modernisez votre image tout en faisant un geste pour l'environnement.
+                    </p>
+                </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-primary text-primary-foreground text-center">
-        <div className="container mx-auto px-4">
-          <Sparkles className="h-16 w-16 mx-auto mb-8 opacity-50" />
-          <h2 className="text-4xl md:text-5xl font-headline font-bold mb-6">Prêt à impressionner vos invités ?</h2>
-          <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-            Que ce soit pour un mariage de prestige ou une conférence internationale à Bunia, notre système s'adapte à tous vos besoins.
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden bg-primary">
+        <div className="absolute inset-0 opacity-10">
+          <ConnectionMeshAnimation />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10 text-white">
+          <h2 className="text-4xl md:text-6xl font-headline font-bold mb-8">Sublimez votre prochain événement</h2>
+          <p className="text-xl md:text-2xl opacity-90 mb-12 max-w-3xl mx-auto font-light">
+            Mariages de luxe, sommets diplomatiques ou galas de bienfaisance : offrez-vous la sérénité technologique.
           </p>
-          <Button size="lg" variant="secondary" className="rounded-full px-12 h-16 text-lg font-bold" asChild>
-            <Link href="/contact?subject=Devis Système Invitations">Demander un devis personnalisé</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" variant="secondary" className="rounded-full px-12 h-20 text-xl font-bold shadow-2xl" asChild>
+              <Link href="/contact?subject=Devis Système Invitations">Obtenir une proposition</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full px-12 h-20 text-xl font-bold bg-transparent border-white text-white hover:bg-white hover:text-primary" asChild>
+              <Link href="/contact">Demander une démonstration</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
   );
 }
 
-function Step({ num, title, desc }: { num: string; title: string; desc: string }) {
+function StepItem({ num, title, desc }: { num: string; title: string; desc: string }) {
   return (
-    <div className="flex gap-8 items-start group">
-      <div className="text-6xl font-headline font-black text-primary/10 group-hover:text-primary/20 transition-colors leading-none">
+    <div className="flex gap-8 group">
+      <div className="flex-shrink-0 w-16 h-16 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary font-headline text-xl font-bold group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
         {num}
       </div>
-      <div className="pt-2">
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+      <div className="space-y-2">
+        <h3 className="text-2xl font-bold">{title}</h3>
         <p className="text-muted-foreground text-lg leading-relaxed">{desc}</p>
       </div>
     </div>
-  );
-}
-
-function Badge({ children, variant, className }: { children: React.ReactNode; variant?: "outline" | "default"; className?: string }) {
-  return (
-    <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${className}`}>
-      {children}
-    </span>
   );
 }
