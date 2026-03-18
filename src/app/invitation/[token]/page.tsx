@@ -5,9 +5,9 @@ import { useEffect, useState, use } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { format, isValid, parseISO } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { MapPin, Calendar, Clock, Loader2, AlertCircle, ArrowLeft, CheckCircle2, ShieldCheck, Ticket, Info, Heart } from 'lucide-react';
+import { MapPin, Calendar, Clock, Loader2, AlertCircle, ArrowLeft, Heart, ShieldCheck, Ticket, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -128,41 +128,37 @@ export default function InvitationPage({ params }: InvitationPageProps) {
   const msgBody = invitation_data?.message?.body || event.description;
 
   return (
-    <div className="min-h-screen bg-[#f9f7f2] text-[#4a3f35] py-12 px-4 selection:bg-[#8c7a6b] selection:text-white">
-      {/* Texture de papier subtile en background */}
+    <div className="min-h-screen bg-[#f9f7f2] text-[#4a3f35] py-6 md:py-12 px-4 selection:bg-[#8c7a6b] selection:text-white">
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
-      <div className="relative z-10 max-w-2xl mx-auto">
+      <div className="relative z-10 max-w-xl mx-auto">
         
-        {/* Navigation discrète */}
-        <div className="flex justify-between items-center mb-8 px-2">
+        <div className="flex justify-between items-center mb-4 px-2">
           <Link href="/" className="flex items-center gap-2 text-[#8c7a6b] hover:opacity-70 transition-all">
-            <ArrowLeft className="h-4 w-4" />
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase">ITSS DRC</span>
+            <ArrowLeft className="h-3 w-3" />
+            <span className="text-[9px] font-medium tracking-[0.2em] uppercase">ITSS DRC</span>
           </Link>
-          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#8c7a6b] opacity-50">
-            N° {token.substring(0, 6).toUpperCase()}
+          <span className="text-[9px] font-medium tracking-[0.2em] uppercase text-[#8c7a6b] opacity-50">
+            {token.substring(0, 8).toUpperCase()}
           </span>
         </div>
 
-        <div className="bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-2xl overflow-hidden border border-[#eee6d9]">
+        <div className="bg-white shadow-[0_15px_40px_rgba(0,0,0,0.04)] rounded-2xl overflow-hidden border border-[#eee6d9]">
           
-          {/* Section Botanique & Titre (Inspiration Image) */}
-          <div className="relative pt-20 pb-12 px-8 text-center bg-[#fdfcfb]">
-            {/* Illustration botanique simulée (Coins) */}
-            <div className="absolute top-0 left-0 w-32 h-32 opacity-20 pointer-events-none">
+          <div className="relative pt-12 pb-8 px-6 text-center bg-[#fdfcfb]">
+            <div className="absolute top-0 left-0 w-24 h-24 opacity-15 pointer-events-none">
                 <Image src="https://picsum.photos/seed/leaves1/200/200" alt="decor" width={200} height={200} className="object-contain rotate-[-15deg]" data-ai-hint="botanical leaves" />
             </div>
-            <div className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none scale-x-[-1]">
+            <div className="absolute top-0 right-0 w-24 h-24 opacity-15 pointer-events-none scale-x-[-1]">
                 <Image src="https://picsum.photos/seed/leaves2/200/200" alt="decor" width={200} height={200} className="object-contain rotate-[15deg]" data-ai-hint="botanical flowers" />
             </div>
 
-            <div className="space-y-6">
-                <p className="text-[10px] uppercase tracking-[0.5em] text-[#8c7a6b] font-semibold">Vous êtes cordialement invité à</p>
-                <h1 className="text-4xl md:text-5xl font-serif tracking-tight text-[#2d241d] leading-tight px-4 capitalize">
+            <div className="space-y-4">
+                <p className="text-[9px] uppercase tracking-[0.4em] text-[#8c7a6b] font-semibold">Invitation Cordiale</p>
+                <h1 className="text-3xl md:text-4xl font-serif tracking-tight text-[#2d241d] leading-tight px-2 capitalize">
                     {event.name}
                 </h1>
-                <div className="flex items-center justify-center gap-4 text-[#8c7a6b] font-serif italic text-sm">
+                <div className="flex items-center justify-center gap-3 text-[#8c7a6b] font-serif italic text-xs">
                     <span>{displayDate}</span>
                     <span className="w-1 h-1 bg-[#8c7a6b] rounded-full" />
                     <span>{event.location}</span>
@@ -170,133 +166,128 @@ export default function InvitationPage({ params }: InvitationPageProps) {
             </div>
           </div>
 
-          {/* Image de l'événement (Grand format comme l'image) */}
-          <div className="relative aspect-[3/2] w-full overflow-hidden border-y border-[#eee6d9]">
+          <div className="relative aspect-[21/9] w-full overflow-hidden border-y border-[#eee6d9]">
             <Image
-              src={event.image_url || `https://picsum.photos/seed/${event.id}/1200/800`}
+              src={event.image_url || `https://picsum.photos/seed/${event.id}/1200/500`}
               alt={event.name}
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              className="object-cover"
               priority
             />
           </div>
 
-          <CardContent className="p-8 md:p-16 space-y-16">
+          <CardContent className="p-6 md:p-10 space-y-10">
             
-            {/* Section Invité */}
-            <div className="text-center space-y-6">
-                <div className="flex justify-center mb-4">
-                    <Heart className="h-5 w-5 text-[#d4bca4]" fill="#d4bca4" />
+            <div className="text-center space-y-4">
+                <div className="flex justify-center">
+                    <Heart className="h-4 w-4 text-[#d4bca4]" fill="#d4bca4" />
                 </div>
-                <div className="space-y-2">
-                    <p className="text-[10px] uppercase tracking-[0.4em] text-[#8c7a6b] mb-4">En l'honneur de</p>
-                    <h2 className="text-4xl md:text-5xl font-serif text-[#2d241d]">
+                <div className="space-y-1">
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-[#8c7a6b] mb-2">En l'honneur de</p>
+                    <h2 className="text-3xl md:text-4xl font-serif text-[#2d241d]">
                         {guest.first_name} {guest.last_name}
                     </h2>
                     {guest.guest_type === 'couple' && guest.companion_name && (
-                        <>
-                        <p className="text-2xl font-serif italic text-[#8c7a6b]">&</p>
-                        <h3 className="text-3xl md:text-4xl font-serif text-[#2d241d]">
-                            {guest.companion_name}
-                        </h3>
-                        </>
+                        <div className="flex flex-col items-center">
+                          <span className="text-xl font-serif italic text-[#8c7a6b] my-1">&</span>
+                          <h3 className="text-2xl md:text-3xl font-serif text-[#2d241d]">
+                              {guest.companion_name}
+                          </h3>
+                        </div>
                     )}
                 </div>
-                <Badge variant="outline" className="mt-8 border-[#eee6d9] text-[#8c7a6b] rounded-full px-6 py-1 text-[10px] font-medium uppercase tracking-[0.2em]">
+                <Badge variant="outline" className="border-[#eee6d9] text-[#8c7a6b] rounded-full px-4 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] bg-[#fdfcfb]">
                     {guest.category || 'Invité Spécial'}
                 </Badge>
             </div>
 
-            {/* Détails logistiques */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 border-y border-[#f2ece4] text-center md:text-left">
-              <div className="space-y-4">
-                <div className="flex flex-col md:flex-row items-center gap-3">
-                    <Calendar className="h-4 w-4 text-[#8c7a6b] opacity-60" />
-                    <p className="text-[10px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Rendez-vous</p>
+            <div className="grid grid-cols-2 gap-8 py-6 border-y border-[#f2ece4] text-center sm:text-left">
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row items-center gap-2">
+                    <Calendar className="h-3 w-3 text-[#8c7a6b] opacity-60" />
+                    <p className="text-[8px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Moment</p>
                 </div>
-                <p className="text-lg font-serif">{displayDate}</p>
-                <p className="text-sm text-[#8c7a6b] italic">À partir de {displayTime}</p>
+                <p className="text-base font-serif">{displayDate}</p>
+                <p className="text-[10px] text-[#8c7a6b] italic">À partir de {displayTime}</p>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex flex-col md:flex-row items-center gap-3">
-                    <MapPin className="h-4 w-4 text-[#8c7a6b] opacity-60" />
-                    <p className="text-[10px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Lieu</p>
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row items-center gap-2">
+                    <MapPin className="h-3 w-3 text-[#8c7a6b] opacity-60" />
+                    <p className="text-[8px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Lieu</p>
                 </div>
-                <p className="text-lg font-serif leading-snug">{event.location}</p>
-                <p className="text-sm text-[#8c7a6b] italic">{event.city}, {event.country}</p>
+                <p className="text-base font-serif leading-snug">{event.location}</p>
+                <p className="text-[10px] text-[#8c7a6b] italic">{event.city}, {event.country}</p>
               </div>
             </div>
 
-            {/* Message Personnalisé */}
             {msgBody && (
-              <div className="max-w-md mx-auto text-center">
-                <p className="text-lg font-serif italic text-[#6a5a4d] leading-relaxed">
+              <div className="max-w-xs mx-auto text-center">
+                <p className="text-base font-serif italic text-[#6a5a4d] leading-relaxed">
                   "{msgBody}"
                 </p>
               </div>
             )}
 
-            {/* Section Accès / QR Code */}
-            <div className="pt-8 text-center">
+            <div className="pt-4 text-center">
                 {isCheckedIn ? (
-                  <div className="bg-[#f8faf9] border border-[#e8f0ed] rounded-2xl p-10 animate-in zoom-in-95 duration-500">
-                    <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <ShieldCheck className="h-8 w-8 text-emerald-600" />
+                  <div className="bg-[#f8faf9] border border-[#e8f0ed] rounded-xl p-6">
+                    <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <ShieldCheck className="h-6 w-6 text-emerald-600" />
                     </div>
-                    <h4 className="text-[#2d3a35] text-xl font-serif mb-2">Accès Confirmé</h4>
-                    <p className="text-[#647c72] text-[10px] font-medium uppercase tracking-widest leading-loose">
-                        Cette invitation a été validée à l'entrée.<br />Nous vous souhaitons une excellente réception.
+                    <h4 className="text-[#2d3a35] text-lg font-serif mb-1">Accès Confirmé</h4>
+                    <p className="text-[#647c72] text-[9px] font-medium uppercase tracking-widest leading-loose">
+                        Invitation validée à l'entrée.
                     </p>
                   </div>
                 ) : isConfirmed ? (
-                  <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                    <div className="inline-block bg-white p-6 rounded-2xl shadow-[0_10px_40px_rgba(140,122,107,0.1)] border border-[#f2ece4]">
+                  <div className="space-y-6">
+                    <div className="inline-block bg-white p-4 rounded-xl shadow-md border border-[#f2ece4]">
                       <QRCodeSVG 
                         value={guest.qr_code_data || token} 
-                        size={160} 
+                        size={140} 
                         level="H" 
                         includeMargin={false}
                         fgColor="#2d241d"
                       />
                     </div>
-                    <div className="space-y-3">
-                      <p className="text-[#8c7a6b] text-[10px] font-bold uppercase tracking-[0.3em]">Votre Pass Numérique</p>
-                      <p className="text-[#8c7a6b] text-[10px] max-w-[280px] mx-auto italic opacity-70">
-                        Veuillez présenter ce code à l'accueil pour votre enregistrement.
+                    <div className="space-y-2">
+                      <p className="text-[#8c7a6b] text-[9px] font-bold uppercase tracking-[0.2em]">Pass d'Accès Personnel</p>
+                      <p className="text-[#8c7a6b] text-[9px] italic opacity-70">
+                        À présenter à l'accueil pour votre enregistrement.
                       </p>
                     </div>
                   </div>
                 ) : isDeclined ? (
-                  <div className="py-8 opacity-50">
-                    <Info className="h-10 w-10 text-[#8c7a6b] mx-auto mb-4" />
-                    <p className="text-[#8c7a6b] text-xs font-serif italic">Vous avez décliné cette invitation.</p>
+                  <div className="py-4 opacity-50">
+                    <Info className="h-8 w-8 text-[#8c7a6b] mx-auto mb-2" />
+                    <p className="text-[#8c7a6b] text-[10px] font-serif italic">Vous avez décliné l'invitation.</p>
                   </div>
                 ) : (
-                  <div className="py-8 space-y-10">
-                    <div className="w-16 h-16 bg-[#f9f7f2] rounded-full flex items-center justify-center mx-auto">
-                        <Ticket className="h-8 w-8 text-[#d4bca4]" />
+                  <div className="py-4 space-y-6">
+                    <div className="w-12 h-12 bg-[#f9f7f2] rounded-full flex items-center justify-center mx-auto">
+                        <Ticket className="h-6 w-6 text-[#d4bca4]" />
                     </div>
                     <div className="space-y-4">
-                        <p className="text-[#8c7a6b] text-sm font-serif italic max-w-xs mx-auto">
-                            Pour nous aider dans notre organisation, merci de confirmer votre présence.
+                        <p className="text-[#8c7a6b] text-[11px] font-serif italic max-w-xs mx-auto">
+                            Merci de confirmer votre présence.
                         </p>
-                        <div className="flex flex-col gap-4 max-w-xs mx-auto pt-4">
+                        <div className="flex flex-col gap-3 max-w-[240px] mx-auto pt-2">
                             <Button 
-                                className="w-full h-14 rounded-full text-white shadow-lg hover:scale-[1.02] active:scale-95 transition-all"
+                                className="w-full h-12 rounded-full text-white shadow-md hover:scale-[1.01] transition-all"
                                 style={{ backgroundColor: primaryColor }}
                                 onClick={() => handleResponse('confirmed')}
                                 disabled={updating}
                             >
-                                {updating ? <Loader2 className="animate-spin" /> : "Je confirme ma présence"}
+                                {updating ? <Loader2 className="h-4 w-4 animate-spin" /> : "Je serai présent(e)"}
                             </Button>
                             <Button 
                                 variant="ghost" 
-                                className="w-full text-[#8c7a6b] hover:text-red-600 font-serif italic"
+                                className="w-full h-10 text-[#8c7a6b] hover:text-red-600 font-serif italic text-xs"
                                 onClick={() => handleResponse('declined')}
                                 disabled={updating}
                             >
-                                Je ne pourrai malheureusement pas venir
+                                Je ne pourrai pas venir
                             </Button>
                         </div>
                     </div>
@@ -304,17 +295,15 @@ export default function InvitationPage({ params }: InvitationPageProps) {
                 )}
             </div>
 
-            {/* Footer de la carte */}
-            <div className="text-center pt-10 border-t border-[#f2ece4] opacity-50 italic text-[11px] text-[#8c7a6b]">
-              {invitation_data?.message?.footer || "Nous avons hâte de célébrer ce moment avec vous."}
+            <div className="text-center pt-8 border-t border-[#f2ece4] opacity-50 italic text-[10px] text-[#8c7a6b]">
+              {invitation_data?.message?.footer || "Au plaisir de vous voir."}
             </div>
           </CardContent>
         </div>
 
-        {/* Branding Footer de la page */}
-        <div className="text-center py-12">
-            <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#8c7a6b] opacity-40">
-                Une expérience conçue par ITSS DRC
+        <div className="text-center py-8">
+            <p className="text-[8px] font-medium uppercase tracking-[0.3em] text-[#8c7a6b] opacity-40">
+                Expérience conçue par ITSS DRC
             </p>
         </div>
       </div>
