@@ -1,10 +1,11 @@
+
 'use client';
 
 import { useEffect, useState, use } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { format, isValid, parseISO } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { MapPin, Calendar, Clock, Loader2, AlertCircle, ArrowLeft, CheckCircle2, ShieldCheck, Ticket, Info } from 'lucide-react';
+import { MapPin, Calendar, Clock, Loader2, AlertCircle, ArrowLeft, CheckCircle2, ShieldCheck, Ticket, Info, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -34,7 +35,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
       if (!token) return;
       
       try {
-        // cache: 'no-store' est crucial pour voir les changements de statut immédiatement
         const res = await fetch(`/api/invitation/${token}`, { cache: 'no-store' });
         const data = await res.json();
         
@@ -67,7 +67,6 @@ export default function InvitationPage({ params }: InvitationPageProps) {
       });
       if (!res.ok) throw new Error('Erreur lors de la réponse');
       
-      // Mise à jour immédiate de l'interface
       setInvitation((prev: any) => ({
         ...prev,
         status: status,
@@ -88,22 +87,22 @@ export default function InvitationPage({ params }: InvitationPageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-neutral-950 flex flex-col items-center justify-center p-4">
-        <Loader2 className="h-12 w-12 text-primary animate-spin mb-4" />
-        <p className="text-neutral-400 animate-pulse">Chargement de votre invitation...</p>
+      <div className="min-h-screen bg-[#fcfaf7] flex flex-col items-center justify-center p-4">
+        <Loader2 className="h-12 w-12 text-[#8c7a6b] animate-spin mb-4" />
+        <p className="text-[#8c7a6b] font-serif italic">Préparation de votre invitation...</p>
       </div>
     );
   }
 
   if (error || !invitation || !invitation.event || !invitation.guest) {
     return (
-      <div className="min-h-screen bg-neutral-950 flex flex-col items-center justify-center p-6 text-center">
-        <AlertCircle className="h-16 w-16 text-red-500 mb-6" />
-        <h1 className="text-3xl font-headline font-bold text-white mb-3">Oups !</h1>
-        <p className="text-neutral-400 mb-8 max-w-sm mx-auto">
+      <div className="min-h-screen bg-[#fcfaf7] flex flex-col items-center justify-center p-6 text-center">
+        <AlertCircle className="h-16 w-16 text-[#8c7a6b] mb-6 opacity-50" />
+        <h1 className="text-3xl font-serif text-[#4a3f35] mb-3">Oups !</h1>
+        <p className="text-[#8c7a6b] mb-8 max-w-sm mx-auto font-serif italic">
           {error || "Nous n'avons pas pu trouver cette invitation."}
         </p>
-        <Button variant="outline" asChild className="rounded-full border-neutral-800 text-white">
+        <Button variant="outline" asChild className="rounded-full border-[#8c7a6b] text-[#8c7a6b] hover:bg-[#8c7a6b] hover:text-white transition-all">
           <Link href="/">Retour à l'accueil</Link>
         </Button>
       </div>
@@ -120,196 +119,212 @@ export default function InvitationPage({ params }: InvitationPageProps) {
   if (event.start_date) {
     const eventDate = parseISO(event.start_date);
     if (isValid(eventDate)) {
-      displayDate = format(eventDate, 'EEEE d MMMM yyyy', { locale: fr });
+      displayDate = format(eventDate, 'd MMMM yyyy', { locale: fr });
       displayTime = format(eventDate, 'HH:mm', { locale: fr });
     }
   }
 
-  const primaryColor = invitation_data?.design?.primary_color || "hsl(var(--primary))";
+  const primaryColor = invitation_data?.design?.primary_color || "#8c7a6b";
   const msgBody = invitation_data?.message?.body || event.description;
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-900 py-12 px-4">
-      {/* Background Glow */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[120px] rounded-full" />
-      </div>
+    <div className="min-h-screen bg-[#f9f7f2] text-[#4a3f35] py-12 px-4 selection:bg-[#8c7a6b] selection:text-white">
+      {/* Texture de papier subtile en background */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
-      <div className="relative z-10 max-w-xl mx-auto space-y-8">
+      <div className="relative z-10 max-w-2xl mx-auto">
         
-        {/* Navigation */}
-        <div className="flex justify-between items-center px-2">
-          <Link href="/" className="flex items-center gap-2 text-neutral-500 hover:text-white transition-colors">
+        {/* Navigation discrète */}
+        <div className="flex justify-between items-center mb-8 px-2">
+          <Link href="/" className="flex items-center gap-2 text-[#8c7a6b] hover:opacity-70 transition-all">
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-xs font-bold tracking-widest uppercase">ITSS DRC</span>
+            <span className="text-[10px] font-medium tracking-[0.2em] uppercase">ITSS DRC</span>
           </Link>
-          <Badge variant="outline" className="border-neutral-800 text-neutral-500 text-[10px] tracking-tighter">
-            #{token.substring(0, 8).toUpperCase()}
-          </Badge>
+          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#8c7a6b] opacity-50">
+            N° {token.substring(0, 6).toUpperCase()}
+          </span>
         </div>
 
-        <Card className="border-none shadow-2xl rounded-[2.5rem] bg-white overflow-hidden">
-          {/* Cover */}
-          <div className="relative h-64 w-full">
+        <div className="bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-2xl overflow-hidden border border-[#eee6d9]">
+          
+          {/* Section Botanique & Titre (Inspiration Image) */}
+          <div className="relative pt-20 pb-12 px-8 text-center bg-[#fdfcfb]">
+            {/* Illustration botanique simulée (Coins) */}
+            <div className="absolute top-0 left-0 w-32 h-32 opacity-20 pointer-events-none">
+                <Image src="https://picsum.photos/seed/leaves1/200/200" alt="decor" width={200} height={200} className="object-contain rotate-[-15deg]" data-ai-hint="botanical leaves" />
+            </div>
+            <div className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none scale-x-[-1]">
+                <Image src="https://picsum.photos/seed/leaves2/200/200" alt="decor" width={200} height={200} className="object-contain rotate-[15deg]" data-ai-hint="botanical flowers" />
+            </div>
+
+            <div className="space-y-6">
+                <p className="text-[10px] uppercase tracking-[0.5em] text-[#8c7a6b] font-semibold">Vous êtes cordialement invité à</p>
+                <h1 className="text-4xl md:text-5xl font-serif tracking-tight text-[#2d241d] leading-tight px-4 capitalize">
+                    {event.name}
+                </h1>
+                <div className="flex items-center justify-center gap-4 text-[#8c7a6b] font-serif italic text-sm">
+                    <span>{displayDate}</span>
+                    <span className="w-1 h-1 bg-[#8c7a6b] rounded-full" />
+                    <span>{event.location}</span>
+                </div>
+            </div>
+          </div>
+
+          {/* Image de l'événement (Grand format comme l'image) */}
+          <div className="relative aspect-[3/2] w-full overflow-hidden border-y border-[#eee6d9]">
             <Image
               src={event.image_url || `https://picsum.photos/seed/${event.id}/1200/800`}
               alt={event.name}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-8 right-8">
-              <h1 className="text-2xl md:text-3xl font-headline font-black text-white uppercase leading-tight">
-                {event.name}
-              </h1>
-            </div>
           </div>
 
-          <CardContent className="p-8 md:p-12 space-y-10">
-            {/* Guest Intro */}
-            <div className="text-center space-y-4">
-              <p className="text-[10px] uppercase tracking-[0.4em] font-black text-neutral-400">Invitation pour</p>
-              <h2 className="text-3xl md:text-4xl font-headline font-black tracking-tighter">
-                {guest.first_name} {guest.last_name}
-              </h2>
-              {guest.guest_type === 'couple' && guest.companion_name && (
-                <div className="mt-2">
-                  <p className="text-neutral-300 italic mb-1">&</p>
-                  <h3 className="text-2xl font-headline font-black tracking-tighter">
-                    {guest.companion_name}
-                  </h3>
+          <CardContent className="p-8 md:p-16 space-y-16">
+            
+            {/* Section Invité */}
+            <div className="text-center space-y-6">
+                <div className="flex justify-center mb-4">
+                    <Heart className="h-5 w-5 text-[#d4bca4]" fill="#d4bca4" />
                 </div>
-              )}
-              <Badge className="mt-4 bg-neutral-900 text-white rounded-full px-4 text-[10px] font-bold uppercase tracking-widest">
-                {guest.category || 'Invité VIP'}
-              </Badge>
+                <div className="space-y-2">
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-[#8c7a6b] mb-4">En l'honneur de</p>
+                    <h2 className="text-4xl md:text-5xl font-serif text-[#2d241d]">
+                        {guest.first_name} {guest.last_name}
+                    </h2>
+                    {guest.guest_type === 'couple' && guest.companion_name && (
+                        <>
+                        <p className="text-2xl font-serif italic text-[#8c7a6b]">&</p>
+                        <h3 className="text-3xl md:text-4xl font-serif text-[#2d241d]">
+                            {guest.companion_name}
+                        </h3>
+                        </>
+                    )}
+                </div>
+                <Badge variant="outline" className="mt-8 border-[#eee6d9] text-[#8c7a6b] rounded-full px-6 py-1 text-[10px] font-medium uppercase tracking-[0.2em]">
+                    {guest.category || 'Invité Spécial'}
+                </Badge>
             </div>
 
-            {/* Info Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8 border-y border-neutral-100">
-              <div className="flex items-center gap-4">
-                <Calendar className="h-5 w-5" style={{ color: primaryColor }} />
-                <div>
-                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest">Date</p>
-                  <p className="text-sm font-bold capitalize">{displayDate}</p>
+            {/* Détails logistiques */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 border-y border-[#f2ece4] text-center md:text-left">
+              <div className="space-y-4">
+                <div className="flex flex-col md:flex-row items-center gap-3">
+                    <Calendar className="h-4 w-4 text-[#8c7a6b] opacity-60" />
+                    <p className="text-[10px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Rendez-vous</p>
                 </div>
+                <p className="text-lg font-serif">{displayDate}</p>
+                <p className="text-sm text-[#8c7a6b] italic">À partir de {displayTime}</p>
               </div>
-              <div className="flex items-center gap-4">
-                <Clock className="h-5 w-5" style={{ color: primaryColor }} />
-                <div>
-                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest">Heure</p>
-                  <p className="text-sm font-bold">{displayTime}</p>
+              
+              <div className="space-y-4">
+                <div className="flex flex-col md:flex-row items-center gap-3">
+                    <MapPin className="h-4 w-4 text-[#8c7a6b] opacity-60" />
+                    <p className="text-[10px] font-bold text-[#8c7a6b] uppercase tracking-widest">Le Lieu</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 md:col-span-2">
-                <MapPin className="h-5 w-5 shrink-0 mt-1" style={{ color: primaryColor }} />
-                <div>
-                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest">Lieu</p>
-                  <p className="text-sm font-bold">{event.location}</p>
-                  <p className="text-xs text-neutral-500 font-medium">{event.city}, {event.country}</p>
-                </div>
+                <p className="text-lg font-serif leading-snug">{event.location}</p>
+                <p className="text-sm text-[#8c7a6b] italic">{event.city}, {event.country}</p>
               </div>
             </div>
 
-            {/* Note */}
+            {/* Message Personnalisé */}
             {msgBody && (
-              <div className="p-6 rounded-3xl bg-neutral-50 border border-neutral-100 italic text-sm text-neutral-600 text-center">
-                "{msgBody}"
+              <div className="max-w-md mx-auto text-center">
+                <p className="text-lg font-serif italic text-[#6a5a4d] leading-relaxed">
+                  "{msgBody}"
+                </p>
               </div>
             )}
 
-            {/* Access Section */}
-            <div className="relative">
-              <div className="bg-neutral-900 rounded-[2.5rem] p-10 text-center shadow-xl">
+            {/* Section Accès / QR Code */}
+            <div className="pt-8 text-center">
                 {isCheckedIn ? (
-                  <div className="py-8 space-y-4 animate-in zoom-in-95 duration-500">
-                    <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30">
-                      <ShieldCheck className="h-10 w-10 text-emerald-500" />
+                  <div className="bg-[#f8faf9] border border-[#e8f0ed] rounded-2xl p-10 animate-in zoom-in-95 duration-500">
+                    <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <ShieldCheck className="h-8 w-8 text-emerald-600" />
                     </div>
-                    <div>
-                      <h4 className="text-white text-xl font-headline font-bold uppercase tracking-tight">Accès Validé</h4>
-                      <p className="text-neutral-500 text-[10px] font-bold uppercase tracking-widest mt-1">Vous avez été enregistré à l'entrée</p>
-                    </div>
+                    <h4 className="text-[#2d3a35] text-xl font-serif mb-2">Accès Confirmé</h4>
+                    <p className="text-[#647c72] text-[10px] font-medium uppercase tracking-widest leading-loose">
+                        Cette invitation a été validée à l'entrée.<br />Nous vous souhaitons une excellente réception.
+                    </p>
                   </div>
                 ) : isConfirmed ? (
-                  <div className="space-y-8 animate-in fade-in slide-in-from-bottom-5 duration-700">
-                    <div className="inline-block bg-white p-4 rounded-[2rem] shadow-2xl">
+                  <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    <div className="inline-block bg-white p-6 rounded-2xl shadow-[0_10px_40px_rgba(140,122,107,0.1)] border border-[#f2ece4]">
                       <QRCodeSVG 
                         value={guest.qr_code_data || token} 
-                        size={180} 
+                        size={160} 
                         level="H" 
                         includeMargin={false}
+                        fgColor="#2d241d"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-white text-xs font-black uppercase tracking-[0.3em]">Code d'Accès Actif</p>
-                      <p className="text-neutral-500 text-[9px] max-w-[200px] mx-auto opacity-70">
-                        À présenter à l'accueil pour vérification numérique.
+                    <div className="space-y-3">
+                      <p className="text-[#8c7a6b] text-[10px] font-bold uppercase tracking-[0.3em]">Votre Pass Numérique</p>
+                      <p className="text-[#8c7a6b] text-[10px] max-w-[280px] mx-auto italic opacity-70">
+                        Veuillez présenter ce code à l'accueil pour votre enregistrement.
                       </p>
                     </div>
                   </div>
                 ) : isDeclined ? (
-                  <div className="py-10">
-                    <AlertCircle className="h-12 w-12 text-neutral-700 mx-auto mb-4" />
-                    <p className="text-neutral-500 text-xs font-bold uppercase tracking-widest">Invitation déclinée</p>
+                  <div className="py-8 opacity-50">
+                    <Info className="h-10 w-10 text-[#8c7a6b] mx-auto mb-4" />
+                    <p className="text-[#8c7a6b] text-xs font-serif italic">Vous avez décliné cette invitation.</p>
                   </div>
                 ) : (
-                  <div className="py-10 space-y-6">
-                    <Ticket className="h-12 w-12 text-neutral-800 mx-auto" />
-                    <p className="text-neutral-400 text-xs font-medium max-w-[240px] mx-auto leading-relaxed">
-                      Veuillez confirmer votre présence ci-dessous pour activer votre accès numérique.
-                    </p>
+                  <div className="py-8 space-y-10">
+                    <div className="w-16 h-16 bg-[#f9f7f2] rounded-full flex items-center justify-center mx-auto">
+                        <Ticket className="h-8 w-8 text-[#d4bca4]" />
+                    </div>
+                    <div className="space-y-4">
+                        <p className="text-[#8c7a6b] text-sm font-serif italic max-w-xs mx-auto">
+                            Pour nous aider dans notre organisation, merci de confirmer votre présence.
+                        </p>
+                        <div className="flex flex-col gap-4 max-w-xs mx-auto pt-4">
+                            <Button 
+                                className="w-full h-14 rounded-full text-white shadow-lg hover:scale-[1.02] active:scale-95 transition-all"
+                                style={{ backgroundColor: primaryColor }}
+                                onClick={() => handleResponse('confirmed')}
+                                disabled={updating}
+                            >
+                                {updating ? <Loader2 className="animate-spin" /> : "Je confirme ma présence"}
+                            </Button>
+                            <Button 
+                                variant="ghost" 
+                                className="w-full text-[#8c7a6b] hover:text-red-600 font-serif italic"
+                                onClick={() => handleResponse('declined')}
+                                disabled={updating}
+                            >
+                                Je ne pourrai malheureusement pas venir
+                            </Button>
+                        </div>
+                    </div>
                   </div>
                 )}
-              </div>
             </div>
 
-            {/* RSVP Buttons */}
-            {!isCheckedIn && !isConfirmed && !isDeclined && (
-              <div className="flex flex-col gap-3">
-                <Button 
-                  className="w-full h-16 rounded-2xl text-lg font-headline font-black text-white shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
-                  style={{ backgroundColor: primaryColor }}
-                  onClick={() => handleResponse('confirmed')}
-                  disabled={updating}
-                >
-                  {updating ? <Loader2 className="animate-spin" /> : "Confirmer ma Présence"}
-                </Button>
-                <Button 
-                  variant="ghost" 
-                  className="w-full h-12 text-neutral-400 hover:text-red-500 hover:bg-red-50 font-bold text-xs"
-                  onClick={() => handleResponse('declined')}
-                  disabled={updating}
-                >
-                  Je ne pourrai pas venir
-                </Button>
-              </div>
-            )}
-
-            {/* Final Status Note */}
-            {(isConfirmed || isDeclined) && !isCheckedIn && (
-              <div className="text-center py-4 bg-neutral-50 rounded-2xl border border-neutral-100 flex items-center justify-center gap-2">
-                <CheckCircle2 className="h-4 w-4" style={{ color: isConfirmed ? primaryColor : '#ef4444' }} />
-                <span className="text-xs font-bold text-neutral-500">
-                  {isConfirmed ? "Votre présence est enregistrée" : "Absence signalée"}
-                </span>
-              </div>
-            )}
-
-            <div className="text-center pt-6 opacity-40 italic text-[10px] text-neutral-400">
-              {invitation_data?.message?.footer || "Au plaisir de vous recevoir."}
+            {/* Footer de la carte */}
+            <div className="text-center pt-10 border-t border-[#f2ece4] opacity-50 italic text-[11px] text-[#8c7a6b]">
+              {invitation_data?.message?.footer || "Nous avons hâte de célébrer ce moment avec vous."}
             </div>
           </CardContent>
-        </Card>
+        </div>
 
-        {/* Branding */}
-        <div className="text-center opacity-20 hover:opacity-100 transition-opacity pb-10">
-          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-neutral-500 mb-1">Expérience conçue par</p>
-          <p className="text-white font-headline font-black tracking-tighter">ITSS <span className="text-primary">DRC</span></p>
+        {/* Branding Footer de la page */}
+        <div className="text-center py-12">
+            <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#8c7a6b] opacity-40">
+                Une expérience conçue par ITSS DRC
+            </p>
         </div>
       </div>
+
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        .font-serif {
+          font-family: 'Playfair Display', serif;
+        }
+      `}</style>
     </div>
   );
 }
