@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
@@ -11,6 +12,10 @@ export async function GET(
 
   if (!token) {
     return NextResponse.json({ error: 'Token manquant' }, { status: 400 });
+  }
+
+  if (!supabase) {
+    return NextResponse.json({ error: 'Configuration Supabase manquante' }, { status: 500 });
   }
 
   const { data: invitation, error } = await supabase
@@ -50,6 +55,10 @@ export async function POST(
 
   if (!['confirmed', 'declined'].includes(status)) {
     return NextResponse.json({ error: 'Statut invalide' }, { status: 400 });
+  }
+
+  if (!supabase) {
+    return NextResponse.json({ error: 'Configuration Supabase manquante' }, { status: 500 });
   }
 
   const { data: invitation, error: fetchError } = await supabase
