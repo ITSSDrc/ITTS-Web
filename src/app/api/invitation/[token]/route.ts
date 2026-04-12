@@ -8,7 +8,8 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ token: string }> }
 ) {
-  const { token } = await params;
+  const { token: rawToken } = await params;
+  const token = rawToken?.trim();
 
   if (!token) {
     return NextResponse.json({ error: 'Token manquant' }, { status: 400 });
@@ -18,19 +19,24 @@ export async function GET(
     return NextResponse.json({ error: 'Configuration Supabase manquante' }, { status: 500 });
   }
 
-  // Jointure des trois tables : invitations, events, guests
+  // Requête avec jointures explicites pour éviter les ambiguïtés de clés étrangères
   const { data: invitation, error } = await supabase
     .from('invitations')
     .select(`
       *,
-      event:events (*),
-      guest:guests (*)
+      event:events!event_id (*),
+      guest:guests!guest_id (*)
     `)
     .eq('token', token)
     .maybeSingle();
 
-  if (error || !invitation) {
-    console.error('Supabase error or invitation not found:', error);
+  if (error) {
+    console.error('Erreur Supabase lors de la récupération:', error);
+    return NextResponse.json({ error: 'Erreur serveur lors de la recherche' }, { status: 500 });
+  }
+
+  if (!invitation) {
+    console.warn(`Invitation non trouvée pour le token: [${token}]`);
     return NextResponse.json({ error: 'Invitation non trouvée' }, { status: 404 });
   }
 
@@ -52,7 +58,8 @@ export async function POST(
   request: Request,
   { params }: { params: Promise<{ token: string }> }
 ) {
-  const { token } = await params;
+  const { token: rawToken } = await params;
+  const token = rawToken?.trim();
   const { status } = await request.json(); // 'confirmed' ou 'declined'
 
   if (!['confirmed', 'declined'].includes(status)) {
